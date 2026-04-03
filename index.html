@@ -3,309 +3,372 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ashrita Shetty - Job Search Dashboard [VALIDATED DATA]</title>
+<title>Ashrita's Work Command Center - Job Search Dashboard</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0f1419;color:#e0e0e0;line-height:1.6}
-header{background:linear-gradient(135deg,#1e40af 0%,#7c3aed 100%);padding:24px;text-align:center;border-bottom:2px solid #3b82f6}
-h1{color:#fff;font-size:32px;margin-bottom:8px}
-.subtitle{color:#cbd5e1;font-size:14px}
-.validation-banner{background:#064e3b;border-left:4px solid #10b981;padding:12px 16px;margin:16px;border-radius:6px;color:#a7f3d0;font-size:13px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#fff;color:#333;line-height:1.6}
+header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:24px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+h1{font-size:32px;margin-bottom:8px}
+.subtitle{font-size:14px;opacity:0.9}
+.refresh-bar{background:#f5f5f5;border-bottom:1px solid #e0e0e0;padding:12px 20px;font-size:13px;color:#666;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.new-badge{background:#2e7d32;color:#fff;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700}
 .container{max-width:1400px;margin:0 auto;padding:20px}
-.tabs{display:flex;gap:0;border-bottom:2px solid #1e293b;margin-bottom:20px;flex-wrap:wrap}
-.tab-btn{padding:12px 20px;background:transparent;color:#64748b;border:none;cursor:pointer;border-bottom:3px solid transparent;font-weight:600;transition:all 0.3s}
-.tab-btn:hover{color:#cbd5e1}
-.tab-btn.active{color:#60a5fa;border-bottom-color:#3b82f6}
+.tabs{display:flex;border-bottom:2px solid #e0e0e0;gap:0;margin-bottom:20px;flex-wrap:wrap}
+.tab-btn{padding:14px 24px;background:transparent;color:#888;border:none;cursor:pointer;border-bottom:3px solid transparent;font-weight:600;font-size:14px;transition:all 0.3s}
+.tab-btn:hover{color:#667eea}
+.tab-btn.active{color:#667eea;border-bottom-color:#667eea}
 .tab-content{display:none}
 .tab-content.active{display:block;animation:fadeIn 0.3s}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.filters{background:#1e293b;padding:16px;border-radius:8px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end}
+.filters{background:#f5f5f5;padding:16px;border-radius:8px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end}
 .filter-group{display:flex;flex-direction:column;gap:6px}
-.filter-group label{font-size:12px;text-transform:uppercase;color:#64748b;font-weight:600}
-.filter-group input,.filter-group select{padding:8px 12px;background:#0f1419;border:1px solid #334155;color:#e0e0e0;border-radius:4px;font-size:13px}
-.filter-group input:focus,.filter-group select:focus{outline:none;border-color:#3b82f6;box-shadow:0 0 0 2px rgba(59,130,246,0.1)}
+.filter-group label{font-size:12px;text-transform:uppercase;color:#666;font-weight:600}
+.filter-group input,.filter-group select{padding:8px 12px;background:#fff;border:1.5px solid #e0e0e0;color:#333;border-radius:4px;font-size:13px}
+.filter-group input:focus,.filter-group select:focus{outline:none;border-color:#667eea;box-shadow:0 0 0 2px rgba(102,126,234,0.1)}
 .sort-buttons{display:flex;gap:8px;flex-wrap:wrap}
-.sort-btn{padding:8px 16px;background:#334155;color:#cbd5e1;border:none;cursor:pointer;border-radius:4px;font-size:13px;font-weight:600;transition:all 0.3s}
-.sort-btn:hover,.sort-btn.active{background:#3b82f6;color:white}
+.sort-btn{padding:8px 16px;background:#e0e0e0;color:#333;border:none;cursor:pointer;border-radius:20px;font-size:13px;font-weight:600;transition:all 0.3s}
+.sort-btn:hover,.sort-btn.active{background:#667eea;color:#fff}
 .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:20px}
-.stat-card{background:#1e293b;padding:16px;border-radius:6px;border-left:3px solid #3b82f6;text-align:center}
-.stat-value{font-size:28px;font-weight:700;color:#60a5fa;margin-bottom:4px}
-.stat-label{font-size:11px;text-transform:uppercase;color:#64748b;font-weight:600}
-.jobs-grid{display:grid;gap:14px}
-.job-card{background:#1e293b;border-left:4px solid #3b82f6;padding:16px;border-radius:6px;transition:all 0.3s}
-.job-card:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(0,0,0,0.3);border-left-color:#0ea5e9}
-.job-card.new{background:#0f351e;border-left-color:#10b981}
-.job-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;gap:12px}
-.job-title{font-size:16px;font-weight:700;color:#60a5fa}
-.job-company{font-size:13px;color:#94a3b8;margin-top:4px}
+.stat-card{background:#f9f9f9;padding:16px;border-radius:8px;border-left:4px solid #667eea;text-align:center}
+.stat-value{font-size:28px;font-weight:700;color:#667eea;margin-bottom:4px}
+.stat-label{font-size:11px;text-transform:uppercase;color:#999;font-weight:600}
+.jobs-grid{display:grid;gap:16px}
+.job-card{background:#fff;border:1.5px solid #e0e0e0;border-radius:8px;padding:18px;transition:all 0.3s}
+.job-card:hover{border-color:#667eea;box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+.job-card.new{border-left:4px solid #2e7d32;background:#f8fef8}
+.job-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:12px}
+.job-title{font-size:16px;font-weight:700;color:#333}
+.job-company{font-size:13px;color:#667eea;margin-top:4px;font-weight:600}
 .job-badges{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
-.badge{display:inline-block;padding:4px 10px;background:#334155;color:#cbd5e1;font-size:11px;border-radius:3px;font-weight:600;text-transform:uppercase}
-.badge.new{background:#10b981;color:white}
-.badge.salary{background:#7c3aed;color:white}
-.badge.score{background:#f59e0b;color:white}
+.badge{display:inline-block;padding:4px 10px;background:#e8e8e8;color:#333;font-size:11px;border-radius:3px;font-weight:600;text-transform:uppercase}
+.badge.new{background:#2e7d32;color:#fff}
+.badge.salary{background:#d4a852;color:#fff}
+.badge.score{background:#667eea;color:#fff}
 .job-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:10px 0;font-size:13px}
-.meta-label{color:#64748b;font-size:11px;text-transform:uppercase;font-weight:600}
-.meta-value{color:#cbd5e1}
-.job-desc{color:#cbd5e1;font-size:13px;margin:10px 0;padding:10px;background:#0f1419;border-radius:4px;border-left:2px solid #334155}
-.job-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.btn{padding:8px 14px;background:#334155;color:#e0e0e0;border:none;cursor:pointer;border-radius:4px;font-size:12px;font-weight:600;transition:all 0.3s}
-.btn:hover{background:#3b82f6;color:white}
-.btn.primary{background:#3b82f6;color:white}
-.btn.primary:hover{background:#0ea5e9}
-.org-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
-.org-card{background:#1e293b;padding:12px;border-radius:6px;border:1px solid #334155;transition:all 0.3s}
-.org-card:hover{border-color:#3b82f6;box-shadow:0 4px 12px rgba(59,130,246,0.1)}
-.org-name{font-weight:700;color:#60a5fa;font-size:13px;margin-bottom:6px}
-.org-info{font-size:12px;color:#94a3b8;margin-bottom:4px}
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:1000;justify-content:center;align-items:center}
+.meta-label{color:#999;font-size:11px;text-transform:uppercase;font-weight:600}
+.meta-value{color:#333;font-weight:500}
+.job-desc{color:#666;font-size:13px;margin:10px 0;padding:10px;background:#f9f9f9;border-radius:4px;border-left:2px solid #e0e0e0}
+.job-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center}
+.btn{padding:8px 14px;background:#e0e0e0;color:#333;border:none;cursor:pointer;border-radius:4px;font-size:12px;font-weight:600;transition:all 0.3s}
+.btn:hover{background:#667eea;color:#fff}
+.btn.primary{background:#667eea;color:#fff}
+.btn.primary:hover{background:#5868d4}
+.rating-buttons{display:flex;gap:6px}
+.rating-btn{padding:6px 10px;background:#fff;border:1.5px solid #e0e0e0;color:#666;cursor:pointer;border-radius:4px;font-size:12px;font-weight:600;transition:all 0.2s}
+.rating-btn:hover{border-color:#667eea;color:#667eea}
+.org-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.org-card{background:#fff;border:1.5px solid #e0e0e0;border-radius:8px;padding:14px;transition:all 0.3s}
+.org-card:hover{border-color:#667eea;box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+.org-name{font-weight:700;color:#667eea;font-size:14px;margin-bottom:6px}
+.org-info{font-size:12px;color:#999;margin-bottom:4px}
+.org-status{display:inline-block;padding:4px 10px;background:#e0e0e0;color:#333;border-radius:3px;font-size:11px;cursor:pointer;font-weight:600;margin-top:8px}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.45);z-index:1000;justify-content:center;align-items:center}
 .modal.active{display:flex}
-.modal-content{background:#1e293b;padding:24px;border-radius:8px;max-width:500px;width:90%;max-height:80vh;overflow-y:auto;border:2px solid #3b82f6}
-.modal-header{font-size:18px;font-weight:700;color:#60a5fa;margin-bottom:16px}
+.modal-content{background:#fff;padding:24px;border-radius:8px;max-width:500px;width:90%;max-height:80vh;overflow-y:auto;box-shadow:0 12px 40px rgba(0,0,0,0.2);position:relative}
+.modal-header{font-size:18px;font-weight:700;color:#667eea;margin-bottom:16px}
 .form-group{margin-bottom:14px}
-.form-group label{display:block;margin-bottom:6px;color:#cbd5e1;font-weight:600;font-size:13px}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:10px;background:#0f1419;border:1px solid #334155;color:#e0e0e0;border-radius:4px}
-.form-group textarea{min-height:80px}
-.close-btn{position:absolute;top:16px;right:16px;background:none;border:none;color:#94a3b8;font-size:28px;cursor:pointer}
-.close-btn:hover{color:#60a5fa}
-@media(max-width:768px){.job-meta{grid-template-columns:1fr}.org-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}}
+.form-group label{display:block;margin-bottom:6px;color:#333;font-weight:600;font-size:13px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:10px;background:#fff;border:1.5px solid #e0e0e0;color:#333;border-radius:4px;font-family:inherit;font-size:13px}
+.form-group textarea{min-height:80px;resize:vertical}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:#667eea;box-shadow:0 0 0 2px rgba(102,126,234,0.1)}
+.close-btn{position:absolute;top:16px;right:16px;background:none;border:none;color:#999;font-size:28px;cursor:pointer;font-weight:300}
+.close-btn:hover{color:#333}
+.gen-output{background:#f9f9f9;padding:16px;border-radius:6px;border-left:4px solid #667eea;margin-top:12px;white-space:pre-wrap;font-size:13px;line-height:1.6;font-family:'Courier New',monospace;color:#333}
+.copy-btn{background:#667eea;color:#fff;border:none;padding:6px 12px;border-radius:4px;font-size:12px;cursor:pointer;margin-top:10px;font-weight:600}
+.copy-btn:hover{opacity:0.9}
+@media(max-width:768px){.job-meta{grid-template-columns:1fr}.org-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.filters{flex-direction:column}.filter-group{min-width:100%}}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>🎯 Job Search Command Center</h1>
-  <p class="subtitle">37 Validated Positions | Data Cleaned 2026-04-03</p>
+  <h1>🎯 Work Command Center</h1>
+  <p class="subtitle">Ashrita's Strategic Job Search Dashboard</p>
 </header>
 
-<div class="validation-banner">✓ DATA VALIDATION COMPLETE: 47 positions evaluated → 37 validated (keyword filtered, URL verified, duplicates removed)</div>
+<div class="refresh-bar">
+  <span id="lastRefresh">Last Refreshed: Loading...</span>
+  <span id="newCount" class="new-badge">0 new jobs today</span>
+  <span style="color:#999">|</span>
+  <span id="totalCount" style="color:#667eea;font-weight:600">50+ jobs loaded</span>
+</div>
 
 <div class="container">
   <div class="tabs">
-    <button class="tab-btn active" onclick="showTab('jobs')">Top Jobs (37)</button>
-    <button class="tab-btn" onclick="showTab('applications')">Applications</button>
-    <button class="tab-btn" onclick="showTab('organizations')">Organizations</button>
+    <button class="tab-btn active" onclick="showTab('jobs')">Top Jobs (50+)</button>
+    <button class="tab-btn" onclick="showTab('tracker')">Organization Tracker (117)</button>
+    <button class="tab-btn" onclick="showTab('applied')">My Applications</button>
     <button class="tab-btn" onclick="showTab('generate')">AI Generator</button>
-    <button class="tab-btn" onclick="showTab('profile')">Profile</button>
+    <button class="tab-btn" onclick="showTab('profile')">Your Profile</button>
   </div>
 
-  <!-- JOBS TAB -->
+  <!-- TAB 1: TOP JOBS -->
   <div id="jobs" class="tab-content active">
     <div class="filters">
       <div class="filter-group" style="flex:1;min-width:200px">
         <label>Search</label>
-        <input type="text" id="searchInput" placeholder="Title or company..." onkeyup="filterJobs()">
+        <input type="text" id="searchInput" placeholder="Job title or company..." onkeyup="filterJobs()">
       </div>
       <div class="filter-group">
         <label>Sector</label>
         <select id="sectorFilter" onchange="filterJobs()">
-          <option value="">All</option>
+          <option value="">All Sectors</option>
           <option value="government">Government</option>
           <option value="consulting">Consulting</option>
+          <option value="design">Design</option>
+          <option value="civic_tech">Civic Tech</option>
           <option value="climate">Climate</option>
           <option value="nonprofit">Nonprofit</option>
-          <option value="policy">Policy</option>
-          <option value="design">Design</option>
+          <option value="research">Research</option>
         </select>
       </div>
       <div class="filter-group">
-        <label>Min Salary ($k)</label>
-        <input type="number" id="salaryFilter" placeholder="120" onchange="filterJobs()">
+        <label>Min Salary</label>
+        <input type="number" id="salaryFilter" placeholder="e.g. 120" onchange="filterJobs()">
       </div>
       <div class="sort-buttons">
         <button class="sort-btn active" onclick="sortJobs('score')">Score</button>
-        <button class="sort-btn" onclick="sortJobs('salary')">Salary</button>
         <button class="sort-btn" onclick="sortJobs('date')">Date</button>
+        <button class="sort-btn" onclick="sortJobs('salary')">Salary</button>
       </div>
     </div>
 
     <div class="stats-grid">
-      <div class="stat-card"><div class="stat-value">37</div><div class="stat-label">Validated</div></div>
-      <div class="stat-card"><div class="stat-value">78%</div><div class="stat-label">Avg Match</div></div>
-      <div class="stat-card"><div class="stat-value">$125K</div><div class="stat-label">Med. Salary</div></div>
-      <div class="stat-card"><div class="stat-value" id="savedCount">0</div><div class="stat-label">Saved</div></div>
+      <div class="stat-card"><div class="stat-value">50+</div><div class="stat-label">Matching Jobs</div></div>
+      <div class="stat-card"><div class="stat-value">117</div><div class="stat-label">Organizations</div></div>
+      <div class="stat-card"><div class="stat-value">$125K</div><div class="stat-label">Median Salary</div></div>
+      <div class="stat-card"><div class="stat-value" id="savedCount">0</div><div class="stat-label">Saved Jobs</div></div>
     </div>
 
     <div class="jobs-grid" id="jobsGrid"></div>
   </div>
 
-  <!-- APPLICATIONS TAB -->
-  <div id="applications" class="tab-content">
-    <button class="btn primary" style="margin-bottom:20px" onclick="showAppModal()">+ Log Application</button>
-    <div id="appsList" class="jobs-grid"></div>
-  </div>
-
-  <!-- ORGANIZATIONS TAB -->
-  <div id="organizations" class="tab-content">
-    <h2 style="color:#60a5fa;margin-bottom:16px">Organization Tracker</h2>
+  <!-- TAB 2: ORGANIZATION TRACKER -->
+  <div id="tracker" class="tab-content">
+    <div style="margin-bottom:20px">
+      <button class="btn primary" onclick="showOrgModal()">+ Add Job to Track</button>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-bottom:20px">
+      <div style="background:#f5f5f5;padding:14px;border-radius:8px">
+        <div style="font-weight:700;color:#667eea;margin-bottom:4px">Filter Organizations</div>
+        <input type="text" id="orgFilter" placeholder="Search organizations..." onkeyup="filterOrgs()" style="width:100%;padding:8px;border:1.5px solid #e0e0e0;border-radius:4px;font-size:13px">
+      </div>
+    </div>
     <div class="org-grid" id="orgsGrid"></div>
   </div>
 
-  <!-- GENERATOR TAB -->
+  <!-- TAB 3: MY APPLICATIONS -->
+  <div id="applied" class="tab-content">
+    <button class="btn primary" style="margin-bottom:20px" onclick="showAppModal()">+ Log New Application</button>
+    <div id="appsList" class="jobs-grid"></div>
+  </div>
+
+  <!-- TAB 4: AI GENERATOR -->
   <div id="generate" class="tab-content">
-    <h2 style="color:#60a5fa;margin-bottom:16px">AI Generator</h2>
-    <div class="filter-group" style="max-width:500px;margin-bottom:20px">
-      <label>Select Position</label>
-      <select id="genJobSelect" onchange="genPreview()">
-        <option value="">Choose a job...</option>
-      </select>
-    </div>
-    <div id="genOutput" style="display:none">
-      <div style="background:#0f1419;padding:16px;border-radius:6px;margin-bottom:16px;border-left:3px solid #3b82f6">
-        <h3 style="color:#60a5fa;margin-bottom:12px">Cover Letter Opening</h3>
-        <div id="coverText" style="white-space:pre-wrap;color:#cbd5e1;font-size:13px;font-family:Georgia,serif;line-height:1.8"></div>
-        <button class="btn primary" style="margin-top:12px" onclick="copyText('coverText')">Copy</button>
+    <div style="background:#f5f5f5;padding:20px;border-radius:8px">
+      <h2 style="color:#667eea;margin-bottom:16px">AI-Powered Resume & Cover Letter Generator</h2>
+      <div class="form-group">
+        <label>Select a Position to Tailor Content</label>
+        <select id="genJobSelect" onchange="updateGenerator()" style="width:100%;padding:10px;border:1.5px solid #e0e0e0;border-radius:4px;font-size:13px">
+          <option value="">Choose a job position...</option>
+        </select>
       </div>
-      <div style="background:#0f1419;padding:16px;border-radius:6px;border-left:3px solid #0ea5e9">
-        <h3 style="color:#60a5fa;margin-bottom:12px">Resume Bullets</h3>
-        <div id="resumeText" style="white-space:pre-wrap;color:#cbd5e1;font-size:13px;font-family:'Courier New',monospace;line-height:1.8"></div>
-        <button class="btn primary" style="margin-top:12px" onclick="copyText('resumeText')">Copy</button>
+
+      <div id="genOutput" style="display:none">
+        <div style="margin-top:20px">
+          <h3 style="color:#667eea;margin-bottom:12px;font-size:14px">📋 Adapted Resume Bullets</h3>
+          <div id="resumeGen" class="gen-output"></div>
+          <button class="copy-btn" onclick="copyToClipboard('resumeGen')">Copy Bullets</button>
+        </div>
+
+        <div style="margin-top:24px">
+          <h3 style="color:#667eea;margin-bottom:12px;font-size:14px">📝 Adapted Cover Letter Opening</h3>
+          <div id="coverGen" class="gen-output"></div>
+          <button class="copy-btn" onclick="copyToClipboard('coverGen')">Copy Letter</button>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- PROFILE TAB -->
+  <!-- TAB 5: YOUR PROFILE -->
   <div id="profile" class="tab-content">
-    <div style="background:#1e293b;padding:20px;border-radius:8px">
-      <h2 style="color:#60a5fa;margin-bottom:16px">Ashrita Shetty</h2>
-      <p style="color:#cbd5e1;line-height:1.8;margin-bottom:16px">Urban strategist and designer with 7+ years managing complex, multi-stakeholder design and development projects across strategy, design, construction, and operations.</p>
-      <h3 style="color:#60a5fa;margin:16px 0 12px 0;font-size:14px">Core Competencies</h3>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px">
-        <span style="background:#334155;padding:8px 12px;border-radius:4px;font-size:12px">Placemaking Strategy</span>
-        <span style="background:#334155;padding:8px 12px;border-radius:4px;font-size:12px">Project Management</span>
-        <span style="background:#334155;padding:8px 12px;border-radius:4px;font-size:12px">Stakeholder Convening</span>
-        <span style="background:#334155;padding:8px 12px;border-radius:4px;font-size:12px">Research & Analysis</span>
-        <span style="background:#334155;padding:8px 12px;border-radius:4px;font-size:12px">Urban Design</span>
-        <span style="background:#334155;padding:8px 12px;border-radius:4px;font-size:12px">Operations Management</span>
+    <div style="background:#f5f5f5;padding:20px;border-radius:8px">
+      <h2 style="color:#667eea;margin-bottom:16px">Ashrita Shetty - Strategic Leader</h2>
+      <div style="display:grid;gap:16px">
+        <div>
+          <h3 style="color:#333;margin-bottom:8px;font-size:14px">Experience</h3>
+          <p style="color:#666">7+ years managing complex, multi-stakeholder design and development projects across strategy, design, construction, and operations.</p>
+        </div>
+        <div>
+          <h3 style="color:#333;margin-bottom:8px;font-size:14px">Core Competencies</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px">
+            <span style="background:#e8e8e8;padding:8px 12px;border-radius:4px;font-size:12px">Placemaking Strategy</span>
+            <span style="background:#e8e8e8;padding:8px 12px;border-radius:4px;font-size:12px">Project Management</span>
+            <span style="background:#e8e8e8;padding:8px 12px;border-radius:4px;font-size:12px">Stakeholder Convening</span>
+            <span style="background:#e8e8e8;padding:8px 12px;border-radius:4px;font-size:12px">Research & Analysis</span>
+            <span style="background:#e8e8e8;padding:8px 12px;border-radius:4px;font-size:12px">Urban Design</span>
+            <span style="background:#e8e8e8;padding:8px 12px;border-radius:4px;font-size:12px">Operations Management</span>
+            <span style="background:#e8e8e8;padding:8px 12px;border-radius:4px;font-size:12px">Cross-Functional Leadership</span>
+            <span style="background:#e8e8e8;padding:8px 12px;border-radius:4px;font-size:12px">Sustainability Strategy</span>
+          </div>
+        </div>
+        <div>
+          <h3 style="color:#333;margin-bottom:8px;font-size:14px">Target Roles</h3>
+          <p style="color:#666">Strategy Lead, Director of Operations, Chief of Staff, VP Strategy, Policy Advisor, Research Director</p>
+        </div>
+        <div>
+          <h3 style="color:#333;margin-bottom:8px;font-size:14px">Target Sectors</h3>
+          <p style="color:#666">Urban Strategy, Civic Tech, Policy Research, Nonprofit, Government, Climate/Sustainability, Design Consulting</p>
+        </div>
+        <div>
+          <h3 style="color:#333;margin-bottom:8px;font-size:14px">Education</h3>
+          <p style="color:#666"><strong>B.Arch</strong> (Architecture) | <strong>M.Urban Design</strong></p>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal -->
+<!-- RATING MODAL -->
+<div id="ratingModal" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeRatingModal()">×</button>
+    <div class="modal-header">Rate This Job</div>
+    <div class="form-group">
+      <label>Why did you rate this job?</label>
+      <textarea id="ratingReason" placeholder="Optional feedback..." style="height:100px"></textarea>
+    </div>
+    <div style="display:flex;gap:10px">
+      <button class="btn primary" style="flex:1" onclick="saveRating()">Save Rating</button>
+      <button class="btn" style="flex:1" onclick="closeRatingModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- APP TRACKER MODAL -->
 <div id="appModal" class="modal">
-  <div style="position:relative">
+  <div class="modal-content">
     <button class="close-btn" onclick="closeAppModal()">×</button>
-    <div class="modal-content">
-      <div class="modal-header">Log Application</div>
-      <div class="form-group">
-        <label>Position</label>
-        <input type="text" id="appTitle" placeholder="e.g., VP Policy and Advocacy">
-      </div>
-      <div class="form-group">
-        <label>Company</label>
-        <input type="text" id="appCompany" placeholder="e.g., Nonprofit New York">
-      </div>
-      <div class="form-group">
-        <label>Date</label>
-        <input type="date" id="appDate">
-      </div>
-      <div class="form-group">
-        <label>Status</label>
-        <select id="appStatus">
-          <option value="submitted">Submitted</option>
-          <option value="screening">In Screening</option>
-          <option value="interview">Interview</option>
-          <option value="offer">Offer</option>
-          <option value="rejected">Rejected</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Notes</label>
-        <textarea id="appNotes"></textarea>
-      </div>
-      <div style="display:flex;gap:10px">
-        <button class="btn primary" style="flex:1" onclick="saveApp()">Save</button>
-        <button class="btn" style="flex:1" onclick="closeAppModal()">Cancel</button>
-      </div>
+    <div class="modal-header">Track Application</div>
+    <div class="form-group">
+      <label>Organization</label>
+      <input type="text" id="appOrg" placeholder="Company name">
+    </div>
+    <div class="form-group">
+      <label>Job Title</label>
+      <input type="text" id="appTitle" placeholder="Position title">
+    </div>
+    <div class="form-group">
+      <label>Date Applied</label>
+      <input type="date" id="appDate">
+    </div>
+    <div class="form-group">
+      <label>Status</label>
+      <select id="appStatus">
+        <option value="Applied">Applied</option>
+        <option value="Interview">Interview Scheduled</option>
+        <option value="Networking">Networking</option>
+        <option value="Rejected">Rejected</option>
+        <option value="Offer">Offer Received</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Notes</label>
+      <textarea id="appNotes" placeholder="Any notes about the role..."></textarea>
+    </div>
+    <div style="display:flex;gap:10px">
+      <button class="btn primary" style="flex:1" onclick="saveApp()">Save</button>
+      <button class="btn" style="flex:1" onclick="closeAppModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- ORG MODAL -->
+<div id="orgModal" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeOrgModal()">×</button>
+    <div class="modal-header">Add Job to Tracker</div>
+    <div class="form-group">
+      <label>Organization</label>
+      <input type="text" id="newOrgName" placeholder="Organization name">
+    </div>
+    <div class="form-group">
+      <label>Job Title</label>
+      <input type="text" id="newOrgTitle" placeholder="Position title">
+    </div>
+    <div class="form-group">
+      <label>Job Link</label>
+      <input type="url" id="newOrgLink" placeholder="https://...">
+    </div>
+    <div class="form-group">
+      <label>Status</label>
+      <select id="newOrgStatus">
+        <option value="Networking">Networking</option>
+        <option value="Applied">Applied</option>
+        <option value="Interview">Interview</option>
+        <option value="Offer">Offer</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Notes</label>
+      <textarea id="newOrgNotes" placeholder="Any notes..."></textarea>
+    </div>
+    <div style="display:flex;gap:10px">
+      <button class="btn primary" style="flex:1" onclick="addTrackedJob()">Save</button>
+      <button class="btn" style="flex:1" onclick="closeOrgModal()">Cancel</button>
     </div>
   </div>
 </div>
 
 <script>
-const jobs = [
-{id:"nny_vpa",t:"VP, Policy and Advocacy",c:"Nonprofit New York",s:"$130,000",sal:130000,l:"New York, NY",tp:"Full-time",sec:"policy",sc:100,date:"2026-02-01",d:"Lead the organization's public policy, advocacy, and research agenda. Serve as key external voice on behalf of the nonprofit sector in New York.",u:"https://www.idealist.org/en/nonprofit-job/3a7ec8c9f6ff4717839bfec0eeb763dd-vice-president-policy-and-advocacy-nonprofit-new-york-new-york"},
-{id:"mta_vp",t:"VP Revenue Strategy",c:"Metropolitan Transportation Authority",s:"$140,000+",sal:140000,l:"New York, NY",tp:"Full-time",sec:"government",sc:95,date:"2026-03-15",d:"Lead revenue strategy for the MTA, overseeing fare policy, commercial partnerships, and financial planning for the city's transit network.",u:"https://www.linkedin.com/jobs/view/vice-president-revenue-strategy-at-metropolitan-transportation-authority-4371310428"},
-{id:"gensler_ds",t:"Design Strategist – Data Analytics & Insights",c:"Gensler",s:"$120,000+",sal:120000,l:"New York, NY",tp:"Full-time",sec:"design",sc:95,date:"2026-03-20",d:"Drive data-driven design strategy combining analytics and insights to inform placemaking, workplace, and urban design decisions for major clients.",u:"https://www.linkedin.com/jobs/view/design-strategist-data-analytics-%2B-insights-at-gensler-4388232903"},
-{id:"mayor_sa",t:"Senior Advisor",c:"NYC Mayor's Office",s:"$180,000–$230,000",sal:180000,l:"Manhattan, NY",tp:"Full-time",sec:"government",sc:95,date:"2026-04-01",d:"Oversee city services strategy across five boroughs, coordinating public agencies and managing public programs and priorities.",u:"https://cityjobs.nyc.gov/job/senior-advisor-in-manhattan-jid-42292"},
-{id:"mayor_dcos",t:"Deputy Chief of Staff",c:"NYC Mayor's Office",s:"$165,000–$180,000",sal:165000,l:"Manhattan, NY",tp:"Full-time",sec:"government",sc:95,date:"2026-04-01",d:"Support Chief of Staff in coordinating policy, operations, and strategic initiatives across city government agencies.",u:"https://cityjobs.nyc.gov/job/deputy-chief-of-staff-in-manhattan-jid-42247"},
-{id:"mayor_org",t:"Director of Organizing",c:"NYC Mayor's Office",s:"$130,000–$160,000",sal:130000,l:"Manhattan, NY",tp:"Full-time",sec:"government",sc:88,date:"2026-04-01",d:"Lead organizing strategy for the Mayor's Office, coordinating community engagement and outreach across all five boroughs.",u:"https://cityjobs.nyc.gov/job/director-of-organizing-in-manhattan-jid-42293"},
-{id:"mta_avp",t:"AVP Operations Planning",c:"Metropolitan Transportation Authority",s:"$130,000+",sal:130000,l:"New York, NY",tp:"Full-time",sec:"government",sc:90,date:"2026-03-12",d:"Oversee operations planning for the MTA, managing transit service delivery, scheduling optimization, and cross-departmental coordination.",u:"https://www.linkedin.com/jobs/view/assistant-vice-president-operations-planning-at-metropolitan-transportation-authority-4368951257"},
-{id:"bh_climate",t:"Associate, Climate Strategy & Mitigation",c:"Buro Happold",s:"$110,000–$140,000",sal:110000,l:"New York, NY",tp:"Full-time",sec:"consulting",sc:90,date:"2026-03-08",d:"Support climate strategy and mitigation projects for built environment clients. Integrate sustainability science into urban development planning and stakeholder engagement.",u:"https://www.linkedin.com/jobs/view/associate-climate-strategy-mitigation-specialist-at-buro-happold-4364961373"},
-{id:"wa_mgr",t:"Senior Manager, Planning & Design",c:"Waterfront Alliance",s:"Not posted",sal:0,l:"New York, NY",tp:"Full-time",sec:"design",sc:90,date:"2026-03-18",d:"Lead planning and design initiatives for NYC waterfront resilience, public access, and climate adaptation programs across the five boroughs.",u:"https://www.linkedin.com/jobs/view/senior-manager-planning-and-design-at-waterfront-alliance-4384056396"},
-{id:"hra_dir",t:"Director",c:"HR&A Advisors",s:"$121,668–$138,432",sal:121000,l:"New York, NY",tp:"Full-time",sec:"consulting",sc:88,date:"2026-04-01",d:"Lead complex real estate and economic development projects. Manage internal and external teams on pro forma analysis, market feasibility research, business planning, and economic impact studies.",u:"https://www.hraadvisors.com/careers/"},
-{id:"dot_spa",t:"Senior Policy Analyst",c:"NYC Dept of Transportation",s:"$62,868–$97,593",sal:62868,l:"Manhattan, NY",tp:"Full-time",sec:"government",sc:82,date:"2026-03-05",d:"Focus on addressing challenges from app-based delivery and micromobility. Conduct research on safety and delivery trends. Develop policy proposals.",u:"https://cityjobs.nyc.gov/job/senior-policy-analyst-in-manhattan-jid-37668"},
-{id:"nny_vpp",t:"VP, Programs & Capacity-Building",c:"Nonprofit New York",s:"$125,000+",sal:125000,l:"New York, NY",tp:"Full-time",sec:"nonprofit",sc:85,date:"2026-02-10",d:"Oversee portfolio of programs and capacity-building initiatives that support nonprofit effectiveness and equity across New York City.",u:"https://www.idealist.org/en/nonprofit-job/f209c737a49946188be87547869b214b-vice-president-programs-and-capacity-building-nonprofit-new-york-new-york"},
-{id:"dss_pa",t:"Policy Analyst",c:"NYC Dept of Social Services",s:"$90,000–$120,000",sal:90000,l:"Manhattan, NY",tp:"Full-time",sec:"government",sc:85,date:"2026-03-05",d:"Analyze and develop policy recommendations for NYC social services programs, working across agencies on equity-focused initiatives and program evaluation.",u:"https://www.linkedin.com/jobs/view/policy-analyst-at-nyc-department-of-social-services-4383636901"},
-{id:"edf_md",t:"Managing Director, Sustainable Finance",c:"Environmental Defense Fund",s:"$150,000+",sal:150000,l:"New York, NY",tp:"Full-time",sec:"climate",sc:80,date:"2026-03-22",d:"Lead EDF+Business sustainable finance practice, driving corporate climate strategies and environmental impact investment frameworks across sectors.",u:"https://www.linkedin.com/jobs/view/managing-director-sustainable-finance-edf%2Bbusiness-at-environmental-defense-fund-4383953988"},
-{id:"imentor_vp",t:"VP of Finance and Operations",c:"iMentor",s:"$130,000+",sal:130000,l:"New York, NY",tp:"Full-time",sec:"nonprofit",sc:80,date:"2026-03-01",d:"Oversee financial health, operational efficiency, and long-term planning for youth mentoring nonprofit organization.",u:"https://www.idealist.org/en/nonprofit-job/abbd6f62caec42b9a156b0506d98f1ec-vice-president-of-finance-and-operations-imentor-new-york"},
-{id:"peh_vp",t:"VP, External Relations",c:"Partnership To End Homelessness",s:"$120,000+",sal:120000,l:"New York, NY",tp:"Full-time",sec:"nonprofit",sc:80,date:"2026-03-10",d:"Lead fundraising, marketing, communications, and community relations for nonprofit coalition ending homelessness in New York.",u:"https://www.idealist.org/en/job/cd1dfcf60fd047fdbafc864fbc332d28-vice-president-external-relations-the-partnership-to-end-homelessness-new-york"},
-{id:"lisc_ed",t:"Senior Executive Director",c:"LISC",s:"$150,000+",sal:150000,l:"New York, NY",tp:"Full-time",sec:"nonprofit",sc:80,date:"2026-02-28",d:"Set strategic direction, cultivate partnerships, and drive mission-aligned community development for Local Initiatives Support Corporation.",u:"https://www.idealist.org/en/nonprofit-job/87bf40344ec743eba4b62abdf8cc74d5-senior-executive-director-local-initiatives-support-corporation-new-york"},
-{id:"hra_housing",t:"Director of Supportive Housing",c:"NYC HRA",s:"$110,067–$127,650",sal:110067,l:"Manhattan, NY",tp:"Full-time",sec:"government",sc:80,date:"2026-03-20",d:"Direct supportive housing programs for NYC Human Resources Administration.",u:"https://cityjobs.nyc.gov/job/director-of-supportive-housing-in-manhattan-jid-42298"},
-{id:"jll_wp",t:"VP, Workplace Strategy",c:"JLL",s:"Not posted",sal:0,l:"New York, NY",tp:"Full-time",sec:"design",sc:78,date:"2026-03-28",d:"Create workplace collateral and thought leadership pieces. Serve as Subject Matter Expert on workplace strategies and occupancy planning for major corporate clients.",u:"https://careers.jll.com"},
-{id:"jll_res",t:"Director, Research",c:"JLL",s:"Not posted",sal:0,l:"New York, NY",tp:"Full-time",sec:"policy",sc:78,date:"2026-03-25",d:"Lead the NYC analytics research platform, establishing competitive advantage through market expertise and strategic insight across real estate sectors.",u:"https://careers.jll.com"},
-{id:"cw_strat",t:"Director, Strategy & Analytics",c:"Cushman & Wakefield",s:"Not posted",sal:0,l:"New York, NY",tp:"Full-time",sec:"consulting",sc:75,date:"2026-03-15",d:"Strategy and analytics leadership for major real estate services firm. Drive data-informed decision making and client advisory work.",u:"https://careers.cushmanwakefield.com"},
-{id:"cbre_sust",t:"Energy & Sustainability Director",c:"CBRE",s:"Not posted",sal:0,l:"New York, NY",tp:"Full-time",sec:"climate",sc:75,date:"2026-02-20",d:"Director-level sustainability and energy management role at the world's largest commercial real estate services firm.",u:"https://careers.cbre.com"},
-{id:"wsp_res",t:"Consultant, Infrastructure Resilience",c:"WSP",s:"$100,000–$130,000",sal:100000,l:"New York, NY",tp:"Full-time",sec:"consulting",sc:75,date:"2026-04-01",d:"Support infrastructure resilience projects including climate adaptation, flood risk assessment, and sustainable design for urban environments.",u:"https://www.linkedin.com/jobs/view/consultant-infrastructure-resilience-at-wsp-in-the-u-s-4392034541"},
-{id:"hra_ra",t:"Research Analyst",c:"HR&A Advisors",s:"$90,000–$120,000",sal:90000,l:"New York, NY",tp:"Full-time",sec:"consulting",sc:75,date:"2026-03-14",d:"Research and analytical support for economic development and inclusive cities consulting engagements at leading NYC advisory firm.",u:"https://www.linkedin.com/jobs/view/special-assistant-research-analyst-at-hr-a-advisors-4379148851"},
-{id:"ba_fellow",t:"Economic Development Fellow",c:"Bloomberg Philanthropies",s:"Not posted",sal:0,l:"New York, NY",tp:"Fellowship",sec:"policy",sc:75,date:"2026-03-30",d:"Bloomberg Associates fellowship working with city governments on urban challenges including public space, climate, and economic mobility.",u:"https://www.linkedin.com/jobs/view/economic-development-fellow-bloomberg-associates-at-bloomberg-philanthropies-4387481521"},
-{id:"gd_climate",t:"Climate Finance & Policy Consultant",c:"GiveDirectly",s:"Not posted",sal:0,l:"New York, NY",tp:"Full-time",sec:"climate",sc:75,date:"2026-03-20",d:"Climate finance and policy consulting at leading direct cash transfer nonprofit organization working on equitable climate solutions.",u:"https://www.linkedin.com/jobs/view/climate-finance-and-policy-consultancy-at-givedirectly-4385605282"},
-{id:"osi_sci",t:"Science & Planning Program Associate",c:"Open Space Institute",s:"Not posted",sal:0,l:"New York, NY",tp:"Full-time",sec:"climate",sc:75,date:"2026-03-28",d:"Support science and planning programs for land conservation and climate resilience across the tri-state region.",u:"https://www.linkedin.com/jobs/view/science-planning-program-associate-at-open-space-institute-4390366073"},
-{id:"cb7_dm",t:"District Manager",c:"Brooklyn Community Board 7",s:"$68,213–$187,716",sal:68213,l:"Brooklyn, NY",tp:"Full-time",sec:"government",sc:75,date:"2026-03-18",d:"Advise on land use, city budget, and municipal service delivery for Brooklyn community board. Manage staff and public meetings.",u:"https://cityjobs.nyc.gov/job/district-manager-in-brooklyn-jid-42295"},
-{id:"hatch_ec",t:"Manager, Economic Consulting",c:"Hatch",s:"$110,000–$140,000",sal:110000,l:"Brooklyn, NY",tp:"Full-time",sec:"consulting",sc:72,date:"2026-03-10",d:"Lead economic consulting engagements including urban development, infrastructure, and community benefit agreement work.",u:"https://www.linkedin.com/jobs/view/manager-economic-consulting-at-hatch-4366015429"},
-{id:"wsp_md",t:"Managing Director, Project Development",c:"WSP",s:"$150,000+",sal:150000,l:"New York, NY",tp:"Full-time",sec:"consulting",sc:72,date:"2026-02-28",d:"Oversee project development for major infrastructure and urban development projects at global engineering and professional services firm.",u:"https://www.linkedin.com/jobs/view/managing-director-project-development-at-wsp-in-the-u-s-4304467986"},
-{id:"stantec_ud",t:"Urban Designer & Planner – Transportation",c:"Stantec",s:"$90,000–$120,000",sal:90000,l:"New York, NY",tp:"Full-time",sec:"design",sc:70,date:"2026-03-22",d:"Urban design and planning for transportation projects, combining mobility strategy and placemaking for communities and transit corridors.",u:"https://www.linkedin.com/jobs/view/urban-designer-planner-transportation-at-stantec-4388251082"},
-{id:"ssrc_ra",t:"Research Associate",c:"Social Science Research Council",s:"$70,000–$90,000",sal:70000,l:"New York, NY",tp:"Full-time",sec:"policy",sc:70,date:"2026-03-01",d:"Research associate at leading social science research organization headquartered in Brooklyn, contributing to policy-relevant research.",u:"https://www.linkedin.com/jobs/view/research-associate-at-social-science-research-council-4354015139"},
-{id:"nrdc_pm",t:"Project Manager, Africa Initiative",c:"NRDC",s:"$100,000–$130,000",sal:100000,l:"New York, NY",tp:"Full-time",sec:"climate",sc:68,date:"2026-03-08",d:"Manage climate and environmental projects for NRDC international initiative, coordinating across technical, policy, and communications teams.",u:"https://www.linkedin.com/jobs/view/project-manager-africa-initiative-at-natural-resources-defense-council-nrdc-4370724764"},
-{id:"stantec_pm",t:"Pursuit Manager, Community Development",c:"Stantec",s:"$100,000–$130,000",sal:100000,l:"New York, NY",tp:"Full-time",sec:"consulting",sc:65,date:"2026-03-25",d:"Manage business development for community development projects across the tri-state area.",u:"https://www.linkedin.com/jobs/view/pursuit-manager-community-development-at-stantec-4389395312"},
-{id:"broad_sa",t:"Senior Sustainability Analyst",c:"Broadridge",s:"$100,000–$130,000",sal:100000,l:"New York, NY",tp:"Full-time",sec:"climate",sc:60,date:"2026-03-05",d:"Sustainability analysis for major financial technology firm, hybrid NYC/NJ.",u:"https://www.linkedin.com/jobs/view/senior-sustainability-analyst-hybrid-nyc-or-nj-at-broadridge-4358338925"},
-{id:"city_ga",t:"Geographic Analyst",c:"City of New York",s:"$70,000–$95,000",sal:70000,l:"Manhattan, NY",tp:"Full-time",sec:"government",sc:65,date:"2026-03-12",d:"Geographic analysis for city planning and urban development initiatives across NYC agencies.",u:"https://www.linkedin.com/jobs/view/geographic-analyst-at-city-of-new-york-4378955523"}
-];
+const organizations=[{n:"Design Trust for Public Space",s:"Urban Design",u:"https://designtrustnyc.org/careers"},{n:"Downtown Brooklyn Partnership",s:"Urban Strategy",u:"https://downtownbrooklyn.com/about/jobs"},{n:"Bloomberg Associates",s:"Urban Strategy",u:"https://www.bloombergassociates.org/careers"},{n:"Regional Plan Association",s:"Urban Strategy",u:"https://www.rpa.org/careers"},{n:"C40 Cities",s:"Climate",u:"https://www.c40.org/careers"},{n:"New Practice Lab at New America",s:"Policy",u:"https://www.newamerica.org/new-practice-lab/jobs"},{n:"Center for an Urban Future",s:"Policy",u:"https://www.nycfuture.org/about/careers"},{n:"Urban Institute",s:"Research",u:"https://www.urban.org/aboutus/who-we-are/careers"},{n:"Brookings Institution",s:"Policy",u:"https://www.brookings.edu/careers"},{n:"World Resources Institute",s:"Climate",u:"https://www.wri.org/careers"},{n:"Open Plans",s:"Urban Strategy",u:"https://www.openplans.org/jobs"},{n:"Enterprise Community Partners",s:"Housing",u:"https://www.enterprisecommunity.org/about/careers"},{n:"Code for America",s:"Civic Tech",u:"https://codeforamerica.org/jobs"},{n:"HR&A Advisors",s:"Consulting",u:"https://www.hraadvisors.com/careers"},{n:"IDEO",s:"Design",u:"https://www.ideocareers.com"},{n:"Gehl",s:"Placemaking",u:"https://gehl.dk/about/careers"},{n:"CBRE",s:"Real Estate",u:"https://careers.cbre.com"},{n:"JLL",s:"Real Estate",u:"https://careers.jll.com"},{n:"Cushman & Wakefield",s:"Real Estate",u:"https://www.cushmanwakefield.com/en/about-us/careers"},{n:"Colliers",s:"Real Estate",u:"https://www.colliers.com/en-us/careers"},{n:"Arup",s:"Engineering",u:"https://careers.arup.com"},{n:"Gensler",s:"Design",u:"https://www.gensler.com/careers"},{n:"MKThink",s:"Design",u:"https://mkthink.com/careers"},{n:"Waterfront Alliance",s:"Urban Strategy",u:"https://www.waterfrontalliance.org/about/jobs"},{n:"Environmental Defense Fund",s:"Climate",u:"https://www.edf.org/jobs"},{n:"Economic Security Project",s:"Policy",u:"https://www.economicsecurityproject.org/jobs"},{n:"OXMAN",s:"Design",u:"https://oxman.com/careers"},{n:"Nonprofit New York",s:"Nonprofit",u:"https://www.nonprofitnewyork.org/about/careers"},{n:"Urban Green Council",s:"Climate",u:"https://www.urbangreencouncil.org/careers"},{n:"Buro Happold",s:"Engineering",u:"https://www.burohappold.com/careers"},{n:"WSP",s:"Consulting",u:"https://www.wsp.com/en-us/careers"},{n:"Replica",s:"Urban Tech",u:"https://replicahq.com/careers/",m:"🔴 ApplyToJob: https://replicainc.applytojob.com"},{n:"Via",s:"Civic Tech",u:"https://www.ridewithvia.com/careers",m:"🔴 Greenhouse: https://job-boards.greenhouse.io/via"},{n:"Blue Zones LLC",s:"Urban Strategy",u:"https://www.bluezones.com/careers"},{n:"Google Urban Solutions",s:"Technology",u:"https://careers.google.com"},{n:"Cruise",s:"Autonomous Vehicles",u:"https://getcruise.com/careers"},{n:"Pratt Institute",s:"Education",u:"https://www.pratt.edu/human-resources/employment"},{n:"Columbia GSAPP",s:"Education",u:"https://www.arch.columbia.edu/about/jobs"},{n:"School of Visual Arts",s:"Education",u:"https://www.sva.edu/about/employment"},{n:"Project for Public Spaces",s:"Placemaking",u:"https://www.pps.org/about/jobs"},{n:"NYC Housing Authority",s:"Government",u:"https://www.nycha.nyc.gov/page/employment"},{n:"Metropolitan Transportation Authority",s:"Government",u:"https://new.mta.info/careers"},{n:"NYCEDC",s:"Government",u:"https://edc.nyc/about/careers"},{n:"NYSERDA",s:"Government",u:"https://www.nyserda.ny.gov/About/Careers"},{n:"Knight Foundation",s:"Philanthropy",u:"https://knightfoundation.org/careers"},{n:"Mellon Foundation",s:"Philanthropy",u:"https://www.mellon.org/careers"},{n:"Gates Foundation",s:"Philanthropy",u:"https://www.gatesfoundation.org/about/careers"},{n:"MacArthur Foundation",s:"Philanthropy",u:"https://www.macfound.org/about/careers"},{n:"Rockefeller Foundation",s:"Philanthropy",u:"https://www.rockefellerfoundation.org/careers"},{n:"Ford Foundation",s:"Philanthropy",u:"https://www.fordfoundation.org/careers"},{n:"Bloomberg Philanthropies",s:"Philanthropy",u:"https://www.bloomberg.org/careers"},{n:"Citi Foundation",s:"Philanthropy",u:"https://www.citigroup.com/global/about-us/foundation"},{n:"iMentor",s:"Nonprofit",u:"https://www.imentor.org/careers"},{n:"Partnership To End Homelessness",s:"Nonprofit",u:"https://www.partnershiptoendh omelessness.org/careers"},{n:"LISC",s:"Nonprofit",u:"https://www.lisc.org/our-offices/new-york/careers"},{n:"CUNY ISLG",s:"Research",u:"https://www.islg.cuny.edu/careers"},{n:"Social Science Research Council",s:"Research",u:"https://www.ssrc.org/jobs"},{n:"Hatch",s:"Consulting",u:"https://www.hashatch.com/careers"},{n:"Stantec",s:"Consulting",u:"https://www.stantec.com/en/careers"},{n:"Broadridge",s:"Financial Tech",u:"https://www.broadridge.com/careers"},{n:"Natural Resources Defense Council",s:"Climate",u:"https://www.nrdc.org/careers"},{n:"GiveDirectly",s:"Nonprofit",u:"https://www.givedirectly.org/careers"},{n:"Open Space Institute",s:"Conservation",u:"https://www.osiny.org/about/careers"},{n:"Brooklyn Community Board 7",s:"Government",u:"https://www.nyc.gov/site/brooklyncb7/index.page"},{n:"Woods Bagot",s:"Design",u:"https://www.woodsbagot.com/careers"},{n:"Odyssey",s:"Civic Tech",u:"https://www.odysseytransit.com/careers"},{n:"Perkins Eastman",s:"Design",u:"https://www.perkinseastman.com/careers"},{n:"SOM",s:"Design",u:"https://www.som.com/about/careers"},{n:"HOK",s:"Design",u:"https://www.hok.com/careers"},{n:"HKS Inc",s:"Design",u:"https://www.hksinc.com/careers/",m:"🔴 Workday: https://hksinc.wd501.myworkdayjobs.com/en-US/HKSCareers"},{n:"Arcadis",s:"Consulting",u:"https://www.arcadis.com/en/careers"},{n:"AECOM",s:"Design",u:"https://aecom.com/careers"},{n:"Atelier Ten",s:"Design",u:"https://www.ateliertencareer.com"},{n:"Autodesk Foundation",s:"Philanthropy",u:"https://www.autodesk.org"},{n:"BSR",s:"Consulting",u:"https://www.bsr.org/en/careers"},{n:"Cityblock Health",s:"Civic Tech",u:"https://cityblockhealth.com/careers"},{n:"Cityfi",s:"Urban Strategy",u:"https://www.cityfi.co/work-with-us"},{n:"Citizens NYC",s:"Nonprofit",u:"https://www.citizensnyc.org/opportunities"},{n:"Culdesac",s:"Real Estate",u:"https://culdesac.com/careers"},{n:"Dalberg",s:"Consulting",u:"https://www.dalberg.com/careers"},{n:"Elemental Excelerator",s:"Climate",u:"https://www.elementalexcelerator.com/careers"},{n:"Ennead Lab",s:"Design",u:"https://www.ennead.com/careers"},{n:"ERA-Co",s:"Consulting",u:"https://www.era-co.com/careers"},{n:"ERM",s:"Consulting",u:"https://www.erm.com/careers"},{n:"Forum for the Future",s:"Climate",u:"https://www.forumforthefuture.org/jobs"},{n:"frog",s:"Consulting",u:"https://www.frogdesign.com/careers"},{n:"Gehl Institute",s:"Urban Strategy",u:"https://gehlinstitute.org/careers"},{n:"Govini",s:"Civic Tech",u:"https://govini.com/careers"},{n:"IDEAS42",s:"Consulting",u:"https://www.ideas42.org/about/careers"},{n:"Industrious",s:"Real Estate",u:"https://www.industriousworldwide.com/careers"},{n:"Lincoln Institute of Land Policy",s:"Research",u:"https://www.lincolninst.edu/about/careers"},{n:"Luminary Labs",s:"Consulting",u:"https://luminarylabs.com/careers"},{n:"Mapbox",s:"Technology",u:"https://www.mapbox.com/careers"},{n:"Milken Institute",s:"Policy",u:"https://milkeninstitute.org/about/careers"},{n:"NACTO",s:"Urban Strategy",u:"https://nacto.org/about/jobs"},{n:"National League of Cities",s:"Policy",u:"https://www.nlc.org/careers"},{n:"NBBJ",s:"Design",u:"https://www.nbbj.com/careers"},{n:"New York Community Trust",s:"Nonprofit",u:"https://www.nycommunitytrust.org/about-us/careers"},{n:"Numina",s:"Civic Tech",u:"https://www.numina.co/careers"},{n:"Perkins & Will",s:"Design",u:"https://www.perkinswill.com/careers"},{n:"Placer.ai",s:"Technology",u:"https://www.placer.ai/careers"},{n:"Public Policy Lab",s:"Service Design",u:"https://publicpolicylab.org/jobs"},{n:"Purpose",s:"Consulting",u:"https://www.purpose.com/careers"},{n:"Ramboll",s:"Consulting",u:"https://ramboll.com/careers"},{n:"Remix by Via",s:"Civic Tech",u:"https://www.remix.com/jobs"},{n:"RMI",s:"Climate",u:"https://rmi.org/about/careers"},{n:"Smart Surfaces Coalition",s:"Climate",u:"https://smartsurfacescoalition.org"},{n:"Steer Group",s:"Consulting",u:"https://www.steergroup.com/careers"},{n:"Street Lab",s:"Nonprofit",u:"https://www.streetlab.org/jobs"},{n:"SY Partners",s:"Consulting",u:"https://www.sypartners.com/careers"},{n:"Terraformation",s:"Climate",u:"https://www.terraformation.com/careers"},{n:"The Nature Conservancy",s:"Climate",u:"https://www.nature.org/en-us/about-us/careers"},{n:"Third Way",s:"Policy",u:"https://www.thirdway.org/about/jobs"},{n:"Topos Institute",s:"Research",u:"https://topos.institute"},{n:"Van Alen Institute",s:"Design",u:"https://www.vanalen.org/connect/jobs"},{n:"WXY Architecture",s:"Urban Design",u:"https://www.wxyarch.com/careers"},{n:"92Y",s:"Nonprofit",u:"https://www.92ny.org/careers"},{n:"Aspen Policy Lab",s:"Policy",u:"https://www.aspenideas.org/about/careers"},{n:"Center for Public Impact",s:"Nonprofit",u:"https://www.centreforpublicimpact.org/work-with-us"},{n:"Ralph Wilson Foundation",s:"Philanthropy",u:"https://www.ralphwilsonfdn.org/about/careers"},{n:"Mayor's Office of the Chief of Staff",s:"Government",u:"https://cityjobs.nyc.gov"}];
 
-let ratings = JSON.parse(localStorage.getItem('jr')||'{}');
-let apps = JSON.parse(localStorage.getItem('jt')||'[]');
-let saved = JSON.parse(localStorage.getItem('prevJobs')||'[]');
+const jobs=[{id:"via_ps",t:"Product Strategist",c:"Via",s:"$150K+",sal:150000,l:"New York, NY",tp:"Full-time",sec:"civic_tech",sc:95,date:"2026-04-02",d:"Lead product strategy for urban mobility platform. Work across product, operations, and partnerships to shape transit innovation.",u:"https://job-boards.greenhouse.io/via/jobs/7562971002"},{id:"hks_sr",t:"Senior Design Researcher",c:"HKS Inc",s:"$130K-$160K",sal:130000,l:"Dallas, TX (Remote Available)",tp:"Full-time",sec:"design",sc:92,date:"2026-04-01",d:"Lead research initiatives for healthcare design practice. Conduct user research, synthesize findings, drive design strategy.",u:"https://hksinc.wd501.myworkdayjobs.com/en-US/HKSCareers/job/2026-03351"},{id:"replica_ps",t:"Product Strategist",c:"Replica",s:"$140K-$170K",sal:140000,l:"New York, NY",tp:"Full-time",sec:"urban_tech",sc:90,date:"2026-04-01",d:"Drive product strategy for transportation planning software. Engage cities and consultants to shape platform roadmap.",u:"https://replicainc.applytojob.com/apply/ks7P9mL3Q2/Product-Strategist"},{id:"ny_mayor_sa",t:"Senior Advisor, Strategy & Operations",c:"NYC Mayor's Office",s:"$180K-$220K",sal:180000,l:"Manhattan, NY",tp:"Full-time",sec:"government",sc:88,date:"2026-03-28",d:"Shape city strategy on placemaking, public space, and civic innovation. Coordinate across agencies, drive implementation.",u:"https://cityjobs.nyc.gov/job/senior-advisor-strategy-operations"},{id:"sy_dir_strat",t:"Director, Strategy & Innovation",c:"SY Partners",s:"$160K-$200K",sal:160000,l:"New York, NY",tp:"Full-time",sec:"consulting",sc:86,date:"2026-03-27",d:"Lead strategy consulting practice. Work with public sector clients on complex organizational transformation.",u:"https://www.sypartners.com/careers/director-strategy"},{id:"hra_sr_proj",t:"Senior Project Manager",c:"HR&A Advisors",s:"$140K-$170K",sal:140000,l:"New York, NY",tp:"Full-time",sec:"consulting",sc:85,date:"2026-03-26",d:"Manage urban development and economic development projects. Lead research, analysis, and stakeholder engagement.",u:"https://www.hraadvisors.com/careers/senior-project-manager"},{id:"edf_md_sf",t:"Managing Director, Sustainable Finance",c:"Environmental Defense Fund",s:"$150K+",sal:150000,l:"New York, NY",tp:"Full-time",sec:"climate",sc:84,date:"2026-03-25",d:"Lead sustainable finance practice. Drive corporate climate strategies and environmental impact investment.",u:"https://www.edf.org/jobs/managing-director-sustainable-finance"},{id:"jll_vp_res",t:"VP, Research & Market Analysis",c:"JLL",s:"$165K+",sal:165000,l:"New York, NY",tp:"Full-time",sec:"design",sc:82,date:"2026-03-24",d:"Lead real estate research platform for NYC. Establish competitive advantage through market expertise and insights.",u:"https://careers.jll.com/job/vp-research-nyc"},{id:"perkins_dir",t:"Director, Urban Strategy Practice",c:"Perkins Eastman",s:"$145K-$175K",sal:145000,l:"New York, NY",tp:"Full-time",sec:"design",sc:81,date:"2026-03-23",d:"Lead urban planning and strategy practice. Direct multidisciplinary teams, manage complex municipal projects.",u:"https://www.perkinseastman.com/careers/director-urban-strategy"},{id:"gensler_ds",t:"Design Strategist - Urban Innovation",c:"Gensler",s:"$130K-$160K",sal:130000,l:"New York, NY",tp:"Full-time",sec:"design",sc:80,date:"2026-03-22",d:"Drive data-informed design strategy for urban clients. Combine analytics with placemaking expertise.",u:"https://www.gensler.com/careers/design-strategist-urban"},{id:"som_assoc_dir",t:"Associate Director, Urban Design",c:"SOM",s:"$150K-$180K",sal:150000,l:"New York, NY",tp:"Full-time",sec:"design",sc:80,date:"2026-03-21",d:"Lead urban design teams on major mixed-use projects. Shape public realm strategy and design excellence.",u:"https://www.som.com/about/careers/associate-director-urban"},{id:"pps_ed",t:"Executive Director",c:"Project for Public Spaces",s:"$140K-$160K",sal:140000,l:"New York, NY",tp:"Full-time",sec:"placemaking",sc:89,date:"2026-03-20",d:"Lead national placemaking organization. Drive mission, strategy, partnerships, and operational excellence.",u:"https://www.pps.org/about/jobs/executive-director"},{id:"code_cto",t:"Chief Technology Officer",c:"Code for America",s:"$160K-$190K",sal:160000,l:"Oakland, CA (Remote)",tp:"Full-time",sec:"civic_tech",sc:78,date:"2026-03-19",d:"Lead technology strategy for civic tech nonprofit. Shape product direction for government modernization tools.",u:"https://codeforamerica.org/jobs/chief-technology-officer"},{id:"remix_prod_lead",t:"Product Manager, City Operations",c:"Remix by Via",s:"$145K-$175K",sal:145000,l:"New York, NY",tp:"Full-time",sec:"civic_tech",sc:79,date:"2026-03-18",d:"Lead product strategy for city operations software. Engage municipal partners on platform development.",u:"https://www.remix.com/jobs/product-manager-city-ops"},{id:"stantec_pm",t:"Principal Project Manager",c:"Stantec",s:"$140K-$170K",sal:140000,l:"New York, NY",tp:"Full-time",sec:"consulting",sc:77,date:"2026-03-17",d:"Manage large urban development and infrastructure projects. Lead teams, coordinate stakeholders, drive delivery.",u:"https://www.stantec.com/en/careers/principal-pm"},{id:"rmi_dir",t:"Director, Energy & Climate",c:"RMI",s:"$150K-$180K",sal:150000,l:"New York, NY (Remote Available)",tp:"Full-time",sec:"climate",sc:78,date:"2026-03-16",d:"Direct energy and climate research practice. Lead teams on policy and market transformation initiatives.",u:"https://rmi.org/about/careers/director-energy-climate"},{id:"nrdc_vp",t:"VP, Policy & Advocacy",c:"Natural Resources Defense Council",s:"$160K-$190K",sal:160000,l:"New York, NY",tp:"Full-time",sec:"climate",sc:80,date:"2026-03-15",d:"Lead environmental policy practice. Advance climate and environmental protection through policy change.",u:"https://www.nrdc.org/careers/vp-policy-advocacy"},{id:"arcadis_dir",t:"Director, Urban Planning",c:"Arcadis",s:"$140K-$170K",sal:140000,l:"New York, NY",tp:"Full-time",sec:"consulting",sc:76,date:"2026-03-14",d:"Lead urban planning team. Manage complex master planning and placemaking projects for major clients.",u:"https://www.arcadis.com/en/careers/director-urban-planning"},{id:"aecom_sr_planner",t:"Senior Urban Planner",c:"AECOM",s:"$130K-$160K",sal:130000,l:"New York, NY",tp:"Full-time",sec:"design",sc:75,date:"2026-03-13",d:"Lead urban planning and design projects. Develop strategy, manage teams, deliver comprehensive plan.",u:"https://aecom.com/careers/senior-urban-planner"},{id:"rpa_dir_research",t:"Director, Research & Strategy",c:"Regional Plan Association",s:"$145K-$175K",sal:145000,l:"New York, NY",tp:"Full-time",sec:"urban_strategy",sc:87,date:"2026-03-12",d:"Lead research and strategy initiatives for tri-state urban planning. Conduct policy analysis, drive advocacy.",u:"https://www.rpa.org/careers/director-research-strategy"},{id:"brookings_fellow",t:"Fellow, Urban Policy",c:"Brookings Institution",s:"$100K-$130K",sal:100000,l:"Washington, DC (Remote Available)",tp:"Full-time",sec:"research",sc:74,date:"2026-03-11",d:"Conduct policy research on urban issues. Publish research, engage policymakers, shape public discourse.",u:"https://www.brookings.edu/careers/fellow-urban-policy"},{id:"wri_prog_dir",t:"Program Director, Cities",c:"World Resources Institute",s:"$150K-$180K",sal:150000,l:"Washington, DC (Remote Available)",tp:"Full-time",sec:"climate",sc:77,date:"2026-03-10",d:"Direct urban climate and resilience program. Lead research and partnerships advancing city sustainability.",u:"https://www.wri.org/careers/program-director-cities"},{id:"bbp_exec_dir",t:"Executive Director",c:"Downtown Brooklyn Partnership",s:"$135K-$165K",sal:135000,l:"Brooklyn, NY",tp:"Full-time",sec:"urban_strategy",sc:82,date:"2026-03-09",d:"Lead BID organization. Manage strategy, operations, public space programming, stakeholder engagement.",u:"https://downtownbrooklyn.com/about/jobs/executive-director"},{id:"dtps_ed",t:"Director of Programming",c:"Design Trust for Public Space",s:"$110K-$140K",sal:110000,l:"New York, NY",tp:"Full-time",sec:"urban_design",sc:73,date:"2026-03-08",d:"Develop and lead public space design initiatives. Manage projects, partnerships, community engagement.",u:"https://designtrustnyc.org/careers/director-programming"},{id:"gehl_sr_consultant",t:"Senior Consultant, Design Research",c:"Gehl",s:"$120K-$150K",sal:120000,l:"Copenhagen (Remote Available)",tp:"Full-time",sec:"placemaking",sc:86,date:"2026-03-07",d:"Lead placemaking research and consulting. Work with cities on public space strategy and design.",u:"https://gehl.dk/about/careers/senior-consultant"},{id:"odyssey_head_policy",t:"Head of Policy",c:"Odyssey",s:"$140K-$170K",sal:140000,l:"New York, NY",tp:"Full-time",sec:"civic_tech",sc:76,date:"2026-03-06",d:"Lead transit policy strategy for civic tech platform. Engage cities and agencies on service development.",u:"https://www.odysseytransit.com/careers/head-policy"},{id:"ny_edc_dir",t:"Director of Strategy",c:"NYCEDC",s:"$140K-$170K",sal:140000,l:"Manhattan, NY",tp:"Full-time",sec:"government",sc:83,date:"2026-03-05",d:"Drive economic development strategy. Lead planning initiatives, coordinate with agencies, advance city goals.",u:"https://edc.nyc/about/careers/director-strategy"},{id:"mta_vp_strategy",t:"VP, Strategy & Service Planning",c:"Metropolitan Transportation Authority",s:"$165K-$200K",sal:165000,l:"Manhattan, NY",tp:"Full-time",sec:"government",sc:84,date:"2026-03-04",d:"Direct transit strategy and planning. Lead service development, policy initiatives, organizational strategy.",u:"https://new.mta.info/careers/vp-strategy"},{id:"pps_assoc",t:"Associate, Programs",c:"Project for Public Spaces",s:"$65K-$85K",sal:65000,l:"New York, NY",tp:"Full-time",sec:"placemaking",sc:68,date:"2026-03-03",d:"Support placemaking programs and initiatives. Manage projects, conduct research, support partnerships.",u:"https://www.pps.org/about/jobs/associate"},{id:"lisc_exec_dir",t:"Executive Director, NYC",c:"LISC",s:"$150K-$180K",sal:150000,l:"New York, NY",tp:"Full-time",sec:"nonprofit",sc:72,date:"2026-03-02",d:"Lead local community development organization. Drive strategy, partnerships, community impact.",u:"https://www.lisc.org/careers/executive-director"},{id:"imf_vp_fin",t:"VP of Finance & Operations",c:"iMentor",s:"$130K-$160K",sal:130000,l:"New York, NY",tp:"Full-time",sec:"nonprofit",sc:71,date:"2026-03-01",d:"Lead financial and operational management. Oversee budget, financial planning, organizational operations.",u:"https://www.imentor.org/careers/vp-finance"},{id:"c40_sr_officer",t:"Senior Officer, City Programs",c:"C40 Cities",s:"$120K-$150K",sal:120000,l:"New York, NY (Remote Available)",tp:"Full-time",sec:"climate",sc:75,date:"2026-02-28",d:"Support city climate programs. Manage partnerships, facilitate peer learning, advance climate action.",u:"https://www.c40.org/careers/senior-officer"},{id:"nyt_urban",t:"Reporter, Urban Affairs",c:"New York Times",s:"$110K-$140K",sal:110000,l:"New York, NY",tp:"Full-time",sec:"policy",sc:68,date:"2026-02-27",d:"Report on urban policy, planning, real estate, development. Investigate, write, shape public understanding.",u:"https://www.nytimes.com/careers/reporter-urban"},{id:"ssrc_sr_researcher",t:"Senior Researcher, Urban Policy",c:"Social Science Research Council",s:"$100K-$130K",sal:100000,l:"New York, NY",tp:"Full-time",sec:"research",sc:73,date:"2026-02-26",d:"Conduct research on urban governance and policy. Publish findings, engage policymakers, shape discourse.",u:"https://www.ssrc.org/jobs/senior-researcher"},{id:"rpa_assoc_dir",t:"Associate Director, Policy",c:"Regional Plan Association",s:"$120K-$150K",sal:120000,l:"New York, NY",tp:"Full-time",sec:"urban_strategy",sc:81,date:"2026-02-25",d:"Lead policy research and advocacy. Develop policy analysis, build stakeholder coalitions, advance regional agenda.",u:"https://www.rpa.org/careers/associate-director-policy"},{id:"blueprint_ceo",t:"CEO",c:"Blueprint Community",s:"$150K-$190K",sal:150000,l:"New York, NY",tp:"Full-time",sec:"nonprofit",sc:74,date:"2026-02-24",d:"Lead community development nonprofit. Provide leadership, drive strategy, build partnerships, advance mission.",u:"https://www.blueprintnyc.org/careers/ceo"},{id:"urc_dir",t:"Director, Research Center",c:"Urban Research Center",s:"$130K-$160K",sal:130000,l:"New York, NY",tp:"Full-time",sec:"research",sc:69,date:"2026-02-23",d:"Direct research initiatives on urban development. Lead research team, manage projects, publish findings.",u:"https://www.urbanresearchcenter.org/careers/director"},{id:"knight_sr_pg",t:"Senior Program Officer",c:"Knight Foundation",s:"$135K-$165K",sal:135000,l:"New York, NY",tp:"Full-time",sec:"philanthropy",sc:72,date:"2026-02-22",d:"Lead philanthropic initiatives. Manage grantmaking, develop partnerships, support nonprofit ecosystem.",u:"https://knightfoundation.org/careers/senior-program-officer"},{id:"mellon_sr_pg",t:"Senior Program Officer, Arts & Culture",c:"Mellon Foundation",s:"$140K-$170K",sal:140000,l:"New York, NY",tp:"Full-time",sec:"philanthropy",sc:71,date:"2026-02-21",d:"Lead arts and culture grantmaking. Identify opportunities, manage grants, build field partnerships.",u:"https://www.mellon.org/careers/senior-program-officer"},{id:"arup_tech_dir",t:"Director, Technology & Innovation",c:"Arup",s:"$150K-$180K",sal:150000,l:"New York, NY",tp:"Full-time",sec:"engineering",sc:68,date:"2026-02-20",d:"Lead technology strategy. Direct teams, drive innovation, advance technical capabilities across projects.",u:"https://careers.arup.com/director-technology"},{id:"ideo_practice_lead",t:"Practice Lead, Social Impact",c:"IDEO",s:"$140K-$170K",sal:140000,l:"New York, NY",tp:"Full-time",sec:"design",sc:79,date:"2026-02-19",d:"Lead social impact design practice. Direct teams, shape methodology, advance human-centered design.",u:"https://www.ideocareers.com/practice-lead-social-impact"}];
+
+let ratings=JSON.parse(localStorage.getItem('jr')||'{}');
+let apps=JSON.parse(localStorage.getItem('jt')||'[]');
+let orgTracker=JSON.parse(localStorage.getItem('os')||'[]');
+let savedJobs=JSON.parse(localStorage.getItem('sj')||'[]');
+let currentRatingJob='';
 
 function showTab(name){
   document.querySelectorAll('.tab-content').forEach(e=>e.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(e=>e.classList.remove('active'));
   document.getElementById(name).classList.add('active');
   event.target.classList.add('active');
-  if(name==='organizations')renderOrgs();
-  if(name==='applications')renderApps();
-  if(name==='generate')fillJobSelect();
+  if(name==='tracker')renderOrgs();
+  if(name==='applied')renderApps();
+  if(name==='generate')populateGenSelect();
 }
 
 function renderJobs(list){
   const grid=document.getElementById('jobsGrid');
   grid.innerHTML=list.map(j=>`
-    <div class="job-card${saved.includes(j.id)?' new':''}">
+    <div class="job-card${j.date>'2026-04-02'?' new':''}">
       <div class="job-header">
-        <div><div class="job-title">${j.t}</div><div class="job-company">${j.c}</div></div>
-        <div style="display:flex;gap:4px">${[1,2,3,4,5].map(i=>`<span style="cursor:pointer;font-size:18px;color:${ratings[j.id]>=i?'#fbbf24':'#64748b'}" onclick="rate('${j.id}',${i})">★</span>`).join('')}</div>
+        <div><div class="job-title">${j.t}</div><div class="job-company"><a href="#" style="color:#667eea;text-decoration:none">${j.c}</a></div></div>
       </div>
       <div class="job-badges">
-        ${saved.includes(j.id)?'<span class="badge new">NEW</span>':''}
+        ${j.date>'2026-04-02'?'<span class="badge new">NEW</span>':''}
         <span class="badge salary">${j.s}</span>
         <span class="badge score">Match: ${j.sc}%</span>
-        <span class="badge">${j.l}</span>
+        <span class="badge">${j.tp}</span>
       </div>
       <div class="job-meta">
-        <div><span class="meta-label">Sector</span><span class="meta-value">${j.sec}</span></div>
+        <div><span class="meta-label">Sector</span><span class="meta-value">${j.sec.replace(/_/g,' ')}</span></div>
+        <div><span class="meta-label">Location</span><span class="meta-value">${j.l}</span></div>
         <div><span class="meta-label">Posted</span><span class="meta-value">${j.date}</span></div>
       </div>
       <div class="job-desc">${j.d}</div>
       <div class="job-actions">
-        <a href="${j.u}" target="_blank" class="btn primary">View Full Job</a>
-        <button class="btn" onclick="logApp('${j.t}','${j.c}')">Log App</button>
+        <a href="${j.u}" target="_blank" class="btn primary">View Job</a>
+        <button class="btn" onclick="openRatingModal('${j.id}')">👍 Useful</button>
+        <button class="btn" onclick="openRatingModal('${j.id}')">👎 Not Fit</button>
+        <button class="btn" onclick="showGenModal('${j.id}')">Generate</button>
       </div>
     </div>
   `).join('');
-}
-
-function rate(id,r){
-  ratings[id]=r;
-  localStorage.setItem('jr',JSON.stringify(ratings));
-  filterJobs();
+  document.getElementById('savedCount').textContent=savedJobs.length;
 }
 
 function filterJobs(){
@@ -327,87 +390,113 @@ function sortJobs(type,list=jobs){
   renderJobs(s);
 }
 
-const orgs=[
-  {name:"NYC Mayor's Office",roles:3,link:"https://www1.nyc.gov"},
-  {name:"Metropolitan Transportation Authority",roles:2,link:"https://new.mta.info"},
-  {name:"Nonprofit New York",roles:2,link:"https://nonprofitnewyork.org"},
-  {name:"Environmental Defense Fund",roles:1,link:"https://edf.org"},
-  {name:"WSP",roles:3,link:"https://wsp.com"},
-  {name:"Stantec",roles:2,link:"https://stantec.com"},
-  {name:"NRDC",roles:1,link:"https://nrdc.org"},
-  {name:"HR&A Advisors",roles:2,link:"https://hraadvisors.com"}
-];
+function openRatingModal(id){currentRatingJob=id;document.getElementById('ratingModal').classList.add('active')}
+function closeRatingModal(){document.getElementById('ratingModal').classList.remove('active')}
+function saveRating(){
+  if(!currentRatingJob)return;
+  const reason=document.getElementById('ratingReason').value;
+  ratings[currentRatingJob]={rating:event.target.innerText.includes('👍')?'up':'down',reason:reason};
+  localStorage.setItem('jr',JSON.stringify(ratings));
+  closeRatingModal();
+  document.getElementById('ratingReason').value='';
+  filterJobs();
+}
 
 function renderOrgs(){
   const grid=document.getElementById('orgsGrid');
-  grid.innerHTML=orgs.map(o=>`
+  let filtered=organizations;
+  const search=document.getElementById('orgFilter')?.value.toLowerCase()||'';
+  if(search)filtered=organizations.filter(o=>o.n.toLowerCase().includes(search));
+  grid.innerHTML=filtered.map((o,i)=>`
     <div class="org-card">
-      <div class="org-name">${o.name}</div>
-      <div class="org-info">${o.roles} open roles</div>
-      <a href="${o.link}" target="_blank" style="color:#60a5fa;font-size:12px;margin-top:8px;display:block">Visit →</a>
+      <div class="org-name"><a href="${o.u}" target="_blank" style="color:#667eea;text-decoration:none">${o.n}</a></div>
+      <div class="org-info">Sector: ${o.s}</div>
+      ${o.m?'<div class="org-info" style="color:#d32f2f;font-weight:600">'+o.m+'</div>':''}
+      <div class="org-status" onclick="editOrgStatus('${o.n}')">Edit Status</div>
     </div>
   `).join('');
 }
 
-function fillJobSelect(){
-  const sel=document.getElementById('genJobSelect');
-  sel.innerHTML='<option value="">Choose a job...</option>'+jobs.map(j=>`<option value="${j.id}">${j.t} @ ${j.c}</option>`).join('');
+function filterOrgs(){
+  setTimeout(()=>renderOrgs(),50);
 }
 
-function genPreview(){
-  const id=document.getElementById('genJobSelect').value;
-  if(!id){document.getElementById('genOutput').style.display='none';return}
-  const j=jobs.find(x=>x.id===id);
-  document.getElementById('coverText').innerText=`I am writing to apply for the ${j.t} position at ${j.c}.\n\nI bring 7+ years of experience managing complex, multi-stakeholder design and development projects across strategy, design, construction, and operations.\n\nI bring three core qualifications:\n\n1. Strategic & Operational Excellence\n2. Cross-Functional Leadership\n3. Research-Informed Implementation`;
-  document.getElementById('resumeText').innerText=`• Led strategy, design, and operations for high-impact projects with measurable impact\n• Managed stakeholder engagement across diverse constituencies\n• Developed scalable frameworks and evaluation systems\n• Provided strategic and operational leadership across full project lifecycle`;
-  document.getElementById('genOutput').style.display='block';
+function editOrgStatus(name){
+  document.getElementById('newOrgName').value=name;
+  document.getElementById('orgModal').classList.add('active');
 }
 
-function copyText(id){
-  const t=document.getElementById(id).innerText;
-  navigator.clipboard.writeText(t).then(()=>alert('Copied!'));
+function showOrgModal(){document.getElementById('orgModal').classList.add('active')}
+function closeOrgModal(){document.getElementById('orgModal').classList.remove('active')}
+function addTrackedJob(){
+  orgTracker.push({n:document.getElementById('newOrgName').value,t:document.getElementById('newOrgTitle').value,l:document.getElementById('newOrgLink').value,st:document.getElementById('newOrgStatus').value,nt:document.getElementById('newOrgNotes').value});
+  localStorage.setItem('os',JSON.stringify(orgTracker));
+  closeOrgModal();
+  renderOrgs();
 }
 
-function logApp(title,company){
-  document.getElementById('appTitle').value=title;
-  document.getElementById('appCompany').value=company;
-  document.getElementById('appDate').value=new Date().toISOString().split('T')[0];
+function showAppModal(){
+  document.getElementById('appDate').valueAsDate=new Date();
   document.getElementById('appModal').classList.add('active');
 }
-
-function showAppModal(){document.getElementById('appModal').classList.add('active')}
 function closeAppModal(){document.getElementById('appModal').classList.remove('active')}
-
 function saveApp(){
-  apps.push({
-    id:Date.now(),
-    t:document.getElementById('appTitle').value,
-    c:document.getElementById('appCompany').value,
-    d:document.getElementById('appDate').value,
-    s:document.getElementById('appStatus').value,
-    n:document.getElementById('appNotes').value
-  });
+  apps.push({o:document.getElementById('appOrg').value,t:document.getElementById('appTitle').value,d:document.getElementById('appDate').value,s:document.getElementById('appStatus').value,n:document.getElementById('appNotes').value});
   localStorage.setItem('jt',JSON.stringify(apps));
   closeAppModal();
   renderApps();
 }
-
 function renderApps(){
   const list=document.getElementById('appsList');
-  list.innerHTML=apps.map(a=>`
-    <div class="job-card">
-      <div style="display:flex;justify-content:space-between">
-        <div><div class="job-title">${a.t}</div><div class="job-company">${a.c}</div></div>
-        <button class="btn" style="background:#ef4444;color:white" onclick="delApp(${a.id})">Delete</button>
-      </div>
-      <div style="color:#cbd5e1;margin-top:8px;font-size:13px">${a.d} · <span style="background:#334155;padding:2px 6px;border-radius:3px">${a.s}</span></div>
-    </div>
-  `).join('');
+  list.innerHTML=apps.map(a=>`<div class="job-card"><div style="font-weight:700;color:#333">${a.t}</div><div style="color:#667eea;margin:4px 0">${a.o}</div><div style="font-size:12px;color:#999">${a.d} · <span style="background:#e0e0e0;padding:2px 6px;border-radius:3px">${a.s}</span></div></div>`).join('');
 }
 
-function delApp(id){apps=apps.filter(a=>a.id!==id);localStorage.setItem('jt',JSON.stringify(apps));renderApps()}
+function populateGenSelect(){
+  const sel=document.getElementById('genJobSelect');
+  sel.innerHTML='<option value="">Choose a job position...</option>'+jobs.map(j=>`<option value="${j.id}">${j.t} @ ${j.c}</option>`).join('');
+}
 
+function updateGenerator(){
+  const id=document.getElementById('genJobSelect').value;
+  if(!id){document.getElementById('genOutput').style.display='none';return}
+  const j=jobs.find(x=>x.id===id);
+  document.getElementById('resumeGen').innerText=`• Led strategy and operations for placemaking initiatives spanning design, construction, and operations management, delivering measurable impact across $50M+ capital projects
+
+• Managed 35+ stakeholder engagements including interviews, focus groups, and surveys; synthesized findings into actionable strategic recommendations that shaped organizational decisions
+
+• Designed comprehensive multi-method evaluation framework with KPI dashboards and monthly reporting, ensuring service design aligned with operational goals and community needs at ${j.c}
+
+• Demonstrated sustained impact: frameworks and tools remained in active operational use 7+ months post-engagement, proving scalable approach to strategy implementation`;
+  document.getElementById('coverGen').innerText=`I am writing to apply for the ${j.t} position at ${j.c}.
+
+I bring 7+ years of experience managing complex, multi-stakeholder design and development projects across strategy, design, construction, and operations. My background combines deep expertise in strategic planning and operations management with proven ability to lead cross-functional teams and drive organizational transformation.
+
+I bring three core qualifications to this role:
+
+1. Strategic & Operational Excellence: I have led end-to-end initiatives spanning pre-design through operations, managing complex stakeholder landscapes and delivering measurable impact. My experience includes designing comprehensive evaluation frameworks, establishing KPI dashboards, and maintaining active research programs.
+
+2. Cross-Functional Leadership & Stakeholder Convening: I excel at facilitating alignment across diverse constituencies. My experience synthesizing inputs from 35+ interviews and focus groups into actionable strategy has directly informed $50M+ in capital decisions.
+
+3. Research-Informed Implementation: I combine rigorous research methodologies with practical implementation, designing scalable systems that extend far beyond initial engagements.
+
+I am excited to bring this integrated expertise to ${j.c} and contribute to advancing its mission.`;
+  document.getElementById('genOutput').style.display='block';
+}
+
+function copyToClipboard(id){
+  const text=document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(()=>alert('Copied to clipboard!'));
+}
+
+function showGenModal(id){
+  const j=jobs.find(x=>x.id===id);
+  if(j)document.getElementById('genJobSelect').value=id;
+  document.getElementById('generate').click();
+}
+
+document.getElementById('lastRefresh').innerText='Last Refreshed: '+new Date().toLocaleString('en-US',{timeZone:'UTC'})+' UTC';
 renderJobs(jobs);
+populateGenSelect();
 </script>
 </body>
 </html>
