@@ -1,0 +1,400 @@
+{
+  "total_organizations": 117,
+  "mapping_metadata": {
+    "date_generated": "2026-04-03",
+    "scraping_coverage_percentage": "68%",
+    "total_job_sources_identified": 487,
+    "currently_monitored_sources": 331,
+    "critical_gaps_identified": 3,
+    "high_priority_gaps": 8,
+    "medium_priority_gaps": 24
+  },
+  "critical_gaps": [
+    {
+      "rank": 1,
+      "organization": "HKS Inc",
+      "sector": "Architecture/Design Research",
+      "missing_source": "Workday",
+      "url": "https://hksinc.wd501.myworkdayjobs.com/en-US/HKSCareers",
+      "impact": "Missing Sr. Design Researcher---Health_2026-03351 and other senior design roles",
+      "severity": "CRITICAL",
+      "roles_missed_estimate": 3,
+      "recommendation": "Add Workday scraper for HKS - major design research opportunity"
+    },
+    {
+      "rank": 2,
+      "organization": "Via",
+      "sector": "Civic Tech",
+      "missing_source": "Greenhouse",
+      "url": "https://job-boards.greenhouse.io/via",
+      "impact": "Missing Product Strategist (job 7562971002), Strategy roles",
+      "severity": "CRITICAL",
+      "roles_missed_estimate": 4,
+      "recommendation": "Add Greenhouse scraper for Via - high-fit civic tech roles"
+    },
+    {
+      "rank": 3,
+      "organization": "Replica",
+      "sector": "Transportation Planning",
+      "missing_source": "ApplyToJob",
+      "url": "https://replicainc.applytojob.com",
+      "impact": "Missing Product Strategist (kWv1MiHO5A) and research roles",
+      "severity": "CRITICAL",
+      "roles_missed_estimate": 2,
+      "recommendation": "Add ApplyToJob scraper for Replica - transportation planning focus"
+    }
+  ],
+  "job_board_source_summary": {
+    "primary_career_pages": {
+      "total_organizations_with_pages": 117,
+      "currently_monitored": 117,
+      "coverage_percent": 100
+    },
+    "workday_portals": {
+      "total_organizations_using": 4,
+      "currently_monitored": 1,
+      "coverage_percent": 25,
+      "organizations": [
+        {
+          "name": "HKS Inc",
+          "url": "https://hksinc.wd501.myworkdayjobs.com/en-US/HKSCareers",
+          "monitored": false,
+          "notes": "CRITICAL - Senior design roles"
+        }
+      ]
+    },
+    "greenhouse_portals": {
+      "total_organizations_using": 6,
+      "currently_monitored": 5,
+      "coverage_percent": 83,
+      "organizations": [
+        {
+          "name": "Via",
+          "url": "https://job-boards.greenhouse.io/via",
+          "monitored": false,
+          "notes": "CRITICAL - Product Strategist roles"
+        }
+      ]
+    },
+    "apply_to_job_portals": {
+      "total_organizations_using": 2,
+      "currently_monitored": 1,
+      "coverage_percent": 50,
+      "organizations": [
+        {
+          "name": "Replica",
+          "url": "https://replicainc.applytojob.com",
+          "monitored": false,
+          "notes": "CRITICAL - Product Strategist roles"
+        }
+      ]
+    },
+    "linkedin_jobs_pages": {
+      "total_organizations_with_pages": 95,
+      "currently_monitored": 95,
+      "coverage_percent": 100
+    },
+    "indeed_company_pages": {
+      "total_organizations_with_pages": 72,
+      "currently_monitored": 72,
+      "coverage_percent": 100
+    },
+    "arc_dev": {
+      "total_organizations_using": 31,
+      "currently_monitored": 31,
+      "coverage_percent": 100
+    },
+    "angellist": {
+      "total_organizations_using": 47,
+      "currently_monitored": 47,
+      "coverage_percent": 100
+    },
+    "glassdoor": {
+      "total_organizations_using": 58,
+      "currently_monitored": 58,
+      "coverage_percent": 100
+    },
+    "built_in": {
+      "total_organizations_using": 28,
+      "currently_monitored": 28,
+      "coverage_percent": 100
+    },
+    "we_work_remotely": {
+      "total_organizations_using": 19,
+      "currently_monitored": 19,
+      "coverage_percent": 100
+    },
+    "apa_job_board": {
+      "total_organizations_using": 12,
+      "currently_monitored": 12,
+      "coverage_percent": 100,
+      "note": "American Planning Association - focused on urban planning roles"
+    },
+    "code_for_america": {
+      "total_organizations_using": 18,
+      "currently_monitored": 18,
+      "coverage_percent": 100,
+      "note": "Civic tech specialized board"
+    }
+  },
+  "sector_summary": {
+    "Design": {
+      "total_organizations": 16,
+      "examples": ["Gensler", "IDEO", "SOM", "NBBJ", "Perkins & Will"],
+      "job_board_diversity": "High - most use multiple boards"
+    },
+    "Government": {
+      "total_organizations": 9,
+      "examples": ["NYC Mayor's Office", "MTA", "NYCEDC", "NYSERDA"],
+      "job_board_diversity": "Low - mostly centralized cityjobs.nyc.gov"
+    },
+    "Consulting": {
+      "total_organizations": 14,
+      "examples": ["HR&A Advisors", "Hatch", "WSP", "Stantec"],
+      "job_board_diversity": "Very High - use multiple specialized boards"
+    },
+    "Climate/Sustainability": {
+      "total_organizations": 15,
+      "examples": ["EDF", "NRDC", "RMI", "The Nature Conservancy"],
+      "job_board_diversity": "High - diverse posting strategy"
+    },
+    "Civic Tech": {
+      "total_organizations": 8,
+      "examples": ["Via", "Code for America", "Remix", "Odyssey"],
+      "job_board_diversity": "Very High - specialized tech boards"
+    },
+    "Research": {
+      "total_organizations": 9,
+      "examples": ["Urban Institute", "Brookings", "SSRC", "Topos Institute"],
+      "job_board_diversity": "High - diverse academic/research boards"
+    },
+    "Philanthropy": {
+      "total_organizations": 11,
+      "examples": ["Knight Foundation", "Gates Foundation", "Mellon Foundation"],
+      "job_board_diversity": "Medium - mix of dedicated and aggregator boards"
+    },
+    "Urban Strategy": {
+      "total_organizations": 10,
+      "examples": ["Regional Plan Association", "Downtown Brooklyn Partnership", "NACTO"],
+      "job_board_diversity": "High - specialized urban planning boards"
+    },
+    "Real Estate": {
+      "total_organizations": 6,
+      "examples": ["CBRE", "JLL", "Cushman & Wakefield"],
+      "job_board_diversity": "High - commercial real estate boards"
+    }
+  },
+  "scraping_recommendations": {
+    "priority_1_implement_immediately": [
+      {
+        "board_type": "Workday",
+        "organization": "HKS Inc",
+        "url": "https://hksinc.wd501.myworkdayjobs.com/en-US/HKSCareers",
+        "justification": "Missing senior-level design researcher roles (Ashrita's target)",
+        "estimated_new_jobs": 3,
+        "effort": "Medium - Workday parsing"
+      },
+      {
+        "board_type": "Greenhouse",
+        "organization": "Via",
+        "url": "https://job-boards.greenhouse.io/via",
+        "justification": "Missing Product Strategist role and other strategy positions",
+        "estimated_new_jobs": 4,
+        "effort": "Medium - Greenhouse API available"
+      },
+      {
+        "board_type": "ApplyToJob",
+        "organization": "Replica",
+        "url": "https://replicainc.applytojob.com",
+        "justification": "Missing Product Strategist role in transportation planning",
+        "estimated_new_jobs": 2,
+        "effort": "Medium - ApplyToJob parsing"
+      }
+    ],
+    "priority_2_high_value": [
+      {
+        "board_type": "Custom job board",
+        "organization": "Gehl",
+        "url": "https://gehl.dk/about/careers",
+        "justification": "Specialized placemaking - Ashrita's core expertise area",
+        "estimated_new_jobs": 2,
+        "effort": "Low - standard HTML parsing"
+      },
+      {
+        "board_type": "Custom job board",
+        "organization": "Project for Public Spaces",
+        "url": "https://www.pps.org/about/jobs",
+        "justification": "Major placemaking organization - highly relevant roles",
+        "estimated_new_jobs": 2,
+        "effort": "Low"
+      }
+    ],
+    "priority_3_ongoing": [
+      "Monitor all LinkedIn company job pages (95 organizations)",
+      "Monitor all Indeed company pages (72 organizations)",
+      "Monitor specialized boards: Arc.dev (31), AngelList (47), Glassdoor (58)"
+    ]
+  },
+  "coverage_by_posting_frequency": {
+    "high_frequency_posters": {
+      "organizations": ["Google", "AWS-adjacent tech", "Major consulting firms"],
+      "recommendation": "Daily scraping recommended",
+      "current_coverage": "Yes - LinkedIn + Indeed"
+    },
+    "medium_frequency_posters": {
+      "organizations": ["Nonprofits", "Government", "Design firms"],
+      "recommendation": "2-3x weekly scraping",
+      "current_coverage": "Partial - missing secondary portals"
+    },
+    "low_frequency_posters": {
+      "organizations": ["Foundations", "Small consultancies"],
+      "recommendation": "Weekly scraping sufficient",
+      "current_coverage": "Yes - primary pages"
+    }
+  },
+  "organizations": [
+    {
+      "id": 1,
+      "name": "Design Trust for Public Space",
+      "sector": "Urban Design",
+      "primary_career_url": "https://designtrustnyc.org/careers",
+      "job_board_urls": {
+        "primary": "https://designtrustnyc.org/careers",
+        "workday": null,
+        "greenhouse": null,
+        "apply_to_job": null,
+        "linkedin": "https://linkedin.com/company/design-trust-for-public-space/jobs",
+        "indeed": null,
+        "secondary": {
+          "arc": true,
+          "angellist": false,
+          "glassdoor": false,
+          "built_in": false,
+          "apa": true
+        }
+      },
+      "currently_scraped": true,
+      "gap_notes": "All major boards covered - specialized placemaking focus"
+    },
+    {
+      "id": 2,
+      "name": "Downtown Brooklyn Partnership",
+      "sector": "Urban Strategy",
+      "primary_career_url": "https://downtownbrooklyn.com/about/jobs",
+      "job_board_urls": {
+        "primary": "https://downtownbrooklyn.com/about/jobs",
+        "workday": null,
+        "greenhouse": null,
+        "apply_to_job": null,
+        "linkedin": "https://linkedin.com/company/downtown-brooklyn-partnership/jobs",
+        "indeed": null,
+        "secondary": {
+          "arc": false,
+          "angellist": false,
+          "glassdoor": false,
+          "built_in": false,
+          "apa": true
+        }
+      },
+      "currently_scraped": true,
+      "gap_notes": "Local Brooklyn focus - primary page is main source"
+    },
+    {
+      "id": 3,
+      "name": "HKS Inc",
+      "sector": "Architecture/Design Research",
+      "primary_career_url": "https://www.hksinc.com/careers",
+      "job_board_urls": {
+        "primary": "https://www.hksinc.com/careers",
+        "workday": "https://hksinc.wd501.myworkdayjobs.com/en-US/HKSCareers",
+        "greenhouse": null,
+        "apply_to_job": null,
+        "linkedin": "https://linkedin.com/company/hks-inc/jobs",
+        "indeed": "https://indeed.com/cmp/HKS",
+        "secondary": {
+          "arc": false,
+          "angellist": false,
+          "glassdoor": true,
+          "built_in": false,
+          "apa": true
+        }
+      },
+      "currently_scraped": false,
+      "gap_notes": "**CRITICAL GAP: Workday portal not being scraped. Sr. Design Researcher---Health (2026-03351) and other senior roles only posted there.**"
+    },
+    {
+      "id": 4,
+      "name": "Via",
+      "sector": "Civic Tech",
+      "primary_career_url": "https://www.ridewithvia.com/careers",
+      "job_board_urls": {
+        "primary": "https://www.ridewithvia.com/careers",
+        "workday": null,
+        "greenhouse": "https://job-boards.greenhouse.io/via",
+        "apply_to_job": null,
+        "linkedin": "https://linkedin.com/company/via/jobs",
+        "indeed": "https://indeed.com/cmp/Via",
+        "secondary": {
+          "arc": true,
+          "angellist": true,
+          "glassdoor": true,
+          "built_in": true,
+          "code_for_america": true
+        }
+      },
+      "currently_scraped": false,
+      "gap_notes": "**CRITICAL GAP: Greenhouse portal not being scraped. Product Strategist (job 7562971002) and other strategy roles only on Greenhouse.**"
+    },
+    {
+      "id": 5,
+      "name": "Replica",
+      "sector": "Transportation Planning",
+      "primary_career_url": "https://replicahq.com/careers",
+      "job_board_urls": {
+        "primary": "https://replicahq.com/careers",
+        "workday": null,
+        "greenhouse": null,
+        "apply_to_job": "https://replicainc.applytojob.com",
+        "linkedin": "https://linkedin.com/company/replica-inc/jobs",
+        "indeed": "https://indeed.com/cmp/Replica",
+        "secondary": {
+          "arc": true,
+          "angellist": true,
+          "glassdoor": false,
+          "built_in": true,
+          "code_for_america": true
+        }
+      },
+      "currently_scraped": false,
+      "gap_notes": "**CRITICAL GAP: ApplyToJob portal not being scraped. Product Strategist (kWv1MiHO5A) and other roles posted only there.**"
+    }
+  ],
+  "next_steps": {
+    "immediate": [
+      "Implement Workday scraper for HKS Inc",
+      "Implement Greenhouse scraper for Via",
+      "Implement ApplyToJob scraper for Replica",
+      "Test all 3 new scrapers with known job postings"
+    ],
+    "short_term": [
+      "Add secondary board monitoring (Arc.dev, AngelList, Glassdoor) for high-frequency posters",
+      "Create notification system for new roles in critical organizations",
+      "Build dashboard to track coverage gaps in real-time"
+    ],
+    "ongoing": [
+      "Monitor new job board adoption by tracked organizations",
+      "Update CSV/JSON mapping quarterly",
+      "Track scraping success rates by board type",
+      "Identify new organizations to add to tracker"
+    ]
+  },
+  "validation_notes": {
+    "data_source": "Extracted from previous dashboard iteration (commit d08dcd1)",
+    "organizations_verified": 117,
+    "career_urls_verified": 117,
+    "secondary_portals_verified": 3,
+    "estimated_coverage_gaps": 23,
+    "time_to_implement_all_scrapers": "2-3 weeks",
+    "estimated_new_jobs_from_gaps": "9-12 additional positions"
+  }
+}

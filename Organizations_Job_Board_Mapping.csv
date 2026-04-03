@@ -1,0 +1,131 @@
+Organization Name,Sector,Primary Career URL,Workday URL,Greenhouse URL,ApplyToJob URL,LinkedIn Jobs,Indeed,Arc,AngelList,Glassdoor,Built.in,We Work Remotely,APA,Code for America,Custom Boards,Currently Scraped,Notes
+Design Trust for Public Space,Urban Design,https://designtrustnyc.org/careers,,,,,YES,,,,,YES,YES,YES,,YES,Civic design focus
+Downtown Brooklyn Partnership,Urban Strategy,https://downtownbrooklyn.com/about/jobs,,,,,YES,,,,,,,YES,,YES,Local NYC focus
+Mayor's Office of the Chief of Staff,Government,https://cityjobs.nyc.gov,,,,,,,,,,,,,YES,YES,NYC government portal
+Bloomberg Associates,Urban Strategy,https://www.bloombergassociates.org/careers,,,,,YES,,,YES,YES,YES,,YES,,YES,Active recruiter
+Regional Plan Association,Urban Strategy,https://www.rpa.org/careers,,,,,YES,,,,,YES,YES,YES,,YES,Tri-state focus
+C40 Cities,Climate,https://www.c40.org/careers,,,,,YES,,YES,YES,YES,YES,YES,YES,,YES,Global cities network
+New Practice Lab at New America,Policy,https://www.newamerica.org/new-practice-lab/jobs,,,,,YES,,,YES,YES,YES,,YES,,YES,Think tank
+Center for an Urban Future,Policy,https://www.nycfuture.org/about/careers,,,,,YES,,,,,YES,YES,YES,,YES,NYC policy
+Urban Institute,Research,https://www.urban.org/aboutus/who-we-are/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major research org
+Brookings Institution,Policy,https://www.brookings.edu/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,DC-based think tank
+World Resources Institute,Climate,https://www.wri.org/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Global reach
+Open Plans,Urban Strategy,https://www.openplans.org/jobs,,,,,YES,,,,,,,YES,,YES,NYC focused
+Enterprise Community Partners,Housing,https://www.enterprisecommunity.org/about/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Housing focus
+Code for America,Civic Tech,https://codeforamerica.org/jobs,,,,,YES,,YES,YES,YES,YES,YES,YES,,YES,Major civic tech hub
+HR&A Advisors,Consulting,https://www.hraadvisors.com/careers,,,,,YES,,,YES,YES,YES,,YES,,YES,NYC consulting
+IDEO,Design,https://www.ideocareers.com,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Global design firm
+Gehl,Placemaking,https://gehl.dk/about/careers,,,,,YES,,YES,YES,YES,YES,,,,,Placemaking specialist
+CBRE,Real Estate,https://careers.cbre.com,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major real estate
+JLL,Real Estate,https://careers.jll.com,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major real estate
+Cushman & Wakefield,Real Estate,https://www.cushmanwakefield.com/en/about-us/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major real estate
+Colliers,Real Estate,https://www.colliers.com/en-us/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major real estate
+Arup,Engineering,https://careers.arup.com,,,,,YES,YES,YES,YES,YES,YES,,,YES,YES,All major boards covered
+Gensler,Design,https://www.gensler.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major global firm
+MKThink,Design,https://mkthink.com/careers,,,,,YES,,,YES,YES,YES,,YES,,YES,Design strategy
+Waterfront Alliance,Urban Strategy,https://www.waterfrontalliance.org/about/jobs,,,,,YES,,,,,,,YES,,YES,Waterfront specific
+Environmental Defense Fund,Climate,https://www.edf.org/jobs,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major climate org
+Economic Security Project,Policy,https://www.economicsecurityproject.org/jobs,,,,,YES,,,YES,,,,,YES,YES,Policy research
+OXMAN,Design,https://oxman.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Design innovation
+Nonprofit New York,Nonprofit,https://www.nonprofitnewyork.org/about/careers,,,,,YES,,,YES,YES,YES,,YES,,YES,NYC nonprofit sector
+Urban Green Council,Climate,https://www.urbangreencouncil.org/careers,,,,,YES,,,,,,,YES,,YES,Green building
+Buro Happold,Engineering,https://www.burohappold.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Engineering/consulting
+WSP,Consulting,https://www.wsp.com/en-us/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major consulting
+Replica,Urban Tech,https://replicahq.com/careers,,,https://replicainc.applytojob.com,YES,,YES,YES,,YES,YES,YES,YES,NO,**CRITICAL GAP: ApplyToJob portal not being scraped - Product Strategist roles only there**
+Via,Civic Tech,https://www.ridewithvia.com/careers,,https://job-boards.greenhouse.io/via,,,YES,,YES,YES,YES,YES,YES,YES,,NO,**CRITICAL GAP: Greenhouse portal not being scraped - major gap for strategist roles**
+Blue Zones LLC,Urban Strategy,https://www.bluezones.com/careers,,,,,YES,,YES,YES,YES,YES,YES,YES,,YES,Public health strategy
+Google Urban Solutions,Technology,https://careers.google.com,,,,,YES,YES,YES,YES,YES,YES,,,YES,YES,Major tech company
+Cruise,Autonomous Vehicles,https://getcruise.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Tech mobility
+Pratt Institute,Education,https://www.pratt.edu/human-resources/employment,,,,,YES,,,,,,,YES,YES,YES,Design education
+Columbia GSAPP,Education,https://www.arch.columbia.edu/about/jobs,,,,,YES,,,,,,,YES,,YES,Architecture education
+School of Visual Arts,Education,https://www.sva.edu/about/employment,,,,,YES,,,,,,,,YES,YES,Design education
+Project for Public Spaces,Placemaking,https://www.pps.org/about/jobs,,,,,YES,,,YES,YES,YES,YES,YES,,YES,Major placemaking org
+NYC Department of Transportation,Government,https://www.nyc.gov/site/dot/about/employment.page,,,,,,,,,,,,,YES,YES,NYC government
+Metropolitan Transportation Authority,Government,https://new.mta.info/careers,,,,,YES,,,,,,,,YES,YES,NYC transit
+NYC Department of Social Services,Government,https://www1.nyc.gov/site/hra/careers/careers.page,,,,,,,,,,,,,YES,YES,NYC social services
+City of New York,Government,https://cityjobs.nyc.gov,,,,,,,,,,,,,YES,YES,Centralized NYC jobs portal
+NYC Department of Health,Government,https://www1.nyc.gov/site/doh/careers/careers.page,,,,,,,,,,,,,YES,YES,NYC health
+NYC Housing Authority,Government,https://www.nycha.nyc.gov/page/employment,,,,,,,,,,,,,YES,YES,NYC housing
+Office of Management and Budget,Government,https://www1.nyc.gov/site/omb/about/employment.page,,,,,,,,,,,,,YES,YES,NYC budget/planning
+Knight Foundation,Philanthropy,https://knightfoundation.org/careers,,,,,YES,,YES,YES,YES,YES,,,,YES,Multiple boards
+Ralph Wilson Foundation,Philanthropy,https://www.ralphwilsonfdn.org/about/careers,,,,,,,,,,,,,,,YES,Smaller foundation
+Mellon Foundation,Philanthropy,https://www.mellon.org/careers,,,,,YES,,YES,YES,YES,,,,,YES,Major foundation
+Gates Foundation,Philanthropy,https://www.gatesfoundation.org/about/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major foundation
+MacArthur Foundation,Philanthropy,https://www.macfound.org/about/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major foundation
+Rockefeller Foundation,Philanthropy,https://www.rockefellerfoundation.org/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major foundation
+Ford Foundation,Philanthropy,https://www.fordfoundation.org/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major foundation
+Bloomberg Philanthropies,Philanthropy,https://www.bloomberg.org/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major foundation
+Citi Foundation,Philanthropy,https://www.citigroup.com/global/about-us/foundation,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major foundation
+iMentor,Nonprofit,https://www.imentor.org/careers,,,,,YES,,,YES,YES,YES,,YES,,YES,Youth nonprofit
+Partnership To End Homelessness,Nonprofit,https://www.partnershiptoendh omelessness.org/careers,,,,,YES,,,YES,,,,,,,YES,Homelessness focus
+LISC,Nonprofit,https://www.lisc.org/our-offices/new-york/careers,,,,,YES,,,YES,YES,YES,,YES,,YES,Community development
+CUNY ISLG,Research,https://www.islg.cuny.edu/careers,,,,,YES,,,YES,YES,YES,,YES,,YES,Government research
+Social Science Research Council,Research,https://www.ssrc.org/jobs,,,,,YES,,YES,YES,YES,YES,,YES,,YES,Policy research
+Hatch,Consulting,https://www.hashatch.com/careers,,,,,YES,,YES,YES,YES,YES,,YES,,YES,Economic consulting
+Stantec,Consulting,https://www.stantec.com/en/careers,,,,,YES,YES,YES,YES,YES,YES,,,YES,YES,Major consulting
+Broadridge,Financial Tech,https://www.broadridge.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Fintech focus
+Natural Resources Defense Council,Climate,https://www.nrdc.org/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major climate org
+GiveDirectly,Nonprofit,https://www.givedirectly.org/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,International nonprofit
+Open Space Institute,Conservation,https://www.osiny.org/about/careers,,,,,YES,,,YES,YES,YES,,,YES,YES,Land conservation
+Brooklyn Community Board 7,Government,https://www.nyc.gov/site/brooklyncb7/index.page,,,,,,,,,,,,,YES,YES,Local NYC government
+Woods Bagot,Design,https://www.woodsbagot.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Global design firm
+Odyssey,Civic Tech,https://www.odysseytransit.com/careers,,,,,YES,,YES,YES,YES,YES,YES,YES,,YES,Transit tech
+Perkins Eastman,Design,https://www.perkinseastman.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major architecture
+SOM,Design,https://www.som.com/about/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major architecture
+HOK,Design,https://www.hok.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major architecture
+HKS,Design,https://www.hksinc.com/careers,https://hksinc.wd501.myworkdayjobs.com/en-US/HKSCareers,,,,,,,YES,YES,YES,,,YES,NO,**CRITICAL GAP: Workday portal not being scraped - Sr. Design Researcher role**
+Arcadis,Consulting,https://www.arcadis.com/en/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Global consulting
+AECOM,Design,https://aecom.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major design firm
+Atelier Ten,Design,https://www.ateliertencareer.com,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Sustainability design
+Autodesk Foundation,Philanthropy,https://www.autodesk.org,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Tech foundation
+BSR,Consulting,https://www.bsr.org/en/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Sustainability consulting
+Cityblock Health,Civic Tech,https://cityblockhealth.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Health equity tech
+Cityfi,Urban Strategy,https://www.cityfi.co/work-with-us,,,,,YES,,,YES,YES,YES,,,YES,,YES,Urban development tech
+Citizens NYC,Nonprofit,https://www.citizensnyc.org/opportunities,,,,,,,,,,,,,YES,,YES,NYC nonprofit
+Culdesac,Real Estate,https://culdesac.com/careers,,,,,YES,,YES,YES,YES,YES,YES,YES,,YES,Cohousing developer
+Dalberg,Consulting,https://www.dalberg.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Strategy consulting
+Elemental Excelerator,Climate,https://www.elementalexcelerator.com/careers,,,,,YES,,YES,YES,YES,YES,YES,YES,,YES,Climate tech
+Ennead Lab,Design,https://www.ennead.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Architecture lab
+ERA-Co,Consulting,https://www.era-co.com/careers,,,,,YES,,,YES,YES,YES,,,YES,,YES,Environmental consulting
+ERM,Consulting,https://www.erm.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Global consulting
+Forum for the Future,Climate,https://www.forumforthefuture.org/jobs,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Sustainability think tank
+frog,Consulting,https://www.frogdesign.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Design strategy
+Gehl Institute,Urban Strategy,https://gehlinstitute.org/careers,,,,,YES,,YES,YES,YES,YES,,,YES,,YES,Placemaking research
+Govini,Civic Tech,https://govini.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Government tech
+IDEAS42,Consulting,https://www.ideas42.org/about/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Behavioral science
+Industrious,Real Estate,https://www.industriousworldwide.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Flexible workspace
+Lincoln Institute of Land Policy,Research,https://www.lincolninst.edu/about/careers,,,,,YES,,YES,YES,YES,YES,,YES,,YES,Land policy research
+Luminary Labs,Consulting,https://luminarylabs.com/careers,,,,,YES,,,YES,YES,YES,,,YES,,YES,Civic consulting
+Mapbox,Technology,https://www.mapbox.com/careers,,,,,YES,YES,YES,YES,YES,YES,,,YES,YES,Mapping tech
+Milken Institute,Policy,https://milkeninstitute.org/about/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Policy research
+NACTO,Urban Strategy,https://nacto.org/about/jobs,,,,,YES,,,YES,YES,YES,YES,YES,,YES,Transit/urban
+National League of Cities,Policy,https://www.nlc.org/careers,,,,,YES,,YES,YES,YES,YES,,YES,,YES,Cities network
+NBBJ,Design,https://www.nbbj.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major architecture
+New York Community Trust,Nonprofit,https://www.nycommunitytrust.org/about-us/careers,,,,,YES,,,YES,YES,YES,,YES,,YES,NYC philanthropy
+Numina,Civic Tech,https://www.numina.co/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Civic data tech
+NYCEDC,Government,https://edc.nyc/about/careers,,,,,,,,,,,,,YES,YES,NYC economic development
+NYSERDA,Government,https://www.nyserda.ny.gov/About/Careers,,,,,,,,,,,,,YES,YES,NY energy agency
+Perkins & Will,Design,https://www.perkinswill.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major architecture
+Placer.ai,Technology,https://www.placer.ai/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Location intelligence
+Public Policy Lab,Service Design,https://publicpolicylab.org/jobs,,,,,YES,,,YES,YES,YES,YES,YES,,YES,Service design
+Purpose,Consulting,https://www.purpose.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Strategy consulting
+Ramboll,Consulting,https://ramboll.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Global consulting
+Remix by Via,Civic Tech,https://www.remix.com/jobs,,,,,YES,,YES,YES,YES,YES,YES,YES,,YES,Transport planning tech
+RMI,Climate,https://rmi.org/about/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Energy/climate research
+Smart Surfaces Coalition,Climate,https://smartsurfacescoalition.org,,,,,,,,,,,,,,,YES,Climate coalition
+Steer Group,Consulting,https://www.steergroup.com/careers,,,,,YES,,YES,YES,YES,YES,,YES,,YES,Transport consulting
+Street Lab,Nonprofit,https://www.streetlab.org/jobs,,,,,YES,,,,,,,YES,,YES,Grassroots advocacy
+SY Partners,Consulting,https://www.sypartners.com/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Strategy consulting
+Terraformation,Climate,https://www.terraformation.com/careers,,,,,YES,,YES,YES,YES,YES,YES,YES,,YES,Climate restoration
+The Nature Conservancy,Climate,https://www.nature.org/en-us/about-us/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Major conservation org
+Third Way,Policy,https://www.thirdway.org/about/jobs,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Bipartisan policy
+Topos Institute,Research,https://topos.institute,,,,,,,,,,,,,,,YES,Mathematical research
+Van Alen Institute,Design,https://www.vanalen.org/connect/jobs,,,,,YES,,,YES,YES,YES,,,YES,,YES,Design research
+WXY Architecture,Urban Design,https://www.wxyarch.com/careers,,,,,YES,,YES,YES,YES,YES,,YES,,YES,NYC architecture
+92Y,Nonprofit,https://www.92ny.org/careers,,,,,YES,,,YES,YES,YES,,YES,,YES,NYC arts/culture
+Aspen Policy Lab,Policy,https://www.aspenideas.org/about/careers,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Policy conference
+Center for Public Impact,Nonprofit,https://www.centreforpublicimpact.org/work-with-us,,,,,YES,,YES,YES,YES,YES,,,YES,YES,Global nonprofit
+EDC,Government,https://edc.nyc/about/careers,,,,,,,,,,,,,YES,YES,Economic development
+Laundromat Project,Nonprofit,https://laundromatproject.org,,,,,,,,,,,,,YES,,YES,Arts nonprofit
+MIT LCAU,Research,https://lcau.mit.edu,,,,,YES,,,YES,YES,YES,,YES,,YES,Civic research
+Myrtle Ave BID,Urban Strategy,https://myrtleave.org,,,,,,,,,,,,,YES,,YES,Local improvement district
