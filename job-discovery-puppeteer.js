@@ -17,12 +17,36 @@ const JOB_BOARDS = [
     url: 'https://www.linkedin.com/jobs/search/?keywords=urban%20designer&location=Remote&sortBy=DD',
   },
   {
+    name: 'LinkedIn - Design Researcher',
+    url: 'https://www.linkedin.com/jobs/search/?keywords=design%20researcher&location=Remote&sortBy=DD',
+  },
+  {
+    name: 'LinkedIn - Urban Design Consultant',
+    url: 'https://www.linkedin.com/jobs/search/?keywords=urban%20design%20consultant&location=Remote&sortBy=DD',
+  },
+  {
+    name: 'LinkedIn - Workplace Strategist',
+    url: 'https://www.linkedin.com/jobs/search/?keywords=workplace%20strategist&location=Remote&sortBy=DD',
+  },
+  {
+    name: 'LinkedIn - Research Manager',
+    url: 'https://www.linkedin.com/jobs/search/?keywords=research%20manager&location=Remote&sortBy=DD',
+  },
+  {
+    name: 'LinkedIn - Strategy Consultant',
+    url: 'https://www.linkedin.com/jobs/search/?keywords=strategy%20consultant&location=Remote&sortBy=DD',
+  },
+  {
     name: 'LinkedIn - Climate/Sustainability',
     url: 'https://www.linkedin.com/jobs/search/?keywords=climate%20OR%20sustainability&location=Remote&sortBy=DD',
   },
   {
     name: 'LinkedIn - Policy Research',
     url: 'https://www.linkedin.com/jobs/search/?keywords=policy%20OR%20research&location=New%20York&sortBy=DD',
+  },
+  {
+    name: 'LinkedIn - Environmental Consultant',
+    url: 'https://www.linkedin.com/jobs/search/?keywords=environmental%20consultant&location=Remote&sortBy=DD',
   },
   // Indeed
   {
