@@ -31,109 +31,107 @@ const server = http.createServer((req, res) => {
 });
 
 function refreshDashboard(res) {
-  console.log('🚀 Starting scraper...');
+  console.log('🚀 Starting job discovery...');
 
-  let scraperOutput = '';
-  const scraper = spawn('node', ['scraper.js']);
+  let discoveryOutput = '';
+  const discovery = spawn('node', ['job-discovery-scraper.js']);
 
-  scraper.stdout.on('data', (data) => {
-    scraperOutput += data.toString();
+  discovery.stdout.on('data', (data) => {
+    discoveryOutput += data.toString();
+    console.log(data.toString());
   });
 
-  scraper.stderr.on('data', (data) => {
-    scraperOutput += data.toString();
+  discovery.stderr.on('data', (data) => {
+    discoveryOutput += data.toString();
+    console.log(data.toString());
   });
 
-  scraper.on('close', (code) => {
+  discovery.on('close', (code) => {
     if (code !== 0) {
-      console.error('❌ Scraper failed');
+      console.error('❌ Discovery failed');
       res.writeHead(500);
       res.end(JSON.stringify({
         status: 'error',
-        message: 'Scraper failed',
-        output: scraperOutput
+        message: 'Job discovery failed',
+        output: discoveryOutput
       }));
       return;
     }
 
-    console.log('✅ Scraper completed, analyzing results...');
+    console.log('✅ Discovery completed, adding new jobs...');
 
-    // Run process-scraper-results
-    let analysisOutput = '';
-    const analyzer = spawn('node', ['process-scraper-results.js']);
+    // Run add-discovered-jobs to validate and add
+    let addOutput = '';
+    const adder = spawn('node', ['add-discovered-jobs.js']);
 
-    analyzer.stdout.on('data', (data) => {
-      analysisOutput += data.toString();
+    adder.stdout.on('data', (data) => {
+      addOutput += data.toString();
+      console.log(data.toString());
     });
 
-    analyzer.on('close', (code) => {
-      console.log('✅ Results analyzed, updating dashboard...');
+    adder.stderr.on('data', (data) => {
+      console.log(data.toString());
+    });
 
-      // Run update-dashboard
-      let updateOutput = '';
-      const updater = spawn('node', ['update-dashboard.js']);
+    adder.on('close', (code) => {
+      if (code !== 0) {
+        console.error('❌ Failed to add jobs');
+        res.writeHead(500);
+        res.end(JSON.stringify({
+          status: 'error',
+          message: 'Failed to add discovered jobs'
+        }));
+        return;
+      }
 
-      updater.stdout.on('data', (data) => {
-        updateOutput += data.toString();
-      });
+      console.log('✅ Jobs added to dashboard!');
 
-      updater.on('close', (code) => {
-        if (code !== 0) {
-          console.error('❌ Update failed');
-          res.writeHead(500);
-          res.end(JSON.stringify({
-            status: 'error',
-            message: 'Dashboard update failed'
-          }));
-          return;
-        }
+      try {
+        // Get new job count
+        const html = fs.readFileSync('index.html', 'utf8');
+        const jobsMatch = html.match(/var JOBS=\[([\s\S]*?)\];/);
+        const jobCount = (jobsMatch[0].match(/num:\d+/g) || []).length;
 
-        // Read the update report
-        try {
-          const report = JSON.parse(fs.readFileSync('update-report.json', 'utf8'));
-          const results = JSON.parse(fs.readFileSync('scraper-results.json', 'utf8'));
+        const discovered = fs.existsSync('discovered-jobs.json')
+          ? JSON.parse(fs.readFileSync('discovered-jobs.json', 'utf8'))
+          : { total_found: 0 };
 
-          console.log('✅ Dashboard updated successfully!');
-
-          res.writeHead(200);
-          res.end(JSON.stringify({
-            status: 'success',
-            message: 'Dashboard refreshed and updated',
-            data: {
-              timestamp: report.timestamp,
-              jobsVerified: report.updates.jobsWithRequirements,
-              orgsFixed: report.updates.orgsWithFixedUrls,
-              validJobs: report.updates.validJobs,
-              validOrgs: report.updates.validOrgs,
-              nextSteps: [
-                'Review index.html changes',
-                'git add index.html',
-                'git commit -m "Auto-update: dashboard refresh"',
-                'git push origin main'
-              ]
-            }
-          }));
-        } catch (err) {
-          console.error('❌ Error reading report:', err.message);
-          res.writeHead(500);
-          res.end(JSON.stringify({
-            status: 'error',
-            message: 'Failed to read update report'
-          }));
-        }
-      });
+        res.writeHead(200);
+        res.end(JSON.stringify({
+          status: 'success',
+          message: 'Dashboard refreshed with new job opportunities',
+          data: {
+            timestamp: new Date().toISOString(),
+            jobsDiscovered: discovered.total_found,
+            totalJobsOnDashboard: jobCount,
+            nextSteps: [
+              'Review new jobs on dashboard',
+              'git add index.html',
+              'git commit -m "Auto-refresh: discovered new job opportunities"',
+              'git push origin main'
+            ]
+          }
+        }));
+      } catch (err) {
+        console.error('❌ Error reading results:', err.message);
+        res.writeHead(500);
+        res.end(JSON.stringify({
+          status: 'error',
+          message: 'Dashboard updated but error reading results'
+        }));
+      }
     });
   });
 
-  // Set a timeout in case scraper hangs
+  // Set a timeout in case discovery hangs
   setTimeout(() => {
-    scraper.kill();
+    discovery.kill();
     res.writeHead(408);
     res.end(JSON.stringify({
       status: 'timeout',
-      message: 'Scraper took too long (10+ minutes)'
+      message: 'Discovery took too long (15+ minutes)'
     }));
-  }, 600000); // 10 minute timeout
+  }, 900000); // 15 minute timeout
 }
 
 function getStatus(res) {
