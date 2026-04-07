@@ -97,7 +97,7 @@ tr:hover{background:#f9f9ff}
   <span id="lastRefresh">Last refreshed: April 3, 2026</span>
   <span id="newCount" class="new-badge">29 jobs loaded</span>
   <span style="color:#999">|</span>
-  <span id="totalCount" style="color:#667eea;font-weight:600">76 organizations tracked</span>
+  <span id="totalCount" style="color:#667eea;font-weight:600">117 organizations tracked</span>
 </div>
 
 <div class="tabs">
@@ -172,7 +172,7 @@ tr:hover{background:#f9f9ff}
 <div class="cnt" id="t4">
   <div class="statg">
     <div class="statc"><div class="statn">7+</div><div class="statl">Years Exp.</div></div>
-    <div class="statc"><div class="statn" id="orgCount">76</div><div class="statl">Orgs Tracked</div></div>
+    <div class="statc"><div class="statn" id="orgCount">117</div><div class="statl">Orgs Tracked</div></div>
     <div class="statc"><div class="statn">$120K+</div><div class="statl">Target Salary</div></div>
     <div class="statc"><div class="statn">NYC</div><div class="statl">Location</div></div>
   </div>
@@ -272,21 +272,27 @@ var JOBS=[
 var ORGS=[
 {n:"Design Trust for Public Space",s:"Urban Design",u:"https://designtrustnyc.org/careers"},
 {n:"Downtown Brooklyn Partnership",s:"Urban Strategy",u:"https://downtownbrooklyn.com/about/jobs"},
-{n:"NYC Mayor's Office",s:"Government",u:"https://cityjobs.nyc.gov"},
+{n:"HKS Inc",s:"Architecture/Design Research",u:"https://www.hksinc.com/careers"},
+{n:"Via",s:"Civic Tech",u:"https://www.ridewithvia.com/careers"},
+{n:"Replica",s:"Transportation Planning",u:"https://replicahq.com/careers"},
+{n:"Nonprofit New York",s:"Nonprofit",u:"https://nonprofitnewyork.org/careers"},
 {n:"Metropolitan Transportation Authority",s:"Government",u:"https://new.mta.info/careers"},
 {n:"Gensler",s:"Design",u:"https://www.gensler.com/careers"},
+{n:"NYC Mayor's Office",s:"Government",u:"https://cityjobs.nyc.gov"},
 {n:"Buro Happold",s:"Consulting",u:"https://www.burohappold.com/careers"},
 {n:"Waterfront Alliance",s:"Urban Strategy",u:"https://www.waterfront-alliance.org/careers"},
+{n:"HR&A Advisors",s:"Consulting",u:"https://www.hraadvisors.com/careers/"},
 {n:"NYC Dept of Transportation",s:"Government",u:"https://www.nyc.gov/site/dot/careers/careers.page"},
-{n:"Nonprofit New York",s:"Nonprofit",u:"https://nonprofitnewyork.org/careers"},
 {n:"NYC Dept of Social Services",s:"Government",u:"https://www1.nyc.gov/site/dss/careers/careers.html"},
 {n:"Environmental Defense Fund",s:"Climate/Sustainability",u:"https://www.edf.org/careers"},
 {n:"iMentor",s:"Nonprofit",u:"https://imentor.org/careers"},
 {n:"Partnership To End Homelessness",s:"Nonprofit",u:"https://www.peh.org/careers"},
 {n:"LISC",s:"Nonprofit",u:"https://www.lisc.org/about-us/careers"},
 {n:"NYC HRA",s:"Government",u:"https://www1.nyc.gov/site/hra/careers/careers.html"},
+{n:"JLL",s:"Real Estate",u:"https://careers.jll.com"},
+{n:"Cushman & Wakefield",s:"Real Estate",u:"https://careers.cushmanwakefield.com"},
+{n:"CBRE",s:"Real Estate",u:"https://careers.cbre.com"},
 {n:"WSP",s:"Consulting",u:"https://www.wsp.com/en-US/careers"},
-{n:"HR&A Advisors",s:"Consulting",u:"https://www.hraadvisors.com/careers/"},
 {n:"Bloomberg Philanthropies",s:"Philanthropy",u:"https://www.bloomberg.org/careers"},
 {n:"GiveDirectly",s:"Climate/Sustainability",u:"https://www.givedirectly.org/careers"},
 {n:"Open Space Institute",s:"Climate/Sustainability",u:"https://www.openspacesinstitute.org/careers"},
@@ -297,9 +303,10 @@ var ORGS=[
 {n:"NRDC",s:"Climate/Sustainability",u:"https://www.nrdc.org/careers"},
 {n:"Broadridge",s:"Finance/Tech",u:"https://careers.broadridge.com"},
 {n:"City of New York",s:"Government",u:"https://www.nyc.gov/site/olr/careers/careers.page"},
-{n:"Via",s:"Civic Tech",u:"https://www.ridewithvia.com/careers"},
 {n:"Urban Institute",s:"Policy Research",u:"https://www.urban.org/careers"},
 {n:"Brookings Institution",s:"Policy Research",u:"https://www.brookings.edu/careers"},
+{n:"SSRC",s:"Policy Research",u:"https://www.ssrc.org"},
+{n:"Topos Institute",s:"Research",u:"https://toposinstitute.org"},
 {n:"Knight Foundation",s:"Philanthropy",u:"https://www.knightfoundation.org/careers"},
 {n:"Gates Foundation",s:"Philanthropy",u:"https://www.gatesfoundation.org/careers"},
 {n:"Mellon Foundation",s:"Philanthropy",u:"https://mellon.org/careers"},
@@ -314,31 +321,66 @@ var ORGS=[
 {n:"SOM",s:"Architecture",u:"https://www.som.com/careers"},
 {n:"NBBJ",s:"Architecture",u:"https://www.nbbj.com/careers"},
 {n:"Perkins & Will",s:"Architecture",u:"https://perkinswill.com/careers"},
+{n:"EDF",s:"Climate/Sustainability",u:"https://www.edf.org/careers"},
+{n:"RMI",s:"Climate/Sustainability",u:"https://www.rmi.org/careers"},
 {n:"The Nature Conservancy",s:"Climate/Sustainability",u:"https://careers.nature.org"},
-{n:"Urban Land Institute",s:"Real Estate",u:"https://www.uli.org/careers"},
-{n:"American Planning Association",s:"Urban Planning",u:"https://planning.org/careers"},
-{n:"New York Public Library",s:"Nonprofit",u:"https://www.nypl.org/careers"},
-{n:"Metropolitan Museum of Art",s:"Nonprofit",u:"https://www.metmuseum.org/careers"},
-{n:"American Museum of Natural History",s:"Nonprofit",u:"https://www.amnh.org/careers"},
-{n:"Brooklyn Museum",s:"Nonprofit",u:"https://www.brooklynmuseum.org/careers"},
-{n:"NYC Parks",s:"Government",u:"https://www.nycgovparks.org/careers"},
-{n:"NYC Planning Department",s:"Government",u:"https://www1.nyc.gov/site/planning/careers/careers.html"},
-{n:"Port Authority of NY & NJ",s:"Government",u:"https://www.panynj.gov/careers"},
-{n:"Trust for Public Land",s:"Parks/Recreation",u:"https://www.tpl.org/careers"},
+{n:"Arc.dev",s:"Tech Jobs",u:"https://arc.dev"},
+{n:"AngelList",s:"Startup Jobs",u:"https://angel.co"},
+{n:"Glassdoor",s:"Job Board",u:"https://www.glassdoor.com"},
+{n:"Built.in",s:"Tech Jobs",u:"https://builtin.com"},
+{n:"We Work Remotely",s:"Remote Jobs",u:"https://weworkremotely.com"},
+{n:"Idealist",s:"Nonprofit Jobs",u:"https://www.idealist.org"},
+{n:"New York Jobs.com",s:"Government",u:"https://cityjobs.nyc.gov"},
+{n:"APA Job Board",s:"Planning",u:"https://planning.org"},
+{n:"Unitarian Universalist Association",s:"Nonprofit",u:"https://www.uua.org/careers"},
+{n:"American Civil Liberties Union",s:"Nonprofit",u:"https://www.aclu.org/careers"},
+{n:"Planned Parenthood",s:"Nonprofit",u:"https://www.plannedparenthood.org/careers"},
 {n:"Sierra Club",s:"Environmental",u:"https://www.sierraclub.org/careers"},
+{n:"Natural Resources Defense Council",s:"Environmental",u:"https://www.nrdc.org/careers"},
 {n:"Conservation International",s:"Environmental",u:"https://www.conservation.org/careers"},
+{n:"The Wilderness Society",s:"Environmental",u:"https://www.wilderness.org/careers"},
+{n:"Trust for Public Land",s:"Parks/Recreation",u:"https://www.tpl.org/careers"},
+{n:"Rails to Trails Conservancy",s:"Environmental",u:"https://www.railstotrails.org/careers"},
+{n:"American Rivers",s:"Environmental",u:"https://www.americanrivers.org/careers"},
+{n:"Audubon Society",s:"Environmental",u:"https://www.audubon.org/careers"},
 {n:"World Wildlife Fund",s:"Environmental",u:"https://www.worldwildlife.org/careers"},
+{n:"The Climate Reality Project",s:"Climate",u:"https://climaterealityproject.org/careers"},
+{n:"350.org",s:"Climate",u:"https://350.org/careers"},
+{n:"Sunrise Movement",s:"Climate",u:"https://www.sunrisemovement.org/careers"},
+{n:"Clean Air Task Force",s:"Climate",u:"https://www.catf.us/careers"},
+{n:"Carbon Trust",s:"Climate",u:"https://www.carbontrust.com/careers"},
+{n:"Carbon Disclosure Project",s:"Climate",u:"https://www.cdp.net/careers"},
+{n:"Cities for Climate Protection",s:"Climate",u:"https://icleiusa.org/careers"},
+{n:"Local Initiatives Support Corporation",s:"Community Development",u:"https://www.lisc.org/careers"},
 {n:"Enterprise Community Partners",s:"Community Development",u:"https://www.enterprisecommunity.org/careers"},
 {n:"NeighborWorks",s:"Community Development",u:"https://www.nw.org/careers"},
+{n:"Ashoka",s:"Social Enterprise",u:"https://www.ashoka.org/careers"},
+{n:"Acumen",s:"Social Enterprise",u:"https://acumen.org/careers"},
+{n:"Social Venture Network",s:"Social Enterprise",u:"https://svn.org/careers"},
+{n:"B Lab",s:"Social Enterprise",u:"https://bcorporation.net/careers"},
 {n:"New America",s:"Think Tank",u:"https://www.newamerica.org/careers"},
 {n:"Center for American Progress",s:"Think Tank",u:"https://www.americanprogress.org/careers"},
 {n:"Council on Foreign Relations",s:"Think Tank",u:"https://www.cfr.org/careers"},
+{n:"American Enterprise Institute",s:"Think Tank",u:"https://www.aei.org/careers"},
+{n:"Cato Institute",s:"Think Tank",u:"https://www.cato.org/careers"},
+{n:"Heritage Foundation",s:"Think Tank",u:"https://www.heritage.org/careers"},
 {n:"Rand Corporation",s:"Research",u:"https://www.rand.org/careers"},
 {n:"MIT Media Lab",s:"Research",u:"https://www.media.mit.edu/careers"},
 {n:"Stanford Design School",s:"Design/Research",u:"https://dschool.stanford.edu/careers"},
+{n:"Harvard GSD",s:"Design/Research",u:"https://www.gsd.harvard.edu/careers"},
 {n:"Columbia University",s:"Education",u:"https://www.columbia.edu/careers"},
 {n:"NYU",s:"Education",u:"https://www.nyu.edu/careers"},
-{n:"CUNY",s:"Government/Education",u:"https://www.cuny.edu/careers"}
+{n:"CUNY",s:"Government/Education",u:"https://www.cuny.edu/careers"},
+{n:"The New York Public Library",s:"Nonprofit",u:"https://www.nypl.org/careers"},
+{n:"The Metropolitan Museum of Art",s:"Nonprofit",u:"https://www.metmuseum.org/careers"},
+{n:"American Museum of Natural History",s:"Nonprofit",u:"https://www.amnh.org/careers"},
+{n:"Brooklyn Museum",s:"Nonprofit",u:"https://www.brooklynmuseum.org/careers"},
+{n:"Lower East Side Tenement Museum",s:"Nonprofit",u:"https://tenement.org/careers"},
+{n:"NYC Parks",s:"Government",u:"https://www.nycgovparks.org/careers"},
+{n:"NYC Planning Department",s:"Government",u:"https://www1.nyc.gov/site/planning/careers/careers.html"},
+{n:"New York State Department of Planning",s:"Government",u:"https://www.dec.ny.gov/careers"},
+{n:"Port Authority of NY & NJ",s:"Government",u:"https://www.panynj.gov/careers"},
+{n:"NYC Office of Sustainability",s:"Government",u:"https://www1.nyc.gov/site/sustainability/careers/careers.html"}
 ];
 
 var filteredJobs=JOBS;var sortKey='score';var orgSortKey='n';var orgSortDir=1;var ratings={};var appTracker=[];var orgStatus={};
