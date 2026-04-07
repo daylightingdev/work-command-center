@@ -4,14 +4,13 @@ const { spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  res.setHeader('Content-Type', 'application/json');
 
   if (req.method === 'OPTIONS') {
     res.writeHead(200);
@@ -20,11 +19,19 @@ const server = http.createServer((req, res) => {
   }
 
   if (req.url === '/api/refresh' && req.method === 'POST') {
+    res.setHeader('Content-Type', 'application/json');
     console.log('\n🔄 Refresh triggered from dashboard...');
     refreshDashboard(res);
   } else if (req.url === '/api/status' && req.method === 'GET') {
+    res.setHeader('Content-Type', 'application/json');
     getStatus(res);
+  } else if (req.url === '/' || req.url === '/index.html') {
+    res.setHeader('Content-Type', 'text/html');
+    const html = fs.readFileSync('index.html', 'utf8');
+    res.writeHead(200);
+    res.end(html);
   } else {
+    res.setHeader('Content-Type', 'application/json');
     res.writeHead(404);
     res.end(JSON.stringify({ error: 'Not found' }));
   }
