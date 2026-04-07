@@ -7,6 +7,7 @@ puppeteer.use(StealthPlugin());
 
 // Job board search URLs with built-in filtering
 const JOB_BOARDS = [
+  // LinkedIn
   {
     name: 'LinkedIn - Urban Planning',
     url: 'https://www.linkedin.com/jobs/search/?keywords=urban%20planning&location=New%20York%2C%20United%20States&sortBy=DD',
@@ -16,12 +17,45 @@ const JOB_BOARDS = [
     url: 'https://www.linkedin.com/jobs/search/?keywords=urban%20designer&location=Remote&sortBy=DD',
   },
   {
-    name: 'LinkedIn - Climate Researcher',
-    url: 'https://www.linkedin.com/jobs/search/?keywords=climate%20research&location=Remote&sortBy=DD',
+    name: 'LinkedIn - Climate/Sustainability',
+    url: 'https://www.linkedin.com/jobs/search/?keywords=climate%20OR%20sustainability&location=Remote&sortBy=DD',
   },
+  {
+    name: 'LinkedIn - Policy Research',
+    url: 'https://www.linkedin.com/jobs/search/?keywords=policy%20OR%20research&location=New%20York&sortBy=DD',
+  },
+  // Indeed
   {
     name: 'Indeed - Urban Planning',
     url: 'https://www.indeed.com/jobs?q=urban+planning&l=New+York',
+  },
+  {
+    name: 'Indeed - Climate',
+    url: 'https://www.indeed.com/jobs?q=climate+OR+sustainability&l=Remote',
+  },
+  // Idealist.org
+  {
+    name: 'Idealist - Nonprofits NYC',
+    url: 'https://idealist.org/en/jobs?job_type_ids=1,2,3&location_ids=New%20York&commit=Search',
+  },
+  {
+    name: 'Idealist - Remote Nonprofits',
+    url: 'https://idealist.org/en/jobs?job_type_ids=1,2,3&remote=true&commit=Search',
+  },
+  // 80,000 Hours
+  {
+    name: '80000hours - All',
+    url: 'https://jobs.80000hours.org',
+  },
+  // We Work Remotely
+  {
+    name: 'We Work Remotely - Policy/Planning',
+    url: 'https://weworkremotely.com',
+  },
+  // Built.in
+  {
+    name: 'Built.in - NYC',
+    url: 'https://builtin.com/jobs/new-york',
   }
 ];
 
