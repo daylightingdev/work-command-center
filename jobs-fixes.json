@@ -1,0 +1,313 @@
+{
+  "instruction": "For each broken job, find the actual working URL and add entry below",
+  "brokenJobs": [
+    {
+      "id": 1,
+      "title": "VP, Policy and Advocacy",
+      "company": "Nonprofit New York",
+      "currentUrl": "https://www.idealist.org/en/nonprofit-job/1001",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Senior Advisor",
+      "company": "NYC Mayor's Office",
+      "currentUrl": "https://cityjobs.nyc.gov/job/12345",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Deputy Chief of Staff",
+      "company": "NYC Mayor's Office",
+      "currentUrl": "https://cityjobs.nyc.gov/job/12346",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Director of Organizing",
+      "company": "NYC Mayor's Office",
+      "currentUrl": "https://cityjobs.nyc.gov/job/12347",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Senior Policy Analyst",
+      "company": "NYC Dept of Transportation",
+      "currentUrl": "https://cityjobs.nyc.gov/job/12348",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "VP, Programs & Capacity Building",
+      "company": "Nonprofit New York",
+      "currentUrl": "https://www.idealist.org/en/nonprofit-job/1002",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Policy Analyst",
+      "company": "NYC Dept of Social Services",
+      "currentUrl": "https://cityjobs.nyc.gov/job/12349",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "VP of Finance and Operations",
+      "company": "iMentor",
+      "currentUrl": "https://www.idealist.org/en/nonprofit-job/1003",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "VP, External Relations",
+      "company": "Partnership To End Homelessness",
+      "currentUrl": "https://www.idealist.org/en/nonprofit-job/1004",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Senior Executive Director",
+      "company": "LISC",
+      "currentUrl": "https://www.idealist.org/en/nonprofit-job/1005",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Director of Supportive Housing",
+      "company": "NYC HRA",
+      "currentUrl": "https://cityjobs.nyc.gov/job/12350",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 23,
+      "title": "District Manager",
+      "company": "Brooklyn Community Board 7",
+      "currentUrl": "https://cityjobs.nyc.gov/job/12351",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 31,
+      "title": "Geographic Analyst",
+      "company": "City of New York",
+      "currentUrl": "https://cityjobs.nyc.gov/job/12352",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 33,
+      "title": "Strategy & Operations Lead",
+      "company": "Code for America",
+      "currentUrl": "https://codeforamerica.org/careers",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 34,
+      "title": "Research Manager",
+      "company": "Urban Institute",
+      "currentUrl": "https://www.urban.org/careers",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 35,
+      "title": "Policy Director",
+      "company": "Brookings Institution",
+      "currentUrl": "https://www.brookings.edu/careers",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 36,
+      "title": "Associate Director",
+      "company": "Regional Plan Association",
+      "currentUrl": "https://www.rpa.org/careers",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 37,
+      "title": "Senior Advisor, Climate & Communities",
+      "company": "NACTO",
+      "currentUrl": "https://nacto.org/careers",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 38,
+      "title": "Director of Partnerships",
+      "company": "Remix",
+      "currentUrl": "https://www.remix.com/careers",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 40,
+      "title": "Strategy Consultant",
+      "company": "Project for Public Spaces",
+      "currentUrl": "https://www.pps.org/about/jobs",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 42,
+      "title": "Senior Architect, Urban Design",
+      "company": "SOM",
+      "currentUrl": "https://www.som.com/careers",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 43,
+      "title": "Director of Strategy",
+      "company": "Gehl",
+      "currentUrl": "https://gehl.dk/about/careers",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 44,
+      "title": "Policy & Advocacy Manager",
+      "company": "80000hours.org",
+      "currentUrl": "https://jobs.80000hours.org/jobs/1234",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 45,
+      "title": "Director of Research",
+      "company": "ERA-Co",
+      "currentUrl": "https://www.era-co.com/careers",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 46,
+      "title": "Operations Manager",
+      "company": "The Nature Conservancy",
+      "currentUrl": "https://careers.nature.org",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 48,
+      "title": "Senior Policy Fellow",
+      "company": "New America",
+      "currentUrl": "https://www.newamerica.org/careers",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 49,
+      "title": "Director of Programs",
+      "company": "NeighborWorks",
+      "currentUrl": "https://www.nw.org/careers",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    },
+    {
+      "id": 50,
+      "title": "Senior Strategist",
+      "company": "Center for American Progress",
+      "currentUrl": "https://www.americanprogress.org/careers",
+      "correctUrl": "TODO: Find and paste actual working URL here",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ]
+    }
+  ]
+}

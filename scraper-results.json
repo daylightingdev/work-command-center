@@ -1,0 +1,1302 @@
+{
+  "timestamp": "2026-04-07T02:37:10.157Z",
+  "jobs": [
+    {
+      "id": 1,
+      "title": "VP, Policy and Advocacy",
+      "company": "Nonprofit New York",
+      "url": "https://www.idealist.org/en/nonprofit-job/1001",
+      "status": "invalid",
+      "statusCode": 404,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Senior Advisor",
+      "company": "NYC Mayor's Office",
+      "url": "https://cityjobs.nyc.gov/job/12345",
+      "status": "invalid",
+      "statusCode": 301,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Deputy Chief of Staff",
+      "company": "NYC Mayor's Office",
+      "url": "https://cityjobs.nyc.gov/job/12346",
+      "status": "invalid",
+      "statusCode": 301,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "VP Revenue Strategy",
+      "company": "Metropolitan Transportation Authority",
+      "url": "https://www.linkedin.com/jobs/view/4371310428",
+      "status": "valid",
+      "requirements": [
+        "Resume",
+        "Portfolio",
+        "Assessments"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 5,
+      "title": "Design Strategist – Data Analytics",
+      "company": "Gensler",
+      "url": "https://www.linkedin.com/jobs/view/4388232903",
+      "status": "valid",
+      "requirements": [
+        "Cover Letter",
+        "Portfolio",
+        "Video Interview"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 6,
+      "title": "Director of Organizing",
+      "company": "NYC Mayor's Office",
+      "url": "https://cityjobs.nyc.gov/job/12347",
+      "status": "invalid",
+      "statusCode": 301,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "AVP Operations Planning",
+      "company": "Metropolitan Transportation Authority",
+      "url": "https://www.linkedin.com/jobs/view/4368951257",
+      "status": "valid",
+      "requirements": [
+        "Resume",
+        "Portfolio",
+        "Assessments"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 8,
+      "title": "Senior Manager, Planning & Design",
+      "company": "Waterfront Alliance",
+      "url": "https://www.linkedin.com/jobs/view/4384056396",
+      "status": "valid",
+      "requirements": [
+        "Resume",
+        "Assessments"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 9,
+      "title": "Associate, Climate Strategy",
+      "company": "Buro Happold",
+      "url": "https://www.linkedin.com/jobs/view/4364961373",
+      "status": "valid",
+      "requirements": [
+        "Portfolio",
+        "Assessments"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 10,
+      "title": "Senior Policy Analyst",
+      "company": "NYC Dept of Transportation",
+      "url": "https://cityjobs.nyc.gov/job/12348",
+      "status": "invalid",
+      "statusCode": 301,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "VP, Programs & Capacity Building",
+      "company": "Nonprofit New York",
+      "url": "https://www.idealist.org/en/nonprofit-job/1002",
+      "status": "invalid",
+      "statusCode": 404,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Policy Analyst",
+      "company": "NYC Dept of Social Services",
+      "url": "https://cityjobs.nyc.gov/job/12349",
+      "status": "invalid",
+      "statusCode": 301,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Managing Director, Sustainable Finance",
+      "company": "Environmental Defense Fund",
+      "url": "https://www.linkedin.com/jobs/view/4383953988",
+      "status": "valid",
+      "requirements": [
+        "Resume",
+        "Cover Letter",
+        "Assessments"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 14,
+      "title": "VP of Finance and Operations",
+      "company": "iMentor",
+      "url": "https://www.idealist.org/en/nonprofit-job/1003",
+      "status": "invalid",
+      "statusCode": 404,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "VP, External Relations",
+      "company": "Partnership To End Homelessness",
+      "url": "https://www.idealist.org/en/nonprofit-job/1004",
+      "status": "invalid",
+      "statusCode": 404,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Senior Executive Director",
+      "company": "LISC",
+      "url": "https://www.idealist.org/en/nonprofit-job/1005",
+      "status": "invalid",
+      "statusCode": 404,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Director of Supportive Housing",
+      "company": "NYC HRA",
+      "url": "https://cityjobs.nyc.gov/job/12350",
+      "status": "invalid",
+      "statusCode": 301,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Consultant, Infrastructure Resilience",
+      "company": "WSP",
+      "url": "https://www.linkedin.com/jobs/view/4392034541",
+      "status": "valid",
+      "requirements": [
+        "Resume",
+        "Portfolio",
+        "Assessments"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 19,
+      "title": "Special Assistant & Research Analyst",
+      "company": "HR&A Advisors",
+      "url": "https://www.linkedin.com/jobs/view/4379148851",
+      "status": "valid",
+      "requirements": [
+        "Resume",
+        "Cover Letter",
+        "Portfolio",
+        "Video Interview",
+        "References"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 20,
+      "title": "Economic Development Fellow",
+      "company": "Bloomberg Philanthropies",
+      "url": "https://www.linkedin.com/jobs/view/4387481521",
+      "status": "valid",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 21,
+      "title": "Climate Finance & Policy Consultant",
+      "company": "GiveDirectly",
+      "url": "https://www.linkedin.com/jobs/view/4385605282",
+      "status": "valid",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 22,
+      "title": "Science & Planning Program Associate",
+      "company": "Open Space Institute",
+      "url": "https://www.linkedin.com/jobs/view/4390366073",
+      "status": "valid",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 23,
+      "title": "District Manager",
+      "company": "Brooklyn Community Board 7",
+      "url": "https://cityjobs.nyc.gov/job/12351",
+      "status": "invalid",
+      "statusCode": 301,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Manager, Economic Consulting",
+      "company": "Hatch",
+      "url": "https://www.linkedin.com/jobs/view/4366015429",
+      "status": "valid",
+      "requirements": [
+        "Resume",
+        "Assessments"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 25,
+      "title": "Managing Director, Project Development",
+      "company": "WSP",
+      "url": "https://www.linkedin.com/jobs/view/4304467986",
+      "status": "valid",
+      "requirements": [
+        "Resume",
+        "Portfolio"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 26,
+      "title": "Urban Designer & Planner – Transportation",
+      "company": "Stantec",
+      "url": "https://www.linkedin.com/jobs/view/4388251082",
+      "status": "valid",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 27,
+      "title": "Research Associate",
+      "company": "Social Science Research Council",
+      "url": "https://www.linkedin.com/jobs/view/4354015139",
+      "status": "valid",
+      "requirements": [
+        "Resume",
+        "Cover Letter",
+        "Assessments",
+        "Writing Sample"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 28,
+      "title": "Project Manager, Africa Initiative",
+      "company": "NRDC",
+      "url": "https://www.linkedin.com/jobs/view/4370724764",
+      "status": "valid",
+      "requirements": [
+        "Resume",
+        "Cover Letter",
+        "Assessments"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 29,
+      "title": "Pursuit Manager, Community Development",
+      "company": "Stantec",
+      "url": "https://www.linkedin.com/jobs/view/4389395312",
+      "status": "valid",
+      "requirements": [
+        "Resume",
+        "Assessments"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 30,
+      "title": "Senior Sustainability Analyst",
+      "company": "Broadridge",
+      "url": "https://www.linkedin.com/jobs/view/4358338925",
+      "status": "valid",
+      "requirements": [
+        "Resume",
+        "Portfolio",
+        "Assessments"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 31,
+      "title": "Geographic Analyst",
+      "company": "City of New York",
+      "url": "https://cityjobs.nyc.gov/job/12352",
+      "status": "invalid",
+      "statusCode": 301,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 32,
+      "title": "Senior Partner Success Manager",
+      "company": "Via",
+      "url": "https://job-boards.greenhouse.io/via/jobs/7562971002",
+      "status": "valid",
+      "requirements": [
+        "Resume",
+        "Cover Letter"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 33,
+      "title": "Strategy & Operations Lead",
+      "company": "Code for America",
+      "url": "https://codeforamerica.org/careers",
+      "status": "invalid",
+      "statusCode": 403,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 34,
+      "title": "Research Manager",
+      "company": "Urban Institute",
+      "url": "https://www.urban.org/careers",
+      "status": "invalid",
+      "statusCode": 301,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 35,
+      "title": "Policy Director",
+      "company": "Brookings Institution",
+      "url": "https://www.brookings.edu/careers",
+      "status": "invalid",
+      "statusCode": 301,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 36,
+      "title": "Associate Director",
+      "company": "Regional Plan Association",
+      "url": "https://www.rpa.org/careers",
+      "status": "invalid",
+      "statusCode": 301,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 37,
+      "title": "Senior Advisor, Climate & Communities",
+      "company": "NACTO",
+      "url": "https://nacto.org/careers",
+      "status": "invalid",
+      "statusCode": 301,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 38,
+      "title": "Director of Partnerships",
+      "company": "Remix",
+      "url": "https://www.remix.com/careers",
+      "status": "invalid",
+      "statusCode": 301,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 39,
+      "title": "Senior Product Manager",
+      "company": "Odyssey",
+      "url": "https://www.theodysseyapp.com/careers",
+      "status": "valid",
+      "requirements": [
+        "Requirements not specified - check application portal"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 40,
+      "title": "Strategy Consultant",
+      "company": "Project for Public Spaces",
+      "url": "https://www.pps.org/about/jobs",
+      "status": "invalid",
+      "statusCode": 404,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 41,
+      "title": "Design Research Lead",
+      "company": "IDEO",
+      "url": "https://www.ideo.com/careers",
+      "status": "valid",
+      "requirements": [
+        "References"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 42,
+      "title": "Senior Architect, Urban Design",
+      "company": "SOM",
+      "url": "https://www.som.com/careers",
+      "status": "invalid",
+      "statusCode": 301,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 43,
+      "title": "Director of Strategy",
+      "company": "Gehl",
+      "url": "https://gehl.dk/about/careers",
+      "status": "invalid",
+      "statusCode": 455,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 44,
+      "title": "Policy & Advocacy Manager",
+      "company": "80000hours.org",
+      "url": "https://jobs.80000hours.org/jobs/1234",
+      "status": "invalid",
+      "statusCode": 404,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 45,
+      "title": "Director of Research",
+      "company": "ERA-Co",
+      "url": "https://www.era-co.com/careers",
+      "status": "invalid",
+      "statusCode": 301,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 46,
+      "title": "Operations Manager",
+      "company": "The Nature Conservancy",
+      "url": "https://careers.nature.org",
+      "status": "invalid",
+      "statusCode": 301,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 47,
+      "title": "Program Director",
+      "company": "Enterprise Community Partners",
+      "url": "https://www.enterprisecommunity.org/careers",
+      "status": "valid",
+      "requirements": [
+        "Video Interview"
+      ],
+      "statusCode": 200
+    },
+    {
+      "id": 48,
+      "title": "Senior Policy Fellow",
+      "company": "New America",
+      "url": "https://www.newamerica.org/careers",
+      "status": "invalid",
+      "statusCode": 301,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 49,
+      "title": "Director of Programs",
+      "company": "NeighborWorks",
+      "url": "https://www.nw.org/careers",
+      "status": "invalid",
+      "statusCode": 301,
+      "requirements": [
+        "Check posting manually"
+      ]
+    },
+    {
+      "id": 50,
+      "title": "Senior Strategist",
+      "company": "Center for American Progress",
+      "url": "https://www.americanprogress.org/careers",
+      "status": "invalid",
+      "statusCode": 404,
+      "requirements": [
+        "Check posting manually"
+      ]
+    }
+  ],
+  "organizations": [
+    {
+      "name": "Design Trust for Public Space",
+      "status": "unreachable",
+      "error": "getaddrinfo ENOTFOUND designtrustnyc.org",
+      "url": "https://designtrustnyc.org/careers"
+    },
+    {
+      "name": "Downtown Brooklyn Partnership",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://downtownbrooklyn.com/about/jobs",
+      "to": "https://downtownbrooklyn.com/jobs-rfps/"
+    },
+    {
+      "name": "HKS Inc",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.hksinc.com/careers",
+      "to": "https://www.hksinc.com/careers/"
+    },
+    {
+      "name": "Via",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.ridewithvia.com/careers",
+      "to": "https://ridewithvia.com/careers"
+    },
+    {
+      "name": "Replica",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://replicahq.com/careers",
+      "to": "https://www.replicahq.com/careers"
+    },
+    {
+      "name": "Nonprofit New York",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://nonprofitnewyork.org/careers",
+      "to": "https://www.nonprofitnewyork.org/about-us/careers/"
+    },
+    {
+      "name": "Metropolitan Transportation Authority",
+      "status": "error",
+      "statusCode": 403,
+      "url": "https://new.mta.info/careers"
+    },
+    {
+      "name": "Gensler",
+      "status": "valid",
+      "statusCode": 200,
+      "url": "https://www.gensler.com/careers"
+    },
+    {
+      "name": "NYC Mayor's Office",
+      "status": "valid",
+      "statusCode": 200,
+      "url": "https://cityjobs.nyc.gov"
+    },
+    {
+      "name": "Buro Happold",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.burohappold.com/careers",
+      "to": "https://www.burohappold.com/careers/"
+    },
+    {
+      "name": "Waterfront Alliance",
+      "status": "unreachable",
+      "error": "getaddrinfo ENOTFOUND www.waterfront-alliance.org",
+      "url": "https://www.waterfront-alliance.org/careers"
+    },
+    {
+      "name": "HR&A Advisors",
+      "status": "valid",
+      "statusCode": 200,
+      "url": "https://www.hraadvisors.com/careers/"
+    },
+    {
+      "name": "NYC Dept of Transportation",
+      "status": "error",
+      "statusCode": 404,
+      "url": "https://www.nyc.gov/site/dot/careers/careers.page"
+    },
+    {
+      "name": "NYC Dept of Social Services",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www1.nyc.gov/site/dss/careers/careers.html",
+      "to": "https://www.nyc.gov:443/site/dss/careers/careers.html"
+    },
+    {
+      "name": "Environmental Defense Fund",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.edf.org/careers",
+      "to": "https://www.edf.org/environmental-careers"
+    },
+    {
+      "name": "iMentor",
+      "status": "error",
+      "statusCode": 404,
+      "url": "https://imentor.org/careers"
+    },
+    {
+      "name": "Partnership To End Homelessness",
+      "status": "unreachable",
+      "error": "Timeout",
+      "url": "https://www.peh.org/careers"
+    },
+    {
+      "name": "LISC",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.lisc.org/about-us/careers",
+      "to": "/about-us/careers/"
+    },
+    {
+      "name": "NYC HRA",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www1.nyc.gov/site/hra/careers/careers.html",
+      "to": "https://www.nyc.gov:443/site/hra/careers/careers.html"
+    },
+    {
+      "name": "JLL",
+      "status": "unreachable",
+      "error": "getaddrinfo ENOTFOUND careers.jll.com",
+      "url": "https://careers.jll.com"
+    },
+    {
+      "name": "Cushman & Wakefield",
+      "status": "redirect",
+      "statusCode": 302,
+      "from": "https://careers.cushmanwakefield.com",
+      "to": "/en/"
+    },
+    {
+      "name": "CBRE",
+      "status": "redirect",
+      "statusCode": 302,
+      "from": "https://careers.cbre.com",
+      "to": "https://careers.cbre.com/en_US/careers"
+    },
+    {
+      "name": "WSP",
+      "status": "error",
+      "statusCode": 403,
+      "url": "https://www.wsp.com/en-US/careers"
+    },
+    {
+      "name": "Bloomberg Philanthropies",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.bloomberg.org/careers",
+      "to": "https://www.bloomberg.org/about/careers/"
+    },
+    {
+      "name": "GiveDirectly",
+      "status": "valid",
+      "statusCode": 200,
+      "url": "https://www.givedirectly.org/careers"
+    },
+    {
+      "name": "Open Space Institute",
+      "status": "unreachable",
+      "error": "getaddrinfo ENOTFOUND www.openspacesinstitute.org",
+      "url": "https://www.openspacesinstitute.org/careers"
+    },
+    {
+      "name": "Brooklyn Community Board 7",
+      "status": "error",
+      "statusCode": 404,
+      "url": "https://www.nyc.gov/site/cau/community-boards/brooklyn.page"
+    },
+    {
+      "name": "Hatch",
+      "status": "unreachable",
+      "error": "Timeout",
+      "url": "https://www.wearehatch.com/careers"
+    },
+    {
+      "name": "Stantec",
+      "status": "valid",
+      "statusCode": 200,
+      "url": "https://www.stantec.com/en/careers"
+    },
+    {
+      "name": "Social Science Research Council",
+      "status": "error",
+      "statusCode": 404,
+      "url": "https://www.ssrc.org/about/careers"
+    },
+    {
+      "name": "NRDC",
+      "status": "valid",
+      "statusCode": 200,
+      "url": "https://www.nrdc.org/careers"
+    },
+    {
+      "name": "Broadridge",
+      "status": "unreachable",
+      "error": "getaddrinfo ENOTFOUND careers.broadridge.com",
+      "url": "https://careers.broadridge.com"
+    },
+    {
+      "name": "City of New York",
+      "status": "error",
+      "statusCode": 404,
+      "url": "https://www.nyc.gov/site/olr/careers/careers.page"
+    },
+    {
+      "name": "Urban Institute",
+      "status": "error",
+      "statusCode": 403,
+      "url": "https://www.urban.org/careers"
+    },
+    {
+      "name": "Brookings Institution",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.brookings.edu/careers",
+      "to": "https://www.brookings.edu/careers/"
+    },
+    {
+      "name": "Knight Foundation",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.knightfoundation.org/careers",
+      "to": "https://knightfoundation.org/about/careers/"
+    },
+    {
+      "name": "Gates Foundation",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.gatesfoundation.org/careers",
+      "to": "https://www.gatesfoundation.org/about/careers"
+    },
+    {
+      "name": "Mellon Foundation",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://mellon.org/careers",
+      "to": "https://www.mellon.org/careers"
+    },
+    {
+      "name": "Regional Plan Association",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.rpa.org/careers",
+      "to": "https://rpa.org/careers"
+    },
+    {
+      "name": "NACTO",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://nacto.org/careers",
+      "to": "/job-board/"
+    },
+    {
+      "name": "Code for America",
+      "status": "error",
+      "statusCode": 403,
+      "url": "https://codeforamerica.org/careers"
+    },
+    {
+      "name": "Remix",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.remix.com/careers",
+      "to": "https://ridewithvia.com:443/careers"
+    },
+    {
+      "name": "Odyssey",
+      "status": "valid",
+      "statusCode": 200,
+      "url": "https://www.theodysseyapp.com/careers"
+    },
+    {
+      "name": "Gehl",
+      "status": "error",
+      "statusCode": 455,
+      "url": "https://gehl.dk/about/careers"
+    },
+    {
+      "name": "Project for Public Spaces",
+      "status": "error",
+      "statusCode": 404,
+      "url": "https://www.pps.org/about/jobs"
+    },
+    {
+      "name": "IDEO",
+      "status": "valid",
+      "statusCode": 200,
+      "url": "https://www.ideo.com/careers"
+    },
+    {
+      "name": "SOM",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.som.com/careers",
+      "to": "https://www.som.com/culture/careers/"
+    },
+    {
+      "name": "NBBJ",
+      "status": "valid",
+      "statusCode": 200,
+      "url": "https://www.nbbj.com/careers"
+    },
+    {
+      "name": "Perkins & Will",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://perkinswill.com/careers",
+      "to": "https://perkinswill.com/careers/"
+    },
+    {
+      "name": "RMI",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.rmi.org/careers",
+      "to": "https://rmi.org/careers"
+    },
+    {
+      "name": "The Nature Conservancy",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://careers.nature.org",
+      "to": "https://www.nature.org/en-us/about-us/careers/"
+    },
+    {
+      "name": "80000hours.org",
+      "status": "valid",
+      "statusCode": 200,
+      "url": "https://jobs.80000hours.org"
+    },
+    {
+      "name": "ERA-Co",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.era-co.com/careers",
+      "to": "https://era-co.com/careers/"
+    },
+    {
+      "name": "Arc.dev",
+      "status": "valid",
+      "statusCode": 200,
+      "url": "https://arc.dev"
+    },
+    {
+      "name": "AngelList",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://angel.co",
+      "to": "https://wellfound.com/"
+    },
+    {
+      "name": "Glassdoor",
+      "status": "error",
+      "statusCode": 308,
+      "url": "https://www.glassdoor.com"
+    },
+    {
+      "name": "Built.in",
+      "status": "valid",
+      "statusCode": 200,
+      "url": "https://builtin.com"
+    },
+    {
+      "name": "We Work Remotely",
+      "status": "valid",
+      "statusCode": 200,
+      "url": "https://weworkremotely.com"
+    },
+    {
+      "name": "Idealist",
+      "status": "redirect",
+      "statusCode": 302,
+      "from": "https://www.idealist.org",
+      "to": "https://www.idealist.org/en"
+    },
+    {
+      "name": "New York Jobs.com",
+      "status": "valid",
+      "statusCode": 200,
+      "url": "https://cityjobs.nyc.gov"
+    },
+    {
+      "name": "APA Job Board",
+      "status": "valid",
+      "statusCode": 200,
+      "url": "https://planning.org"
+    },
+    {
+      "name": "American Civil Liberties Union",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.aclu.org/careers",
+      "to": "https://www.aclu.org/careers/"
+    },
+    {
+      "name": "Planned Parenthood",
+      "status": "error",
+      "statusCode": 403,
+      "url": "https://www.plannedparenthood.org/careers"
+    },
+    {
+      "name": "Sierra Club",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.sierraclub.org/careers",
+      "to": "https://www.sierraclub.org/careers-jobs-employment"
+    },
+    {
+      "name": "Conservation International",
+      "status": "redirect",
+      "statusCode": 307,
+      "from": "https://www.conservation.org/careers",
+      "to": "/conservation-international-jobs"
+    },
+    {
+      "name": "The Wilderness Society",
+      "status": "error",
+      "statusCode": 404,
+      "url": "https://www.wilderness.org/careers"
+    },
+    {
+      "name": "Trust for Public Land",
+      "status": "valid",
+      "statusCode": 200,
+      "url": "https://www.tpl.org/careers"
+    },
+    {
+      "name": "American Rivers",
+      "status": "redirect",
+      "statusCode": 302,
+      "from": "https://www.americanrivers.org/careers",
+      "to": "/about-us/careers/"
+    },
+    {
+      "name": "Audubon Society",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.audubon.org/careers",
+      "to": "https://www.audubon.org/about/careers"
+    },
+    {
+      "name": "World Wildlife Fund",
+      "status": "error",
+      "statusCode": 403,
+      "url": "https://www.worldwildlife.org/careers"
+    },
+    {
+      "name": "The Climate Reality Project",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://climaterealityproject.org/careers",
+      "to": "https://www.climaterealityproject.org/careers"
+    },
+    {
+      "name": "350.org",
+      "status": "redirect",
+      "statusCode": 302,
+      "from": "https://350.org/careers",
+      "to": "https://350.org/careers?r=US&c=NA"
+    },
+    {
+      "name": "Sunrise Movement",
+      "status": "error",
+      "statusCode": 404,
+      "url": "https://www.sunrisemovement.org/careers"
+    },
+    {
+      "name": "Clean Air Task Force",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.catf.us/careers",
+      "to": "https://www.catf.us/careers/"
+    },
+    {
+      "name": "Carbon Trust",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.carbontrust.com/careers",
+      "to": "https://www.carbontrust.com/who-we-are/our-career-opportunities"
+    },
+    {
+      "name": "Carbon Disclosure Project",
+      "status": "redirect",
+      "statusCode": 307,
+      "from": "https://www.cdp.net/careers",
+      "to": "/en/careers"
+    },
+    {
+      "name": "Cities for Climate Protection",
+      "status": "error",
+      "statusCode": 404,
+      "url": "https://icleiusa.org/careers"
+    },
+    {
+      "name": "Local Initiatives Support Corporation",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.lisc.org/careers",
+      "to": "/careers/"
+    },
+    {
+      "name": "Enterprise Community Partners",
+      "status": "valid",
+      "statusCode": 200,
+      "url": "https://www.enterprisecommunity.org/careers"
+    },
+    {
+      "name": "NeighborWorks",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.nw.org/careers",
+      "to": "https://www.neighborworks.org/"
+    },
+    {
+      "name": "Futures Without Violence",
+      "status": "error",
+      "statusCode": 404,
+      "url": "https://www.futureswithoutviolence.org/careers"
+    },
+    {
+      "name": "National Council of La Raza",
+      "status": "unreachable",
+      "error": "Timeout",
+      "url": "https://www.nclr.org/careers"
+    },
+    {
+      "name": "Center for American Progress",
+      "status": "error",
+      "statusCode": 404,
+      "url": "https://www.americanprogress.org/careers"
+    },
+    {
+      "name": "Council on Foreign Relations",
+      "status": "error",
+      "statusCode": 404,
+      "url": "https://www.cfr.org/careers"
+    },
+    {
+      "name": "Heritage Foundation",
+      "status": "valid",
+      "statusCode": 200,
+      "url": "https://www.heritage.org/careers"
+    },
+    {
+      "name": "American Enterprise Institute",
+      "status": "error",
+      "statusCode": 404,
+      "url": "https://www.aei.org/careers"
+    },
+    {
+      "name": "Cato Institute",
+      "status": "valid",
+      "statusCode": 200,
+      "url": "https://www.cato.org/careers"
+    },
+    {
+      "name": "Manhattan Institute",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.manhattan-institute.org/careers",
+      "to": "https://manhattan.institute/careers"
+    },
+    {
+      "name": "Progressive Policy Institute",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.progressivepolicy.org/careers",
+      "to": "https://www.progressivepolicy.org/about/careers/"
+    },
+    {
+      "name": "Center for Strategic and International Studies",
+      "status": "error",
+      "statusCode": 404,
+      "url": "https://www.csis.org/careers"
+    },
+    {
+      "name": "American Action Forum",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.americanactionforum.org/careers",
+      "to": "https://www.americanactionforum.org/careers/"
+    },
+    {
+      "name": "National Bureau of Economic Research",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.nber.org/careers",
+      "to": "https://www2.nber.org/careers"
+    },
+    {
+      "name": "Joint Center for Political and Economic Studies",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://jointcenter.org/careers",
+      "to": "https://jointcenter.org/about/careers/"
+    },
+    {
+      "name": "Urban Land Institute",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://uli.org/careers",
+      "to": "/programs/career-center/"
+    },
+    {
+      "name": "American Institute of Architects",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.aia.org/careers",
+      "to": "https://www.aia.org/career-growth"
+    },
+    {
+      "name": "Industrial Designers Society of America",
+      "status": "error",
+      "statusCode": 404,
+      "url": "https://www.idsa.org/careers"
+    },
+    {
+      "name": "American Society of Landscape Architects",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.asla.org/careers",
+      "to": "https://www.asla.org/about/careers-at-asla"
+    },
+    {
+      "name": "American Planning Association",
+      "status": "redirect",
+      "statusCode": 302,
+      "from": "https://www.planning.org/careers",
+      "to": "/careers/"
+    },
+    {
+      "name": "Congress for the New Urbanism",
+      "status": "error",
+      "statusCode": 404,
+      "url": "https://www.cnu.org/careers"
+    },
+    {
+      "name": "National Association of Development Organizations",
+      "status": "error",
+      "statusCode": 404,
+      "url": "https://www.nado.org/careers"
+    },
+    {
+      "name": "National Association of Counties",
+      "status": "error",
+      "statusCode": 404,
+      "url": "https://www.naco.org/careers"
+    },
+    {
+      "name": "National League of Cities",
+      "status": "error",
+      "statusCode": 404,
+      "url": "https://www.nlc.org/careers"
+    },
+    {
+      "name": "International City/County Management Association",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://icma.org/careers",
+      "to": "https://icma.org/careers-learning"
+    },
+    {
+      "name": "National Governors Association",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.nga.org/careers",
+      "to": "https://www.nga.org/about/careers/"
+    },
+    {
+      "name": "National Conference of State Legislatures",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.ncsl.org/careers",
+      "to": "https://www.ncsl.org/about-us/careers"
+    },
+    {
+      "name": "Council of State Governments",
+      "status": "error",
+      "statusCode": 403,
+      "url": "https://www.csg.org/careers"
+    },
+    {
+      "name": "New America",
+      "status": "redirect",
+      "statusCode": 301,
+      "from": "https://www.newamerica.org/careers",
+      "to": "https://www.newamerica.org/careers/"
+    },
+    {
+      "name": "Aspen Institute",
+      "status": "error",
+      "statusCode": 403,
+      "url": "https://www.aspeninstitute.org/careers"
+    },
+    {
+      "name": "Carnegie Endowment for International Peace",
+      "status": "valid",
+      "statusCode": 200,
+      "url": "https://carnegieendowment.org/careers"
+    }
+  ],
+  "summary": {
+    "totalJobs": 50,
+    "validJobs": 22,
+    "invalidJobs": 28,
+    "totalOrgs": 109,
+    "validOrgs": 20,
+    "invalidOrgs": 89
+  }
+}

@@ -1,0 +1,265 @@
+{
+  "instruction": "For each redirect, use the 'To:' URL from scraper results",
+  "orgs": [
+    {
+      "name": "Downtown Brooklyn Partnership",
+      "oldUrl": "https://downtownbrooklyn.com/about/jobs",
+      "newUrl": "https://downtownbrooklyn.com/jobs-rfps/"
+    },
+    {
+      "name": "HKS Inc",
+      "oldUrl": "https://www.hksinc.com/careers",
+      "newUrl": "https://www.hksinc.com/careers/"
+    },
+    {
+      "name": "Via",
+      "oldUrl": "https://www.ridewithvia.com/careers",
+      "newUrl": "https://ridewithvia.com/careers"
+    },
+    {
+      "name": "Replica",
+      "oldUrl": "https://replicahq.com/careers",
+      "newUrl": "https://www.replicahq.com/careers"
+    },
+    {
+      "name": "Nonprofit New York",
+      "oldUrl": "https://nonprofitnewyork.org/careers",
+      "newUrl": "https://www.nonprofitnewyork.org/about-us/careers/"
+    },
+    {
+      "name": "Buro Happold",
+      "oldUrl": "https://www.burohappold.com/careers",
+      "newUrl": "https://www.burohappold.com/careers/"
+    },
+    {
+      "name": "NYC Dept of Social Services",
+      "oldUrl": "https://www1.nyc.gov/site/dss/careers/careers.html",
+      "newUrl": "https://www.nyc.gov:443/site/dss/careers/careers.html"
+    },
+    {
+      "name": "Environmental Defense Fund",
+      "oldUrl": "https://www.edf.org/careers",
+      "newUrl": "https://www.edf.org/environmental-careers"
+    },
+    {
+      "name": "LISC",
+      "oldUrl": "https://www.lisc.org/about-us/careers",
+      "newUrl": "/about-us/careers/"
+    },
+    {
+      "name": "NYC HRA",
+      "oldUrl": "https://www1.nyc.gov/site/hra/careers/careers.html",
+      "newUrl": "https://www.nyc.gov:443/site/hra/careers/careers.html"
+    },
+    {
+      "name": "Cushman & Wakefield",
+      "oldUrl": "https://careers.cushmanwakefield.com",
+      "newUrl": "/en/"
+    },
+    {
+      "name": "CBRE",
+      "oldUrl": "https://careers.cbre.com",
+      "newUrl": "https://careers.cbre.com/en_US/careers"
+    },
+    {
+      "name": "Bloomberg Philanthropies",
+      "oldUrl": "https://www.bloomberg.org/careers",
+      "newUrl": "https://www.bloomberg.org/about/careers/"
+    },
+    {
+      "name": "Brookings Institution",
+      "oldUrl": "https://www.brookings.edu/careers",
+      "newUrl": "https://www.brookings.edu/careers/"
+    },
+    {
+      "name": "Knight Foundation",
+      "oldUrl": "https://www.knightfoundation.org/careers",
+      "newUrl": "https://knightfoundation.org/about/careers/"
+    },
+    {
+      "name": "Gates Foundation",
+      "oldUrl": "https://www.gatesfoundation.org/careers",
+      "newUrl": "https://www.gatesfoundation.org/about/careers"
+    },
+    {
+      "name": "Mellon Foundation",
+      "oldUrl": "https://mellon.org/careers",
+      "newUrl": "https://www.mellon.org/careers"
+    },
+    {
+      "name": "Regional Plan Association",
+      "oldUrl": "https://www.rpa.org/careers",
+      "newUrl": "https://rpa.org/careers"
+    },
+    {
+      "name": "NACTO",
+      "oldUrl": "https://nacto.org/careers",
+      "newUrl": "/job-board/"
+    },
+    {
+      "name": "Remix",
+      "oldUrl": "https://www.remix.com/careers",
+      "newUrl": "https://ridewithvia.com:443/careers"
+    },
+    {
+      "name": "SOM",
+      "oldUrl": "https://www.som.com/careers",
+      "newUrl": "https://www.som.com/culture/careers/"
+    },
+    {
+      "name": "Perkins & Will",
+      "oldUrl": "https://perkinswill.com/careers",
+      "newUrl": "https://perkinswill.com/careers/"
+    },
+    {
+      "name": "RMI",
+      "oldUrl": "https://www.rmi.org/careers",
+      "newUrl": "https://rmi.org/careers"
+    },
+    {
+      "name": "The Nature Conservancy",
+      "oldUrl": "https://careers.nature.org",
+      "newUrl": "https://www.nature.org/en-us/about-us/careers/"
+    },
+    {
+      "name": "ERA-Co",
+      "oldUrl": "https://www.era-co.com/careers",
+      "newUrl": "https://era-co.com/careers/"
+    },
+    {
+      "name": "AngelList",
+      "oldUrl": "https://angel.co",
+      "newUrl": "https://wellfound.com/"
+    },
+    {
+      "name": "Idealist",
+      "oldUrl": "https://www.idealist.org",
+      "newUrl": "https://www.idealist.org/en"
+    },
+    {
+      "name": "American Civil Liberties Union",
+      "oldUrl": "https://www.aclu.org/careers",
+      "newUrl": "https://www.aclu.org/careers/"
+    },
+    {
+      "name": "Sierra Club",
+      "oldUrl": "https://www.sierraclub.org/careers",
+      "newUrl": "https://www.sierraclub.org/careers-jobs-employment"
+    },
+    {
+      "name": "Conservation International",
+      "oldUrl": "https://www.conservation.org/careers",
+      "newUrl": "/conservation-international-jobs"
+    },
+    {
+      "name": "American Rivers",
+      "oldUrl": "https://www.americanrivers.org/careers",
+      "newUrl": "/about-us/careers/"
+    },
+    {
+      "name": "Audubon Society",
+      "oldUrl": "https://www.audubon.org/careers",
+      "newUrl": "https://www.audubon.org/about/careers"
+    },
+    {
+      "name": "The Climate Reality Project",
+      "oldUrl": "https://climaterealityproject.org/careers",
+      "newUrl": "https://www.climaterealityproject.org/careers"
+    },
+    {
+      "name": "350.org",
+      "oldUrl": "https://350.org/careers",
+      "newUrl": "https://350.org/careers?r=US&c=NA"
+    },
+    {
+      "name": "Clean Air Task Force",
+      "oldUrl": "https://www.catf.us/careers",
+      "newUrl": "https://www.catf.us/careers/"
+    },
+    {
+      "name": "Carbon Trust",
+      "oldUrl": "https://www.carbontrust.com/careers",
+      "newUrl": "https://www.carbontrust.com/who-we-are/our-career-opportunities"
+    },
+    {
+      "name": "Carbon Disclosure Project",
+      "oldUrl": "https://www.cdp.net/careers",
+      "newUrl": "/en/careers"
+    },
+    {
+      "name": "Local Initiatives Support Corporation",
+      "oldUrl": "https://www.lisc.org/careers",
+      "newUrl": "/careers/"
+    },
+    {
+      "name": "NeighborWorks",
+      "oldUrl": "https://www.nw.org/careers",
+      "newUrl": "https://www.neighborworks.org/"
+    },
+    {
+      "name": "Manhattan Institute",
+      "oldUrl": "https://www.manhattan-institute.org/careers",
+      "newUrl": "https://manhattan.institute/careers"
+    },
+    {
+      "name": "Progressive Policy Institute",
+      "oldUrl": "https://www.progressivepolicy.org/careers",
+      "newUrl": "https://www.progressivepolicy.org/about/careers/"
+    },
+    {
+      "name": "American Action Forum",
+      "oldUrl": "https://www.americanactionforum.org/careers",
+      "newUrl": "https://www.americanactionforum.org/careers/"
+    },
+    {
+      "name": "National Bureau of Economic Research",
+      "oldUrl": "https://www.nber.org/careers",
+      "newUrl": "https://www2.nber.org/careers"
+    },
+    {
+      "name": "Joint Center for Political and Economic Studies",
+      "oldUrl": "https://jointcenter.org/careers",
+      "newUrl": "https://jointcenter.org/about/careers/"
+    },
+    {
+      "name": "Urban Land Institute",
+      "oldUrl": "https://uli.org/careers",
+      "newUrl": "/programs/career-center/"
+    },
+    {
+      "name": "American Institute of Architects",
+      "oldUrl": "https://www.aia.org/careers",
+      "newUrl": "https://www.aia.org/career-growth"
+    },
+    {
+      "name": "American Society of Landscape Architects",
+      "oldUrl": "https://www.asla.org/careers",
+      "newUrl": "https://www.asla.org/about/careers-at-asla"
+    },
+    {
+      "name": "American Planning Association",
+      "oldUrl": "https://www.planning.org/careers",
+      "newUrl": "/careers/"
+    },
+    {
+      "name": "International City/County Management Association",
+      "oldUrl": "https://icma.org/careers",
+      "newUrl": "https://icma.org/careers-learning"
+    },
+    {
+      "name": "National Governors Association",
+      "oldUrl": "https://www.nga.org/careers",
+      "newUrl": "https://www.nga.org/about/careers/"
+    },
+    {
+      "name": "National Conference of State Legislatures",
+      "oldUrl": "https://www.ncsl.org/careers",
+      "newUrl": "https://www.ncsl.org/about-us/careers"
+    },
+    {
+      "name": "New America",
+      "oldUrl": "https://www.newamerica.org/careers",
+      "newUrl": "https://www.newamerica.org/careers/"
+    }
+  ]
+}
