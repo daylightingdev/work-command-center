@@ -31,10 +31,10 @@ const server = http.createServer((req, res) => {
 });
 
 function refreshDashboard(res) {
-  console.log('🚀 Starting job discovery...');
+  console.log('🚀 Starting job discovery with Puppeteer...');
 
   let discoveryOutput = '';
-  const discovery = spawn('node', ['job-discovery-scraper.js']);
+  const discovery = spawn('node', ['job-discovery-puppeteer.js']);
 
   discovery.stdout.on('data', (data) => {
     discoveryOutput += data.toString();

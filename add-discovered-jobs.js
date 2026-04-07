@@ -10,21 +10,29 @@ async function validateURL(url) {
       resolve({ valid: false, status: 0 });
     }, 8000);
 
-    const req = protocol.head(url, {
-      timeout: 8000,
-      headers: { 'User-Agent': 'Mozilla/5.0' }
-    }, (res) => {
-      clearTimeout(timeout);
-      resolve({
-        valid: res.statusCode < 400,
-        status: res.statusCode
+    try {
+      const req = protocol.request(url, {
+        method: 'HEAD',
+        timeout: 8000,
+        headers: { 'User-Agent': 'Mozilla/5.0' }
+      }, (res) => {
+        clearTimeout(timeout);
+        resolve({
+          valid: res.statusCode < 400,
+          status: res.statusCode
+        });
       });
-    });
 
-    req.on('error', () => {
+      req.on('error', () => {
+        clearTimeout(timeout);
+        resolve({ valid: false, status: 0 });
+      });
+
+      req.end();
+    } catch (err) {
       clearTimeout(timeout);
       resolve({ valid: false, status: 0 });
-    });
+    }
   });
 }
 
