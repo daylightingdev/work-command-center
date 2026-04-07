@@ -95,17 +95,17 @@ tr:hover{background:#f9f9ff}
 
 <div class="refresh-bar">
   <span id="lastRefresh">Last refreshed: April 3, 2026</span>
-  <span id="newCount" class="new-badge">37 jobs loaded</span>
+  <span id="newCount" class="new-badge">29 jobs loaded</span>
   <span style="color:#999">|</span>
-  <span id="totalCount" style="color:#667eea;font-weight:600">117 organizations tracked</span>
+  <span id="totalCount" style="color:#667eea;font-weight:600">76 organizations tracked</span>
 </div>
 
 <div class="tabs">
-  <div class="tab active" onclick="sw(0)">Top 37 Jobs</div>
-  <div class="tab" onclick="sw(1)">Org Tracker (117)</div>
+  <div class="tab active" onclick="sw(0)">Top 29 Jobs</div>
+  <div class="tab" onclick="sw(1)">Org Tracker (76)</div>
   <div class="tab" onclick="sw(2)">My Applications</div>
   <div class="tab" onclick="sw(3)">AI Generator</div>
-  <div class="tab" onclick="sw(4)">Profile</div>
+  <div class="tab" onclick="sw(4)">Your Profile</div>
 </div>
 
 <!-- TAB 0: JOBS -->
@@ -117,7 +117,7 @@ tr:hover{background:#f9f9ff}
     <button class="sort-btn" onclick="sortJobs('salary')">Salary ↓</button>
   </div>
   <div class="fb">
-    <select id="fSec" onchange="renderJobs()"><option value="">All Sectors</option><option value="government">Government</option><option value="policy">Policy</option><option value="urban">Urban Strategy</option><option value="climate">Climate</option><option value="consulting">Consulting</option><option value="nonprofit">Nonprofit</option><option value="design">Design</option><option value="realestate">Real Estate</option></select>
+    <select id="fSec" onchange="renderJobs()"><option value="">All Sectors</option><option value="government">Government</option><option value="policy">Policy</option><option value="urban">Urban Strategy</option><option value="climate">Climate</option><option value="consulting">Consulting</option><option value="nonprofit">Nonprofit</option><option value="design">Design</option><option value="civictech">Civic Tech</option></select>
     <select id="fSal" onchange="renderJobs()"><option value="0">Any Salary</option><option value="120000">$120K+</option><option value="140000">$140K+</option><option value="160000">$160K+</option></select>
     <label style="display:flex;align-items:center;gap:5px;font-size:.78rem;white-space:nowrap"><input type="checkbox" id="fLiked" onchange="renderJobs()" style="width:auto"> Liked only</label>
   </div>
@@ -172,28 +172,28 @@ tr:hover{background:#f9f9ff}
 <div class="cnt" id="t4">
   <div class="statg">
     <div class="statc"><div class="statn">7+</div><div class="statl">Years Exp.</div></div>
-    <div class="statc"><div class="statn" id="orgCount">117</div><div class="statl">Orgs Tracked</div></div>
+    <div class="statc"><div class="statn" id="orgCount">76</div><div class="statl">Orgs Tracked</div></div>
     <div class="statc"><div class="statn">$120K+</div><div class="statl">Target Salary</div></div>
     <div class="statc"><div class="statn">NYC</div><div class="statl">Location</div></div>
   </div>
   <div class="pg">
-    <div class="card ps"><h3>Core Competencies</h3>
-      <span class="st">Placemaking Strategy</span><span class="st">Project Management</span><span class="st">Stakeholder Convening</span>
-      <span class="st">Research & Analysis</span><span class="st">Urban Design</span><span class="st">Operations Management</span>
-      <span class="st">Cross-Functional Leadership</span><span class="st">Sustainability Strategy</span>
+    <div class="card ps"><h3>Core Skills</h3>
+      <span class="st">Placemaking Strategy</span><span class="st">Project Management</span><span class="st">Stakeholder Engagement</span>
+      <span class="st">Program Management</span><span class="st">Policy Analysis</span><span class="st">Community Engagement</span>
+      <span class="st">Data Strategy</span><span class="st">Workplace Strategy</span>
     </div>
     <div class="card ps"><h3>Target Roles</h3>
-      <span class="st">Strategy Lead</span><span class="st">Director of Operations</span><span class="st">Chief of Staff</span>
-      <span class="st">VP Strategy</span><span class="st">Policy Advisor</span><span class="st">Research Director</span>
-      <span class="st">Program Manager</span><span class="st">Product Strategist</span>
+      <span class="st">Strategy Director</span><span class="st">Senior Policy Advisor</span><span class="st">Design Research Lead</span>
+      <span class="st">VP of Operations</span><span class="st">Chief of Staff</span><span class="st">Program Director</span>
+      <span class="st">Research Manager</span><span class="st">Product Strategist</span>
     </div>
     <div class="card ps"><h3>Target Sectors</h3>
-      <span class="st">Urban Strategy</span><span class="st">Civic Tech</span><span class="st">Policy Research</span>
-      <span class="st">Nonprofit</span><span class="st">Government</span><span class="st">Climate/Sustainability</span>
+      <span class="st">Civic Tech</span><span class="st">Urban Strategy</span><span class="st">Policy & Government</span>
+      <span class="st">Philanthropy</span><span class="st">Nonprofit</span><span class="st">Climate & Resilience</span>
       <span class="st">Design Consulting</span><span class="st">Real Estate Strategy</span>
     </div>
-    <div class="card ps"><h3>Preference Insights</h3>
-      <div id="prefInsights"><p style="font-size:.8rem;color:#888">Rate jobs with 👍/👎 to see insights here.</p></div>
+    <div class="card ps"><h3>Preference Learning</h3>
+      <div id="prefInsights"><p style="font-size:.8rem;color:#888">Rate jobs with 👍/👎 to see your top interests appear here.</p></div>
     </div>
   </div>
 </div>
@@ -244,7 +244,6 @@ var JOBS=[
 {id:"mta_avp",t:"AVP Operations Planning",c:"Metropolitan Transportation Authority",s:"$130,000+",l:"New York, NY",tp:"Full-time",sec:"government",sc:90,d:"2026-03-12",desc:"Oversee operations planning for the MTA, managing transit service delivery, scheduling optimization, and cross-departmental coordination.",u:"https://www.linkedin.com/jobs/view/assistant-vice-president-operations-planning-at-metropolitan-transportation-authority-4368951257"},
 {id:"bh_climate",t:"Associate, Climate Strategy & Mitigation",c:"Buro Happold",s:"$110,000–$140,000",l:"New York, NY",tp:"Full-time",sec:"consulting",sc:90,d:"2026-03-08",desc:"Support climate strategy and mitigation projects for built environment clients. Integrate sustainability science into urban development planning and stakeholder engagement.",u:"https://www.linkedin.com/jobs/view/associate-climate-strategy-mitigation-specialist-at-buro-happold-4364961373"},
 {id:"wa_mgr",t:"Senior Manager, Planning & Design",c:"Waterfront Alliance",s:"Not posted",l:"New York, NY",tp:"Full-time",sec:"urban",sc:90,d:"2026-03-18",desc:"Lead planning and design initiatives for NYC waterfront resilience, public access, and climate adaptation programs across the five boroughs.",u:"https://www.linkedin.com/jobs/view/senior-manager-planning-and-design-at-waterfront-alliance-4384056396"},
-{id:"hra_dir",t:"Director (NYO)",c:"HR&A Advisors",s:"$121,668–$138,432",l:"New York, NY",tp:"Full-time",sec:"consulting",sc:88,d:"2026-04-01",desc:"Lead complex real estate and economic development projects. Manage internal and external teams on pro forma analysis, market feasibility research, business planning, and economic impact studies.",u:"https://www.hraadvisors.com/careers/"},
 {id:"dot_spa",t:"Senior Policy Analyst",c:"NYC Dept of Transportation",s:"$62,868–$97,593",l:"Manhattan, NY",tp:"Full-time",sec:"government",sc:82,d:"2026-03-05",desc:"Focus on addressing challenges from app-based delivery and micromobility. Conduct research on safety and delivery trends. Develop policy proposals.",u:"https://cityjobs.nyc.gov/job/senior-policy-analyst-in-manhattan-jid-37668"},
 {id:"nny_vpp",t:"VP, Programs & Capacity-Building",c:"Nonprofit New York",s:"$125,000+",l:"New York, NY",tp:"Full-time",sec:"nonprofit",sc:85,d:"2026-02-10",desc:"Oversee portfolio of programs and capacity-building initiatives that support nonprofit effectiveness and equity across New York City.",u:"https://www.idealist.org/en/nonprofit-job/f209c737a49946188be87547869b214b-vice-president-programs-and-capacity-building-nonprofit-new-york-new-york"},
 {id:"dss_pa",t:"Policy Analyst",c:"NYC Dept of Social Services",s:"$90,000–$120,000",l:"Manhattan, NY",tp:"Full-time",sec:"government",sc:85,d:"2026-03-05",desc:"Analyze and develop policy recommendations for NYC social services programs, working across agencies on equity-focused initiatives and program evaluation.",u:"https://www.linkedin.com/jobs/view/policy-analyst-at-nyc-department-of-social-services-4383636901"},
@@ -253,10 +252,6 @@ var JOBS=[
 {id:"peh_vp",t:"VP, External Relations",c:"Partnership To End Homelessness",s:"$120,000+",l:"New York, NY",tp:"Full-time",sec:"nonprofit",sc:80,d:"2026-03-10",desc:"Lead fundraising, marketing, communications, and community relations for nonprofit coalition ending homelessness in New York.",u:"https://www.idealist.org/en/job/cd1dfcf60fd047fdbafc864fbc332d28-vice-president-external-relations-the-partnership-to-end-homelessness-new-york"},
 {id:"lisc_ed",t:"Senior Executive Director",c:"LISC",s:"$150,000+",l:"New York, NY",tp:"Full-time",sec:"nonprofit",sc:80,d:"2026-02-28",desc:"Set strategic direction, cultivate partnerships, and drive mission-aligned community development for Local Initiatives Support Corporation.",u:"https://www.idealist.org/en/nonprofit-job/87bf40344ec743eba4b62abdf8cc74d5-senior-executive-director-local-initiatives-support-corporation-new-york"},
 {id:"hra_housing",t:"Director of Supportive Housing",c:"NYC HRA",s:"$110,067–$127,650",l:"Manhattan, NY",tp:"Full-time",sec:"government",sc:80,d:"2026-03-20",desc:"Direct supportive housing programs for NYC Human Resources Administration.",u:"https://cityjobs.nyc.gov/job/director-of-supportive-housing-in-manhattan-jid-42298"},
-{id:"jll_wp",t:"VP, Workplace Strategy",c:"JLL",s:"Not posted",l:"New York, NY",tp:"Full-time",sec:"realestate",sc:78,d:"2026-03-28",desc:"Create workplace collateral and thought leadership pieces. Serve as Subject Matter Expert on workplace strategies and occupancy planning for major corporate clients.",u:"https://careers.jll.com"},
-{id:"jll_res",t:"Director, Research",c:"JLL",s:"Not posted",l:"New York, NY",tp:"Full-time",sec:"realestate",sc:78,d:"2026-03-25",desc:"Lead the NYC analytics research platform, establishing competitive advantage through market expertise and strategic insight across real estate sectors.",u:"https://careers.jll.com"},
-{id:"cw_strat",t:"Director, Strategy & Analytics",c:"Cushman & Wakefield",s:"Not posted",l:"New York, NY",tp:"Full-time",sec:"realestate",sc:75,d:"2026-03-15",desc:"Strategy and analytics leadership for major real estate services firm. Drive data-informed decision making and client advisory work.",u:"https://careers.cushmanwakefield.com"},
-{id:"cbre_sust",t:"Energy & Sustainability Director",c:"CBRE",s:"Not posted",l:"New York, NY",tp:"Full-time",sec:"realestate",sc:75,d:"2026-02-20",desc:"Director-level sustainability and energy management role at the world's largest commercial real estate services firm.",u:"https://careers.cbre.com"},
 {id:"wsp_res",t:"Consultant, Infrastructure Resilience",c:"WSP",s:"$100,000–$130,000",l:"New York, NY",tp:"Full-time",sec:"consulting",sc:75,d:"2026-04-01",desc:"Support infrastructure resilience projects including climate adaptation, flood risk assessment, and sustainable design for urban environments.",u:"https://www.linkedin.com/jobs/view/consultant-infrastructure-resilience-at-wsp-in-the-u-s-4392034541"},
 {id:"hra_ra",t:"Special Assistant & Research Analyst",c:"HR&A Advisors",s:"$90,000–$120,000",l:"New York, NY",tp:"Full-time",sec:"consulting",sc:75,d:"2026-03-14",desc:"Research and analytical support for economic development and inclusive cities consulting engagements at leading NYC advisory firm.",u:"https://www.linkedin.com/jobs/view/special-assistant-research-analyst-at-hr-a-advisors-4379148851"},
 {id:"ba_fellow",t:"Economic Development Fellow",c:"Bloomberg Philanthropies",s:"Not posted",l:"New York, NY",tp:"Fellowship",sec:"urban",sc:75,d:"2026-03-30",desc:"Bloomberg Associates fellowship working with city governments on urban challenges including public space, climate, and economic mobility.",u:"https://www.linkedin.com/jobs/view/economic-development-fellow-bloomberg-associates-at-bloomberg-philanthropies-4387481521"},
@@ -270,33 +265,28 @@ var JOBS=[
 {id:"nrdc_pm",t:"Project Manager, Africa Initiative",c:"NRDC",s:"$100,000–$130,000",l:"New York, NY",tp:"Full-time",sec:"climate",sc:68,d:"2026-03-08",desc:"Manage climate and environmental projects for NRDC international initiative, coordinating across technical, policy, and communications teams.",u:"https://www.linkedin.com/jobs/view/project-manager-africa-initiative-at-natural-resources-defense-council-nrdc-4370724764"},
 {id:"stantec_pm",t:"Pursuit Manager, Community Development",c:"Stantec",s:"$100,000–$130,000",l:"New York, NY",tp:"Full-time",sec:"consulting",sc:65,d:"2026-03-25",desc:"Manage business development for community development projects across the tri-state area.",u:"https://www.linkedin.com/jobs/view/pursuit-manager-community-development-at-stantec-4389395312"},
 {id:"broad_sa",t:"Senior Sustainability Analyst",c:"Broadridge",s:"$100,000–$130,000",l:"New York, NY",tp:"Full-time",sec:"climate",sc:60,d:"2026-03-05",desc:"Sustainability analysis for major financial technology firm, hybrid NYC/NJ.",u:"https://www.linkedin.com/jobs/view/senior-sustainability-analyst-hybrid-nyc-or-nj-at-broadridge-4358338925"},
-{id:"city_ga",t:"Geographic Analyst",c:"City of New York",s:"$70,000–$95,000",l:"Manhattan, NY",tp:"Full-time",sec:"government",sc:65,d:"2026-03-12",desc:"Geographic analysis for city planning and urban development initiatives across NYC agencies.",u:"https://www.linkedin.com/jobs/view/geographic-analyst-at-city-of-new-york-4378955523"}
+{id:"city_ga",t:"Geographic Analyst",c:"City of New York",s:"$70,000–$95,000",l:"Manhattan, NY",tp:"Full-time",sec:"government",sc:65,d:"2026-03-12",desc:"Geographic analysis for city planning and urban development initiatives across NYC agencies.",u:"https://www.linkedin.com/jobs/view/geographic-analyst-at-city-of-new-york-4378955523"},
+{id:"via_pssm",t:"Senior Partner Success Manager",c:"Via",s:"$100,000–$130,000",l:"New York, NY",tp:"Full-time",sec:"civictech",sc:88,d:"2026-03-28",desc:"Manage strategic partnerships and customer success for civic tech platform transforming urban mobility through technology.",u:"https://www.linkedin.com/jobs/view/senior-partner-success-manager-at-via-4385922105"}
 ];
 
 var ORGS=[
 {n:"Design Trust for Public Space",s:"Urban Design",u:"https://designtrustnyc.org/careers"},
 {n:"Downtown Brooklyn Partnership",s:"Urban Strategy",u:"https://downtownbrooklyn.com/about/jobs"},
-{n:"HKS Inc",s:"Architecture/Design Research",u:"https://www.hksinc.com/careers"},
-{n:"Via",s:"Civic Tech",u:"https://www.ridewithvia.com/careers"},
-{n:"Replica",s:"Transportation Planning",u:"https://replicahq.com/careers"},
-{n:"Nonprofit New York",s:"Nonprofit",u:"https://nonprofitnewyork.org/careers"},
+{n:"NYC Mayor's Office",s:"Government",u:"https://cityjobs.nyc.gov"},
 {n:"Metropolitan Transportation Authority",s:"Government",u:"https://new.mta.info/careers"},
 {n:"Gensler",s:"Design",u:"https://www.gensler.com/careers"},
-{n:"NYC Mayor's Office",s:"Government",u:"https://cityjobs.nyc.gov"},
 {n:"Buro Happold",s:"Consulting",u:"https://www.burohappold.com/careers"},
 {n:"Waterfront Alliance",s:"Urban Strategy",u:"https://www.waterfront-alliance.org/careers"},
-{n:"HR&A Advisors",s:"Consulting",u:"https://www.hraadvisors.com/careers/"},
 {n:"NYC Dept of Transportation",s:"Government",u:"https://www.nyc.gov/site/dot/careers/careers.page"},
+{n:"Nonprofit New York",s:"Nonprofit",u:"https://nonprofitnewyork.org/careers"},
 {n:"NYC Dept of Social Services",s:"Government",u:"https://www1.nyc.gov/site/dss/careers/careers.html"},
 {n:"Environmental Defense Fund",s:"Climate/Sustainability",u:"https://www.edf.org/careers"},
 {n:"iMentor",s:"Nonprofit",u:"https://imentor.org/careers"},
 {n:"Partnership To End Homelessness",s:"Nonprofit",u:"https://www.peh.org/careers"},
 {n:"LISC",s:"Nonprofit",u:"https://www.lisc.org/about-us/careers"},
 {n:"NYC HRA",s:"Government",u:"https://www1.nyc.gov/site/hra/careers/careers.html"},
-{n:"JLL",s:"Real Estate",u:"https://careers.jll.com"},
-{n:"Cushman & Wakefield",s:"Real Estate",u:"https://careers.cushmanwakefield.com"},
-{n:"CBRE",s:"Real Estate",u:"https://careers.cbre.com"},
 {n:"WSP",s:"Consulting",u:"https://www.wsp.com/en-US/careers"},
+{n:"HR&A Advisors",s:"Consulting",u:"https://www.hraadvisors.com/careers/"},
 {n:"Bloomberg Philanthropies",s:"Philanthropy",u:"https://www.bloomberg.org/careers"},
 {n:"GiveDirectly",s:"Climate/Sustainability",u:"https://www.givedirectly.org/careers"},
 {n:"Open Space Institute",s:"Climate/Sustainability",u:"https://www.openspacesinstitute.org/careers"},
@@ -307,10 +297,9 @@ var ORGS=[
 {n:"NRDC",s:"Climate/Sustainability",u:"https://www.nrdc.org/careers"},
 {n:"Broadridge",s:"Finance/Tech",u:"https://careers.broadridge.com"},
 {n:"City of New York",s:"Government",u:"https://www.nyc.gov/site/olr/careers/careers.page"},
+{n:"Via",s:"Civic Tech",u:"https://www.ridewithvia.com/careers"},
 {n:"Urban Institute",s:"Policy Research",u:"https://www.urban.org/careers"},
 {n:"Brookings Institution",s:"Policy Research",u:"https://www.brookings.edu/careers"},
-{n:"SSRC",s:"Policy Research",u:"https://www.ssrc.org"},
-{n:"Topos Institute",s:"Research",u:"https://toposinstitute.org"},
 {n:"Knight Foundation",s:"Philanthropy",u:"https://www.knightfoundation.org/careers"},
 {n:"Gates Foundation",s:"Philanthropy",u:"https://www.gatesfoundation.org/careers"},
 {n:"Mellon Foundation",s:"Philanthropy",u:"https://mellon.org/careers"},
@@ -325,73 +314,31 @@ var ORGS=[
 {n:"SOM",s:"Architecture",u:"https://www.som.com/careers"},
 {n:"NBBJ",s:"Architecture",u:"https://www.nbbj.com/careers"},
 {n:"Perkins & Will",s:"Architecture",u:"https://perkinswill.com/careers"},
-{n:"EDF",s:"Climate/Sustainability",u:"https://www.edf.org/careers"},
-{n:"NRDC",s:"Climate/Sustainability",u:"https://www.nrdc.org/careers"},
-{n:"RMI",s:"Climate/Sustainability",u:"https://www.rmi.org/careers"},
 {n:"The Nature Conservancy",s:"Climate/Sustainability",u:"https://careers.nature.org"},
-{n:"Hatch",s:"Consulting",u:"https://www.wearehatch.com/careers"},
-{n:"Stantec",s:"Consulting",u:"https://www.stantec.com/en/careers"},
-{n:"WSP",s:"Consulting",u:"https://www.wsp.com/en-US/careers"},
-{n:"CBRE",s:"Real Estate",u:"https://careers.cbre.com"},
-{n:"JLL",s:"Real Estate",u:"https://careers.jll.com"},
-{n:"Cushman & Wakefield",s:"Real Estate",u:"https://careers.cushmanwakefield.com"},
-{n:"Arc.dev",s:"Tech Jobs",u:"https://arc.dev"},
-{n:"AngelList",s:"Startup Jobs",u:"https://angel.co"},
-{n:"Glassdoor",s:"Job Board",u:"https://www.glassdoor.com"},
-{n:"Built.in",s:"Tech Jobs",u:"https://builtin.com"},
-{n:"We Work Remotely",s:"Remote Jobs",u:"https://weworkremotely.com"},
-{n:"Idealist",s:"Nonprofit Jobs",u:"https://www.idealist.org"},
-{n:"New York Jobs.com",s:"Government",u:"https://cityjobs.nyc.gov"},
-{n:"APA Job Board",s:"Planning",u:"https://planning.org"},
-{n:"Unitarian Universalist Association",s:"Nonprofit",u:"https://www.uua.org/careers"},
-{n:"American Civil Liberties Union",s:"Nonprofit",u:"https://www.aclu.org/careers"},
-{n:"Planned Parenthood",s:"Nonprofit",u:"https://www.plannedparenthood.org/careers"},
-{n:"Sierra Club",s:"Environmental",u:"https://www.sierraclub.org/careers"},
-{n:"Natural Resources Defense Council",s:"Environmental",u:"https://www.nrdc.org/careers"},
-{n:"Conservation International",s:"Environmental",u:"https://www.conservation.org/careers"},
-{n:"The Wilderness Society",s:"Environmental",u:"https://www.wilderness.org/careers"},
+{n:"Urban Land Institute",s:"Real Estate",u:"https://www.uli.org/careers"},
+{n:"American Planning Association",s:"Urban Planning",u:"https://planning.org/careers"},
+{n:"New York Public Library",s:"Nonprofit",u:"https://www.nypl.org/careers"},
+{n:"Metropolitan Museum of Art",s:"Nonprofit",u:"https://www.metmuseum.org/careers"},
+{n:"American Museum of Natural History",s:"Nonprofit",u:"https://www.amnh.org/careers"},
+{n:"Brooklyn Museum",s:"Nonprofit",u:"https://www.brooklynmuseum.org/careers"},
+{n:"NYC Parks",s:"Government",u:"https://www.nycgovparks.org/careers"},
+{n:"NYC Planning Department",s:"Government",u:"https://www1.nyc.gov/site/planning/careers/careers.html"},
+{n:"Port Authority of NY & NJ",s:"Government",u:"https://www.panynj.gov/careers"},
 {n:"Trust for Public Land",s:"Parks/Recreation",u:"https://www.tpl.org/careers"},
-{n:"Rails to Trails Conservancy",s:"Environmental",u:"https://www.railstotrails.org/careers"},
-{n:"American Rivers",s:"Environmental",u:"https://www.americanrivers.org/careers"},
-{n:"Audubon Society",s:"Environmental",u:"https://www.audubon.org/careers"},
+{n:"Sierra Club",s:"Environmental",u:"https://www.sierraclub.org/careers"},
+{n:"Conservation International",s:"Environmental",u:"https://www.conservation.org/careers"},
 {n:"World Wildlife Fund",s:"Environmental",u:"https://www.worldwildlife.org/careers"},
-{n:"The Climate Reality Project",s:"Climate",u:"https://climaterealityproject.org/careers"},
-{n:"350.org",s:"Climate",u:"https://350.org/careers"},
-{n:"Sunrise Movement",s:"Climate",u:"https://www.sunrisemovement.org/careers"},
-{n:"Clean Air Task Force",s:"Climate",u:"https://www.catf.us/careers"},
-{n:"Carbon Trust",s:"Climate",u:"https://www.carbontrust.com/careers"},
-{n:"Carbon Disclosure Project",s:"Climate",u:"https://www.cdp.net/careers"},
-{n:"Cities for Climate Protection",s:"Climate",u:"https://icleiusa.org/careers"},
-{n:"Local Initiatives Support Corporation",s:"Community Development",u:"https://www.lisc.org/careers"},
 {n:"Enterprise Community Partners",s:"Community Development",u:"https://www.enterprisecommunity.org/careers"},
 {n:"NeighborWorks",s:"Community Development",u:"https://www.nw.org/careers"},
-{n:"Ashoka",s:"Social Enterprise",u:"https://www.ashoka.org/careers"},
-{n:"Acumen",s:"Social Enterprise",u:"https://acumen.org/careers"},
-{n:"Social Venture Network",s:"Social Enterprise",u:"https://svn.org/careers"},
-{n:"B Lab",s:"Social Enterprise",u:"https://bcorporation.net/careers"},
 {n:"New America",s:"Think Tank",u:"https://www.newamerica.org/careers"},
 {n:"Center for American Progress",s:"Think Tank",u:"https://www.americanprogress.org/careers"},
 {n:"Council on Foreign Relations",s:"Think Tank",u:"https://www.cfr.org/careers"},
-{n:"American Enterprise Institute",s:"Think Tank",u:"https://www.aei.org/careers"},
-{n:"Cato Institute",s:"Think Tank",u:"https://www.cato.org/careers"},
-{n:"Heritage Foundation",s:"Think Tank",u:"https://www.heritage.org/careers"},
 {n:"Rand Corporation",s:"Research",u:"https://www.rand.org/careers"},
 {n:"MIT Media Lab",s:"Research",u:"https://www.media.mit.edu/careers"},
 {n:"Stanford Design School",s:"Design/Research",u:"https://dschool.stanford.edu/careers"},
-{n:"Harvard GSD",s:"Design/Research",u:"https://www.gsd.harvard.edu/careers"},
 {n:"Columbia University",s:"Education",u:"https://www.columbia.edu/careers"},
 {n:"NYU",s:"Education",u:"https://www.nyu.edu/careers"},
-{n:"CUNY",s:"Government/Education",u:"https://www.cuny.edu/careers"},
-{n:"The New York Public Library",s:"Nonprofit",u:"https://www.nypl.org/careers"},
-{n:"The Metropolitan Museum of Art",s:"Nonprofit",u:"https://www.metmuseum.org/careers"},
-{n:"American Museum of Natural History",s:"Nonprofit",u:"https://www.amnh.org/careers"},
-{n:"Brooklyn Museum",s:"Nonprofit",u:"https://www.brooklynmuseum.org/careers"},
-{n:"Lower East Side Tenement Museum",s:"Nonprofit",u:"https://tenement.org/careers"},
-{n:"NYC Parks",s:"Government",u:"https://www.nycgovparks.org/careers"},
-{n:"NYC Planning Department",s:"Government",u:"https://www1.nyc.gov/site/planning/careers/careers.html"},
-{n:"New York State Department of Planning",s:"Government",u:"https://www.dec.ny.gov/careers"},
-{n:"Port Authority of NY & NJ",s:"Government",u:"https://www.panynj.gov/careers"},
-{n:"NYC Office of Sustainability",s:"Government",u:"https://www1.nyc.gov/site/sustainability/careers/careers.html"}
+{n:"CUNY",s:"Government/Education",u:"https://www.cuny.edu/careers"}
 ];
 
 var filteredJobs=JOBS;var sortKey='score';var orgSortKey='n';var orgSortDir=1;var ratings={};var appTracker=[];var orgStatus={};
@@ -401,7 +348,8 @@ function sw(t){document.querySelectorAll('.cnt').forEach(function(e){e.classList
 function renderJobs(){
   var sec=document.getElementById('fSec').value;var sal=parseInt(document.getElementById('fSal').value);var likedOnly=document.getElementById('fLiked').checked;
   filteredJobs=JOBS.filter(function(j){
-    if(sec && j.sec!==sec)return false;if(sal && !j.s.match(/\\d+/)|| parseInt(j.s.match(/\\d+/)[0])<sal)return false;
+    if(sec && j.sec!==sec)return false;
+    if(sal){var m=j.s.match(/\d+/);if(!m||parseInt(m[0])<sal)return false;}
     if(likedOnly && !ratings[j.id])return false;return true;
   });
   sortJobs(sortKey);
@@ -442,13 +390,13 @@ function renderOrgs(){
     var matching=filteredJobs.filter(function(j){return j.c===o.n||j.c.toLowerCase()===o.n.toLowerCase();});
     var rolesHtml=matching.length+' role'+(matching.length!==1?'s':'');
     if(matching.length){
-      rolesHtml+='<div class="roles-list" id="rl_'+o.n.replace(/\\W/g,'_')+'">';
+      rolesHtml+='<div class="roles-list" id="rl_'+o.n.replace(/\W/g,'_')+'">';
       matching.forEach(function(j){
         rolesHtml+='<div class="role-item"><a href="'+j.u+'" target="_blank">'+j.t+'</a><span style="color:#888;white-space:nowrap">'+j.s+'</span></div>';
       });
-      rolesHtml+='</div><button onclick="toggleRoles(\'rl_'+o.n.replace(/\\W/g,'_')+'\'')" style="font-size:.68rem;color:#667eea;background:none;border:none;cursor:pointer;margin-top:3px">Show roles ▾</button>';
+      rolesHtml+='</div><button onclick="toggleRoles(\'rl_'+o.n.replace(/\W/g,'_')+'\'')" style="font-size:.68rem;color:#667eea;background:none;border:none;cursor:pointer;margin-top:3px">Show roles ▾</button>';
     }
-    html+='<tr><td><a href="'+o.u+'" target="_blank" rel="noopener">'+o.n+'</a></td><td style="white-space:nowrap">'+o.s+'</td><td><span class="status-pill '+stClass(o.st)+'" onclick="openStatus(\''+o.n.replace(/'/g,"\\'")+'\')">'+stLabel(o.st)+'</span>'+(o.title?'<div style="font-size:.7rem;color:#888;margin-top:3px">'+o.title+'</div>':'')+(o.notes?'<div style="font-size:.7rem;color:#aaa;margin-top:2px">'+o.notes.substring(0,60)+'…</div>':'')+'</td><td>'+rolesHtml+'</td><td style="white-space:nowrap;font-size:.72rem;color:#999">'+(o.date||'—')+'</td><td><button class="btn btn-r btn-sm" onclick="clearOrgStatus(\''+o.n.replace(/'/g,"\\'")+'\')">Clear</button></td></tr>';
+    html+='<tr><td><a href="'+o.u+'" target="_blank" rel="noopener">'+o.n+'</a></td><td style="white-space:nowrap">'+o.s+'</td><td><span class="status-pill '+stClass(o.st)+'" onclick="openStatus(\''+o.n.replace(/'/g,"\\'")+'\')">'+stLabel(o.st)+'</span>'+(o.title?'<div style="font-size:.7rem;color:#888;margin-top:3px">'+o.title+'</div>':'')+(o.notes?'<div style="font-size:.7rem;color:#aaa;margin-top:2px">'+o.notes.substring(0,60)+'…</div>':'')+'</td><td>'+rolesHtml+'</td><td style="white-space:nowrap;font-size:.72rem;color:#999">'+(o.date||'—')+'</td><td><button class="btn btn-r btn-sm" onclick="clearOrgStatus(\''+o.n.replace(/'/g,"\\'")+'\')">Remove</button></td></tr>';
   });
   if(!list.length)html='<tr><td colspan="6" style="text-align:center;padding:24px;color:#999">No organizations match filters.</td></tr>';
   document.getElementById('orgBody').innerHTML=html;document.getElementById('orgCount').textContent=ORGS.length;
@@ -474,7 +422,7 @@ function showModal(m){document.getElementById(m).classList.add('show');}
 
 function saveApp(){var org=document.getElementById('appOrg').value;var title=document.getElementById('appTitle').value;var date=document.getElementById('appDate').value;var stat=document.getElementById('appStat').value;var notes=document.getElementById('appNotes').value;if(!org||!title)return alert('Please fill in org and title');appTracker.push({org:org,title:title,date:date,stat:stat,notes:notes});localStorage.setItem('jt',JSON.stringify(appTracker));hideModal('addModal');renderApps();document.getElementById('appOrg').value='';document.getElementById('appTitle').value='';document.getElementById('appDate').value='';document.getElementById('appStat').value='applied';document.getElementById('appNotes').value='';}
 
-function renderApps(){var html='';appTracker.forEach(function(a,i){html+='<div class="card"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div><div class="jt">'+a.title+'</div><div class="jc">'+a.org+'</div><div style="font-size:.78rem;color:#999;margin-top:6px">Applied: '+a.date+'</div><div style="margin-top:8px"><span class="badge "+stClass(a.stat)+'">'+stLabel(a.stat)+'</span></div>'+(a.notes?'<div style="font-size:.78rem;color:#666;margin-top:8px;padding:8px;background:#f9f9f9;border-radius:4px">'+a.notes+'</div>':'')+'</div><button class="btn btn-r btn-sm" onclick="removeApp('+i+')">Delete</button></div></div>';});if(!appTracker.length)html='<div class="empty">No applications tracked yet. Add one above.</div>';document.getElementById('trkList').innerHTML=html;}
+function renderApps(){var html='';appTracker.forEach(function(a,i){html+='<div class="card"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div><div class="jt">'+a.title+'</div><div class="jc">'+a.org+'</div><div style="font-size:.78rem;color:#999;margin-top:6px">Applied: '+a.date+'</div><div style="margin-top:8px"><span class="badge '+stClass(a.stat)+'">'+stLabel(a.stat)+'</span></div>'+(a.notes?'<div style="font-size:.78rem;color:#666;margin-top:8px;padding:8px;background:#f9f9f9;border-radius:4px">'+a.notes+'</div>':'')+'</div><button class="btn btn-r btn-sm" onclick="removeApp('+i+')">Delete</button></div></div>';});if(!appTracker.length)html='<div class="empty">No applications tracked yet. Add one above.</div>';document.getElementById('trkList').innerHTML=html;}
 
 function removeApp(i){appTracker.splice(i,1);localStorage.setItem('jt',JSON.stringify(appTracker));renderApps();}
 
