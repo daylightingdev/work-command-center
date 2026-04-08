@@ -6,7 +6,8 @@ const path = require('path');
 
 const PORT = process.env.PORT || 3000;
 
-const server = http.createServer((req, res) => {
+// Vercel serverless function handler
+module.exports = (req, res) => {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -35,6 +36,11 @@ const server = http.createServer((req, res) => {
     res.writeHead(404);
     res.end(JSON.stringify({ error: 'Not found' }));
   }
+};
+
+// Create server for local development
+const server = http.createServer((req, res) => {
+  module.exports(req, res);
 });
 
 function refreshDashboard(res) {
