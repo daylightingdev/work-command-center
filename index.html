@@ -28,6 +28,7 @@ h1{font-size:32px;font-weight:700;margin-bottom:8px}
 .badge-salary{background:#f3f4f6;color:#0f172a;border:1px solid #e2e8f0}
 .badge-tag{background:#f3f4f6;color:#0f172a;border:1px solid #e2e8f0}
 .badge-new{background:#059669;color:#ffffff}
+.badge-source{background:#ede9fe;color:#5b21b6;border:1px solid #c4b5fd}
 .job-reqs{font-size:14px;color:#0f172a;margin:12px 0;padding:12px;background:#f9fafb;border-radius:6px;border-left:3px solid #0066cc;line-height:1.8}
 .job-actions{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
 .thumb{display:inline-block;width:36px;height:36px;border:1.5px solid #e2e8f0;border-radius:6px;text-align:center;line-height:36px;cursor:pointer;font-size:16px;transition:all 0.3s;background:#ffffff}
@@ -83,6 +84,7 @@ a:hover{color:#0052a3;text-decoration:underline}
 .gen-output{background:#f9fafb;border-left:3px solid #0066cc;padding:16px;border-radius:6px;margin-top:12px;font-size:13px;line-height:1.7;white-space:pre-wrap;font-family:monospace;color:#0f172a;max-height:300px;overflow-y:auto}
 .copy-btn{background:#0066cc;color:#ffffff;border:none;padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;margin-top:10px;font-weight:600;transition:all 0.3s;font-family:inherit}
 .copy-btn:hover{background:#0052a3}
+.url-invalid{opacity:0.6;border-left:3px solid #dc2626}
 @media(max-width:768px){.stats{grid-template-columns:repeat(2,1fr)}.filters{flex-direction:column}.filter{width:100%}.table{font-size:12px}th,td{padding:10px}}
 ::-webkit-scrollbar{width:8px}
 ::-webkit-scrollbar-track{background:#f1f5f9}
@@ -94,21 +96,21 @@ a:hover{color:#0052a3;text-decoration:underline}
 
 <header>
   <h1>Work Command Center</h1>
-  <p class="subtitle">Ashrita Shetty — Urban Strategist & Design Researcher<br><small style="font-size:12px;opacity:0.8">22 Verified Job Opportunities</small></p>
+  <p class="subtitle">Ashrita Shetty &mdash; Urban Strategist & Design Researcher<br><small style="font-size:12px;opacity:0.8">333 Verified Job Opportunities from 94 Organizations</small></p>
 </header>
 
 <div class="refresh">
-  <span id="lastRefresh">Last Refreshed: April 7, 2026</span>
-  <button class="btn btn-sm" onclick="refreshDashboard()" id="refreshBtn">🔄 Refresh</button>
-  <span style="color:#e2e8f0">•</span>
-  <span id="totalJobs" style="color:#0066cc;font-weight:600">50+ jobs loaded</span>
-  <span style="color:#e2e8f0">•</span>
-  <span id="totalOrgs" style="color:#0066cc;font-weight:600">117 organizations</span>
+  <span id="lastRefresh">Last Refreshed: April 8, 2026</span>
+  <button class="btn btn-sm" onclick="refreshDashboard()" id="refreshBtn">Refresh</button>
+  <span style="color:#e2e8f0">&bull;</span>
+  <span id="totalJobs" style="color:#0066cc;font-weight:600">50 jobs loaded</span>
+  <span style="color:#e2e8f0">&bull;</span>
+  <span id="totalOrgs" style="color:#0066cc;font-weight:600">94 organizations</span>
 </div>
 
 <div class="tabs">
   <div class="tab active" onclick="showTab(0)">Top 50 Jobs</div>
-  <div class="tab" onclick="showTab(1)">Org Tracker (117)</div>
+  <div class="tab" onclick="showTab(1)">Org Tracker (94)</div>
   <div class="tab" onclick="showTab(2)">My Applications</div>
   <div class="tab" onclick="showTab(3)">AI Generator</div>
   <div class="tab" onclick="showTab(4)">Your Profile</div>
@@ -117,9 +119,9 @@ a:hover{color:#0052a3;text-decoration:underline}
 <div class="content active" id="tab0">
   <div class="sort">
     <span style="font-size:13px;font-weight:600;color:#0f172a;text-transform:uppercase">Sort:</span>
-    <button class="sort-btn active" onclick="sortJobs('score')">Match Score ↓</button>
-    <button class="sort-btn" onclick="sortJobs('date')">Posted ↓</button>
-    <button class="sort-btn" onclick="sortJobs('salary')">Salary ↓</button>
+    <button class="sort-btn active" onclick="sortJobs('score')">Match Score</button>
+    <button class="sort-btn" onclick="sortJobs('date')">Posted</button>
+    <button class="sort-btn" onclick="sortJobs('salary')">Salary</button>
   </div>
   <div class="filters">
     <div class="filter">
@@ -139,9 +141,18 @@ a:hover{color:#0052a3;text-decoration:underline}
       <label>Salary</label>
       <select id="filterSalary" onchange="renderJobs()">
         <option value="0">Any</option>
+        <option value="90000">$90K+</option>
         <option value="120000">$120K+</option>
         <option value="140000">$140K+</option>
         <option value="160000">$160K+</option>
+      </select>
+    </div>
+    <div class="filter">
+      <label>Source</label>
+      <select id="filterSource" onchange="renderJobs()">
+        <option value="">All</option>
+        <option value="greenhouse">Greenhouse</option>
+        <option value="lever">Lever</option>
       </select>
     </div>
     <div class="filter">
@@ -196,8 +207,8 @@ a:hover{color:#0052a3;text-decoration:underline}
       <label>Job Description</label>
       <textarea id="genDesc" placeholder="Paste job description..."></textarea>
     </div>
-    <button class="btn" onclick="genBullets()">✦ Generate Resume Bullets</button>
-    <button class="btn btn-secondary" style="margin-left:8px" onclick="genLetter()">✦ Generate Cover Letter</button>
+    <button class="btn" onclick="genBullets()">Generate Resume Bullets</button>
+    <button class="btn btn-secondary" style="margin-left:8px" onclick="genLetter()">Generate Cover Letter</button>
     <div id="genOutput"></div>
   </div>
 </div>
@@ -211,8 +222,8 @@ a:hover{color:#0052a3;text-decoration:underline}
         <div class="stat-label">Years Experience</div>
       </div>
       <div class="stat">
-        <div class="stat-val">73</div>
-      <div class="stat-label">Organizations</div>
+        <div class="stat-val">94</div>
+        <div class="stat-label">Organizations</div>
       </div>
       <div class="stat">
         <div class="stat-val">$120K+</div>
@@ -251,7 +262,7 @@ a:hover{color:#0052a3;text-decoration:underline}
 
 <div id="jobAIModal" class="modal">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('jobAIModal')">×</button>
+    <button class="modal-close" onclick="closeModal('jobAIModal')">&times;</button>
     <h3>AI Resume & Cover Letter Assistant</h3>
     <div class="form-group">
       <label>Job Title</label>
@@ -262,8 +273,8 @@ a:hover{color:#0052a3;text-decoration:underline}
       <input type="text" id="aiCompany" readonly>
     </div>
     <div style="display:flex;gap:8px;margin-bottom:16px">
-      <button class="btn" onclick="genJobBullets()">✦ Generate Resume Bullets</button>
-      <button class="btn" onclick="genJobLetter()">✦ Generate Cover Letter</button>
+      <button class="btn" onclick="genJobBullets()">Generate Resume Bullets</button>
+      <button class="btn" onclick="genJobLetter()">Generate Cover Letter</button>
     </div>
     <div id="aiOutput"></div>
   </div>
@@ -271,7 +282,7 @@ a:hover{color:#0052a3;text-decoration:underline}
 
 <div id="removeJobModal" class="modal">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('removeJobModal')">×</button>
+    <button class="modal-close" onclick="closeModal('removeJobModal')">&times;</button>
     <h3>Remove Job</h3>
     <p style="font-size:13px;color:#64748b;margin-bottom:12px">Why don't you want to see this job?</p>
     <div class="form-group">
@@ -283,7 +294,7 @@ a:hover{color:#0052a3;text-decoration:underline}
 
 <div id="addJobModal" class="modal">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('addJobModal')">×</button>
+    <button class="modal-close" onclick="closeModal('addJobModal')">&times;</button>
     <h3>Add Application</h3>
     <div class="form-group">
       <label>Company & Position</label>
@@ -311,12 +322,12 @@ a:hover{color:#0052a3;text-decoration:underline}
 
 <div id="orgStatusModal" class="modal">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('orgStatusModal')">×</button>
+    <button class="modal-close" onclick="closeModal('orgStatusModal')">&times;</button>
     <h3 id="orgStatusTitle">Organization Status</h3>
     <div class="form-group">
       <label>Status</label>
       <select id="statusValue">
-        <option value="">— Clear</option>
+        <option value="">&mdash; Clear</option>
         <option value="applied">Applied</option>
         <option value="interview">Interview</option>
         <option value="rejected">Rejected</option>
@@ -333,124 +344,178 @@ a:hover{color:#0052a3;text-decoration:underline}
 <script>
 var currentOrgName='',currentRemoveJobId='',currentSort='score';
 var JOBS=[
-{num:1,id:4,t:"VP Revenue Strategy",c:"Metropolitan Transportation Authority",s:"$140,000-$180,000",l:"Remote",sec:"general",sc:100,d:"2026-04-07",u:"https://www.linkedin.com/jobs/view/4371310428",r:["Resume","Portfolio"]},
-{num:2,id:5,t:"Design Strategist – Data Analytics",c:"Gensler",s:"$120,000-$155,000",l:"Remote",sec:"urban",sc:96,d:"2026-04-07",u:"https://www.linkedin.com/jobs/view/4388232903",r:["Resume","Cover Letter","Portfolio"]},
-{num:3,id:7,t:"AVP Operations Planning",c:"Metropolitan Transportation Authority",s:"$125,000-$160,000",l:"Remote",sec:"urban",sc:92,d:"2026-04-07",u:"https://www.linkedin.com/jobs/view/4368951257",r:["Resume","Portfolio"]},
-{num:5,id:9,t:"Associate, Climate Strategy",c:"Buro Happold",s:"$110,000-$140,000",l:"Remote",sec:"climate",sc:84,d:"2026-04-07",u:"https://www.linkedin.com/jobs/view/4364961373",r:["Resume","Portfolio"]},
-{num:6,id:18,t:"Consultant, Infrastructure Resilience",c:"WSP",s:"$115,000-$145,000",l:"Remote",sec:"general",sc:80,d:"2026-04-07",u:"https://www.linkedin.com/jobs/view/4392034541",r:["Resume","Portfolio"]},
-{num:7,id:19,t:"Special Assistant & Research Analyst",c:"HR&A Advisors",s:"$115,000-$145,000",l:"Remote",sec:"general",sc:76,d:"2026-04-07",u:"https://www.linkedin.com/jobs/view/4379148851",r:["Resume","Cover Letter","Portfolio"]},
-{num:8,id:22,t:"Science & Planning Program Associate",c:"Open Space Institute",s:"$120,000-$150,000",l:"Remote",sec:"urban",sc:72,d:"2026-04-07",u:"https://www.linkedin.com/jobs/view/4390366073",r:["Resume","Cover Letter"]},
-{num:9,id:25,t:"Managing Director, Project Development",c:"WSP",s:"$140,000-$180,000",l:"Remote",sec:"general",sc:68,d:"2026-04-07",u:"https://www.linkedin.com/jobs/view/4304467986",r:["Resume","Portfolio"]},
-{num:10,id:26,t:"Urban Designer & Planner – Transportation",c:"Stantec",s:"$120,000-$150,000",l:"Remote",sec:"urban",sc:64,d:"2026-04-07",u:"https://www.linkedin.com/jobs/view/4388251082",r:["Resume"]},
-{num:11,id:27,t:"Research Associate",c:"Social Science Research Council",s:"$120,000-$150,000",l:"Remote",sec:"general",sc:60,d:"2026-04-07",u:"https://www.linkedin.com/jobs/view/4354015139",r:["Resume","Cover Letter"]},
-{num:12,id:28,t:"Project Manager, Africa Initiative",c:"NRDC",s:"$120,000-$150,000",l:"Remote",sec:"general",sc:56,d:"2026-04-07",u:"https://www.linkedin.com/jobs/view/4370724764",r:["Resume"]},
-{num:13,id:29,t:"Pursuit Manager, Community Development",c:"Stantec",s:"$120,000-$155,000",l:"Remote",sec:"general",sc:52,d:"2026-04-07",u:"https://www.linkedin.com/jobs/view/4389395312",r:["Resume"]},
-{num:14,id:30,t:"Senior Sustainability Analyst",c:"Broadridge",s:"$120,000-$150,000",l:"Remote",sec:"climate",sc:48,d:"2026-04-07",u:"https://www.linkedin.com/jobs/view/4358338925",r:["Resume","Portfolio"]},
-{num:15,id:32,t:"Senior Partner Success Manager",c:"Via",s:"$120,000-$150,000",l:"Remote",sec:"general",sc:44,d:"2026-04-07",u:"https://job-boards.greenhouse.io/via/jobs/7562971002",r:["Resume"]},
-{num:16,id:39,t:"Senior Product Manager",c:"Odyssey",s:"$120,000-$155,000",l:"Remote",sec:"general",sc:40,d:"2026-04-07",u:"https://www.theodysseyapp.com/careers",r:["Resume"]},
-{num:17,id:41,t:"Design Research Lead",c:"IDEO",s:"$120,000-$160,000",l:"Remote",sec:"urban",sc:36,d:"2026-04-07",u:"https://www.ideo.com/careers",r:["Resume"]},
-{num:18,id:47,t:"Program Director",c:"Enterprise Community Partners",s:"$120,000-$150,000",l:"Remote",sec:"general",sc:32,d:"2026-04-07",u:"https://www.enterprisecommunity.org/careers",r:["Resume"]}
+{num:1,id:1,t:"Senior Product Designer, Transit Operations",c:"Via",s:"$150,000-$200,000",l:"New York City",sec:"climate",sc:100,d:"2025-12-07",u:"https://job-boards.greenhouse.io/via/jobs/7896438002",r:["Portfolio"]},
+{num:2,id:2,t:"Strategy and Operations Principal, Partner Operations",c:"Via",s:"$145,000-$170,000",l:"Dallas - Fort Worth, TX ",sec:"climate",sc:100,d:"2026-03-18",u:"https://job-boards.greenhouse.io/via/jobs/8398588002",r:["Resume (standard)"]},
+{num:3,id:3,t:"Strategy & Operations Principal, Global Operations",c:"Via",s:"$125,000-$160,000",l:"New York City",sec:"climate",sc:100,d:"2026-03-05",u:"https://job-boards.greenhouse.io/via/jobs/8448498002",r:["Portfolio"]},
+{num:4,id:4,t:"Strategy & Operations Principal, Vehicle Operations ",c:"Via",s:"$130,000-$165,000",l:"New York City",sec:"climate",sc:100,d:"2026-01-14",u:"https://job-boards.greenhouse.io/via/jobs/8292591002",r:["Resume (standard)"]},
+{num:5,id:5,t:"Sales Director, North America (Remix)",c:"Via",s:"$150,000-$210,000",l:"San Francisco; Los Angeles; New York City",sec:"climate",sc:95,d:"2026-02-04",u:"https://job-boards.greenhouse.io/via/jobs/6260601002",r:["Resume (standard)"]},
+{num:6,id:6,t:"Strategy & Operations Associate Principal, Vehicle Operations ",c:"Via",s:"$85,000-$115,000",l:"New York City",sec:"climate",sc:95,d:"2026-01-14",u:"https://job-boards.greenhouse.io/via/jobs/8292564002",r:["Resume (standard)"]},
+{num:7,id:7,t:"Strategy & Operations Principal, Partner Operations",c:"Via",s:"$130,000-$165,000",l:"Seattle, WA",sec:"climate",sc:95,d:"2026-03-16",u:"https://job-boards.greenhouse.io/via/jobs/7952928002",r:["Resume (standard)"]},
+{num:8,id:8,t:"Strategy Principal, Proposals",c:"Via",s:"$115,000-$160,000",l:"New York City",sec:"climate",sc:95,d:"2026-03-25",u:"https://job-boards.greenhouse.io/via/jobs/8239401002",r:["Resume (standard)"]},
+{num:9,id:9,t:"Data Scientist, Supply and Operations Technology, Lyft Urban Solutions",c:"Lyft",s:"$128,000-$160,000",l:"New York, NY",sec:"climate",sc:95,d:"2026-02-11",u:"https://app.careerpuck.com/job-board/lyft/job/8402782002?gh_jid=8402782002",r:["Resume (standard)"]},
+{num:10,id:10,t:"Executive Assistant to the CEO",c:"Via",s:"$130,000-$170,000",l:"New York City",sec:"climate",sc:90,d:"2026-04-07",u:"https://job-boards.greenhouse.io/via/jobs/8425409002",r:["Resume (standard)"]},
+{num:11,id:11,t:"Full Stack Software Engineer, Remix by Via",c:"Via",s:"$160,000-$220,000",l:"New York, New York",sec:"climate",sc:90,d:"2026-03-10",u:"https://job-boards.greenhouse.io/via/jobs/8427488002",r:["Resume (standard)"]},
+{num:12,id:12,t:"General Operations Manager ",c:"Via",s:"$110,000-$160,000",l:"Sarasota, FL",sec:"climate",sc:90,d:"2026-04-07",u:"https://job-boards.greenhouse.io/via/jobs/8394532002",r:["Resume (standard)"]},
+{num:13,id:13,t:"Senior Account Executive, North America (Remix)",c:"Via",s:"$125,000-$165,000",l:"San Francisco; Los Angeles; New York City",sec:"climate",sc:90,d:"2026-02-04",u:"https://job-boards.greenhouse.io/via/jobs/8372159002",r:["Resume (standard)"]},
+{num:14,id:14,t:"Strategy & Operations Principal",c:"Via",s:"$110,000-$160,000",l:"Sioux Falls, South Dakota",sec:"climate",sc:90,d:"2026-03-17",u:"https://job-boards.greenhouse.io/via/jobs/8466463002",r:["Resume (standard)"]},
+{num:15,id:15,t:"Strategy & Operations Principal ",c:"Via",s:"$100,000-$150,000",l:"Benton Harbor, MI ",sec:"climate",sc:90,d:"2026-03-17",u:"https://job-boards.greenhouse.io/via/jobs/8448481002",r:["Resume (standard)"]},
+{num:16,id:16,t:"Engineering Manager, Lyft Urban Solutions",c:"Lyft",s:"$176,000-$220,000",l:"New York, NY",sec:"climate",sc:90,d:"2026-02-25",u:"https://app.careerpuck.com/job-board/lyft/job/8430584002?gh_jid=8430584002",r:["References"]},
+{num:17,id:17,t:"Group Product Manager II, Pricing",c:"Lyft",s:"$208,000-$260,000",l:"New York, NY",sec:"climate",sc:90,d:"2026-04-02",u:"https://app.careerpuck.com/job-board/lyft/job/8492202002?gh_jid=8492202002",r:["Portfolio"]},
+{num:18,id:18,t:"Chief of Staff to the CRO",c:"Via",s:"$200,000-$300,000",l:"New York",sec:"urban",sc:85,d:"2026-02-27",u:"https://job-boards.greenhouse.io/via/jobs/8401464002",r:["Resume (standard)"]},
+{num:19,id:19,t:"Engineering Manager",c:"Via",s:"$200,000-$275,000",l:"New York",sec:"climate",sc:85,d:"2026-03-12",u:"https://job-boards.greenhouse.io/via/jobs/8460194002",r:["Resume (standard)"]},
+{num:20,id:20,t:"Motion & AI Video Designer (Via, Remix, Citymapper)",c:"Via",s:"$125,000-$160,000",l:"New York City",sec:"climate",sc:85,d:"2026-03-24",u:"https://job-boards.greenhouse.io/via/jobs/8478199002",r:["Resume","Portfolio"]},
+{num:21,id:21,t:"Sales Director, Eastern US",c:"Via",s:"$150,000-$210,000",l:"New York; Miami; Atlanta",sec:"climate",sc:85,d:"2026-02-24",u:"https://job-boards.greenhouse.io/via/jobs/8435017002",r:["Resume (standard)"]},
+{num:22,id:22,t:"Senior Account Executive, Eastern US",c:"Via",s:"$145,000-$165,000",l:"Atlanta; Miami; New York City ",sec:"climate",sc:85,d:"2026-02-05",u:"https://job-boards.greenhouse.io/via/jobs/6665024002",r:["Resume (standard)"]},
+{num:23,id:23,t:"Senior Workday Consultant",c:"Via",s:"$115,000-$140,000",l:"New York, NY",sec:"climate",sc:85,d:"2026-01-08",u:"https://job-boards.greenhouse.io/via/jobs/8362069002",r:["Resume (standard)"]},
+{num:24,id:24,t:"VP, Product Marketing",c:"Via",s:"$230,000-$270,000",l:"New York City",sec:"climate",sc:85,d:"2026-04-03",u:"https://job-boards.greenhouse.io/via/jobs/8324589002",r:["Portfolio"]},
+{num:25,id:25,t:"Workday Solutions Architect",c:"Via",s:"$115,000-$140,000",l:"New York, NY",sec:"climate",sc:85,d:"2026-01-27",u:"https://job-boards.greenhouse.io/via/jobs/8186241002",r:["Resume (standard)"]},
+{num:26,id:26,t:"Analytics Lead, Safety & Customer Care",c:"Lyft",s:"$118,000-$147,500",l:"New York, NY",sec:"climate",sc:85,d:"2026-04-07",u:"https://app.careerpuck.com/job-board/lyft/job/8474709002?gh_jid=8474709002",r:["Resume (standard)"]},
+{num:27,id:27,t:"Applied Scientist- Pricing, Dynamic Pricing & Offer Selection",c:"Lyft",s:"$140,800-$176,000",l:"New York, NY",sec:"climate",sc:85,d:"2026-04-06",u:"https://app.careerpuck.com/job-board/lyft/job/8403370002?gh_jid=8403370002",r:["Resume (standard)"]},
+{num:28,id:28,t:"Product Designer, Core Rider",c:"Lyft",s:"$128,000-$160,000",l:"New York, NY",sec:"climate",sc:85,d:"2026-02-24",u:"https://app.careerpuck.com/job-board/lyft/job/8357844002?gh_jid=8357844002",r:["Resume (standard)"]},
+{num:29,id:29,t:"Senior Manager, Global Equity Programs",c:"Lyft",s:"$132,000-$165,000",l:"New York, NY",sec:"climate",sc:85,d:"2026-03-12",u:"https://app.careerpuck.com/job-board/lyft/job/8460918002?gh_jid=8460918002",r:["Resume (standard)"]},
+{num:30,id:30,t:"Equity Compensation Principal",c:"Via",s:"$90,000-$150,000",l:"New York, NY",sec:"climate",sc:80,d:"2025-11-24",u:"https://job-boards.greenhouse.io/via/jobs/8195890002",r:["Resume (standard)"]},
+{num:31,id:31,t:"General Manager ",c:"Via",s:"$145,000-$170,000",l:"Dallas-Fort Worth, TX",sec:"climate",sc:80,d:"2026-03-18",u:"https://job-boards.greenhouse.io/via/jobs/7761526002",r:["Resume (standard)"]},
+{num:32,id:32,t:"General Manager ",c:"Via",s:"$110,000-$160,000",l:"Sarasota, FL ",sec:"climate",sc:80,d:"2026-04-07",u:"https://job-boards.greenhouse.io/via/jobs/8290431002",r:["Resume (standard)"]},
+{num:33,id:33,t:"People Operations Associate",c:"Via",s:"$70,000-$90,000",l:"New York City",sec:"urban",sc:80,d:"2026-04-07",u:"https://job-boards.greenhouse.io/via/jobs/8496869002",r:["Resume (standard)"]},
+{num:34,id:34,t:"Public Relations Director",c:"Via",s:"$160,000-$200,000",l:"New York City",sec:"climate",sc:80,d:"2026-03-31",u:"https://job-boards.greenhouse.io/via/jobs/8437768002",r:["Resume (standard)"]},
+{num:35,id:35,t:"Sales Director, Central US",c:"Via",s:"$150,000-$210,000",l:"Chicago",sec:"climate",sc:80,d:"2026-03-31",u:"https://job-boards.greenhouse.io/via/jobs/6665485002",r:["Resume (standard)"]},
+{num:36,id:36,t:"Sales Director, Central US",c:"Via",s:"$150,000-$210,000",l:"Dallas",sec:"climate",sc:80,d:"2026-03-31",u:"https://job-boards.greenhouse.io/via/jobs/8451276002",r:["Resume (standard)"]},
+{num:37,id:37,t:"Sales Director, Central US",c:"Via",s:"$150,000-$210,000",l:"Detroit",sec:"climate",sc:80,d:"2026-03-31",u:"https://job-boards.greenhouse.io/via/jobs/8451268002",r:["Resume (standard)"]},
+{num:38,id:38,t:"Sales Director, Western US",c:"Via",s:"$150,000-$210,000",l:"San Francisco; Los Angeles",sec:"climate",sc:80,d:"2026-03-31",u:"https://job-boards.greenhouse.io/via/jobs/8399167002",r:["Resume (standard)"]},
+{num:39,id:39,t:"Sales Director, Western US",c:"Via",s:"$150,000-$210,000",l:"Seattle",sec:"climate",sc:80,d:"2026-03-31",u:"https://job-boards.greenhouse.io/via/jobs/8455341002",r:["Resume (standard)"]},
+{num:40,id:40,t:"Senior Account Executive, Western US",c:"Via",s:"$145,000-$165,000",l:"Los Angeles; San Francisco",sec:"climate",sc:80,d:"2026-03-24",u:"https://job-boards.greenhouse.io/via/jobs/4114323002",r:["Resume (standard)"]},
+{num:41,id:41,t:"Senior Account Executive, Western US",c:"Via",s:"$145,000-$165,000",l:"Denver",sec:"climate",sc:80,d:"2026-03-24",u:"https://job-boards.greenhouse.io/via/jobs/8451257002",r:["Resume (standard)"]},
+{num:42,id:42,t:"Senior Account Executive, Western US",c:"Via",s:"$145,000-$165,000",l:"Seattle",sec:"climate",sc:80,d:"2026-03-24",u:"https://job-boards.greenhouse.io/via/jobs/8451256002",r:["Resume (standard)"]},
+{num:43,id:43,t:"Senior Backend Engineer",c:"Via",s:"$180,000-$220,000",l:"New York City, New York",sec:"climate",sc:80,d:"2026-03-10",u:"https://job-boards.greenhouse.io/via/jobs/8321613002",r:["Resume (standard)"]},
+{num:44,id:44,t:"Senior iOS Engineer",c:"Via",s:"$160,000-$200,000",l:"New York, New York",sec:"climate",sc:80,d:"2026-02-09",u:"https://job-boards.greenhouse.io/via/jobs/7789696002",r:["Resume (standard)"]},
+{num:45,id:45,t:"Senior Partner Success Manager, Eastern US",c:"Via",s:"$145,000-$165,000",l:"New York City; Atlanta; Miami; Toronto",sec:"climate",sc:80,d:"2026-02-04",u:"https://job-boards.greenhouse.io/via/jobs/7562971002",r:["Resume (standard)"]},
+{num:46,id:46,t:"Senior Stock Plan Administrator",c:"Via",s:"$90,000-$150,000",l:"New York, NY",sec:"climate",sc:80,d:"2025-12-10",u:"https://job-boards.greenhouse.io/via/jobs/8332494002",r:["Resume (standard)"]},
+{num:47,id:47,t:"Strategy & Operations Principal",c:"Via",s:"Salary not listed",l:"London",sec:"climate",sc:80,d:"2026-03-24",u:"https://job-boards.greenhouse.io/via/jobs/8224276002",r:["Portfolio"]},
+{num:48,id:48,t:"Associate Program Manager, Regulatory Operations ",c:"Lyft",s:"$108,000-$135,000",l:"New York, NY",sec:"climate",sc:80,d:"2026-03-05",u:"https://app.careerpuck.com/job-board/lyft/job/8448230002?gh_jid=8448230002",r:["Resume (standard)"]},
+{num:49,id:49,t:"Counsel, Litigation & Employment (Labor)",c:"Lyft",s:"$176,000-$220,000",l:"New York, NY",sec:"climate",sc:80,d:"2026-03-27",u:"https://app.careerpuck.com/job-board/lyft/job/8482240002?gh_jid=8482240002",r:["Portfolio"]},
+{num:50,id:50,t:"Data Scientist, Algorithms - Lyft Ads",c:"Lyft",s:"$128,000-$160,000",l:"New York, NY",sec:"climate",sc:80,d:"2025-12-10",u:"https://app.careerpuck.com/job-board/lyft/job/8330595002?gh_jid=8330595002",r:["Resume"]}
 ];
 var ORGS=[
-{n:"Downtown Brooklyn Partnership",s:"general",u:"https://downtownbrooklyn.com/jobs-rfps/"},
-{n:"HKS Inc",s:"general",u:"https://www.hksinc.com/careers/"},
-{n:"Via",s:"general",u:"https://ridewithvia.com/careers"},
-{n:"Replica",s:"general",u:"https://www.replicahq.com/careers"},
-{n:"Nonprofit New York",s:"general",u:"https://www.nonprofitnewyork.org/about-us/careers/"},
-{n:"Gensler",s:"general",u:"https://www.gensler.com/careers"},
-{n:"NYC Mayor's Office",s:"general",u:"https://cityjobs.nyc.gov"},
-{n:"Buro Happold",s:"general",u:"https://www.burohappold.com/careers/"},
-{n:"HR&A Advisors",s:"general",u:"https://www.hraadvisors.com/careers/"},
-{n:"NYC Dept of Social Services",s:"general",u:"https://www.nyc.gov:443/site/dss/careers/careers.html"},
-{n:"Environmental Defense Fund",s:"general",u:"https://www.edf.org/environmental-careers"},
-{n:"LISC",s:"general",u:"/about-us/careers/"},
-{n:"NYC HRA",s:"general",u:"https://www.nyc.gov:443/site/hra/careers/careers.html"},
-{n:"Cushman & Wakefield",s:"general",u:"/en/"},
-{n:"CBRE",s:"general",u:"https://careers.cbre.com/en_US/careers"},
-{n:"WSP",s:"general",u:"https://www.wsp.com/en-us/careers"},
-{n:"Bloomberg Philanthropies",s:"general",u:"https://www.bloomberg.org/about/careers/"},
-{n:"GiveDirectly",s:"general",u:"https://www.givedirectly.org/careers"},
-{n:"Stantec",s:"general",u:"https://www.stantec.com/en/careers"},
-{n:"Brookings Institution",s:"general",u:"https://www.brookings.edu/careers/"},
-{n:"Knight Foundation",s:"general",u:"https://knightfoundation.org/about/careers/"},
-{n:"Gates Foundation",s:"general",u:"https://www.gatesfoundation.org/about/careers"},
-{n:"Mellon Foundation",s:"general",u:"https://www.mellon.org/careers"},
-{n:"Regional Plan Association",s:"general",u:"https://rpa.org/careers"},
-{n:"NACTO",s:"general",u:"/job-board/"},
-{n:"Remix",s:"general",u:"https://ridewithvia.com:443/careers"},
-{n:"Odyssey",s:"general",u:"https://www.theodysseyapp.com/careers"},
-{n:"IDEO",s:"general",u:"https://www.ideo.com/careers"},
-{n:"SOM",s:"general",u:"https://www.som.com/culture/careers/"},
-{n:"NBBJ",s:"general",u:"https://www.nbbj.com/careers"},
-{n:"Perkins & Will",s:"general",u:"https://perkinswill.com/careers/"},
-{n:"RMI",s:"general",u:"https://rmi.org/careers"},
-{n:"The Nature Conservancy",s:"general",u:"https://www.nature.org/en-us/about-us/careers/"},
-{n:"80000hours.org",s:"general",u:"https://jobs.80000hours.org"},
-{n:"ERA-Co",s:"general",u:"https://era-co.com/careers/"},
-{n:"Arc.dev",s:"general",u:"https://arc.dev"},
-{n:"AngelList",s:"general",u:"https://wellfound.com/"},
-{n:"Built.in",s:"general",u:"https://builtin.com"},
-{n:"We Work Remotely",s:"general",u:"https://weworkremotely.com"},
-{n:"Idealist",s:"general",u:"https://www.idealist.org/en"},
-{n:"New York Jobs.com",s:"general",u:"https://cityjobs.nyc.gov"},
-{n:"APA Job Board",s:"general",u:"https://planning.org"},
-{n:"American Civil Liberties Union",s:"general",u:"https://www.aclu.org/careers/"},
-{n:"Sierra Club",s:"general",u:"https://www.sierraclub.org/careers-jobs-employment"},
-{n:"Conservation International",s:"general",u:"/conservation-international-jobs"},
-{n:"Trust for Public Land",s:"general",u:"https://www.tpl.org/careers"},
-{n:"American Rivers",s:"general",u:"/about-us/careers/"},
-{n:"Audubon Society",s:"general",u:"https://www.audubon.org/about/careers"},
-{n:"World Wildlife Fund",s:"general",u:"/about/careers/"},
-{n:"The Climate Reality Project",s:"general",u:"https://www.climaterealityproject.org/careers"},
-{n:"350.org",s:"general",u:"https://350.org/careers?r=US&c=NA"},
-{n:"Clean Air Task Force",s:"general",u:"https://www.catf.us/careers/"},
-{n:"Carbon Trust",s:"general",u:"https://www.carbontrust.com/who-we-are/our-career-opportunities"},
-{n:"Carbon Disclosure Project",s:"general",u:"/en/careers"},
-{n:"Local Initiatives Support Corporation",s:"general",u:"/careers/"},
-{n:"Enterprise Community Partners",s:"general",u:"https://www.enterprisecommunity.org/careers"},
-{n:"NeighborWorks",s:"general",u:"https://www.neighborworks.org/"},
-{n:"Heritage Foundation",s:"general",u:"https://www.heritage.org/careers"},
-{n:"Cato Institute",s:"general",u:"https://www.cato.org/careers"},
-{n:"Manhattan Institute",s:"general",u:"https://manhattan.institute/careers"},
-{n:"Progressive Policy Institute",s:"general",u:"https://www.progressivepolicy.org/about/careers/"},
-{n:"American Action Forum",s:"general",u:"https://www.americanactionforum.org/careers/"},
-{n:"National Bureau of Economic Research",s:"general",u:"https://www2.nber.org/careers"},
-{n:"Joint Center for Political and Economic Studies",s:"general",u:"https://jointcenter.org/about/careers/"},
-{n:"Urban Land Institute",s:"general",u:"/programs/career-center/"},
-{n:"American Institute of Architects",s:"general",u:"https://www.aia.org/career-growth"},
-{n:"American Society of Landscape Architects",s:"general",u:"https://www.asla.org/about/careers-at-asla"},
-{n:"American Planning Association",s:"general",u:"/careers/"},
-{n:"International City/County Management Association",s:"general",u:"https://icma.org/careers-learning"},
-{n:"National Governors Association",s:"general",u:"https://www.nga.org/about/careers/"},
-{n:"National Conference of State Legislatures",s:"general",u:"https://www.ncsl.org/about-us/careers"},
-{n:"New America",s:"general",u:"https://www.newamerica.org/careers/"},
-{n:"Carnegie Endowment for International Peace",s:"general",u:"https://carnegieendowment.org/careers"}
+{n:"350.org",s:"climate",u:"https://350.org/careers?r=US&c=NA"},
+{n:"Accenture",s:"consulting",u:"https://www.accenture.com/us-en/careers"},
+{n:"ACLU",s:"policy",u:"https://www.aclu.org/careers/"},
+{n:"AECOM",s:"consulting",u:"https://aecom.jobs"},
+{n:"Arcadis",s:"consulting",u:"https://www.arcadis.com/en/careers"},
+{n:"Arup",s:"consulting",u:"https://www.arup.com/careers"},
+{n:"Audubon Society",s:"climate",u:"https://www.audubon.org/about/careers"},
+{n:"BCG",s:"consulting",u:"https://careers.bcg.com"},
+{n:"Bjarke Ingels Group (BIG)",s:"general",u:"#"},
+{n:"Bloomberg Philanthropies",s:"nonprofit",u:"https://www.bloomberg.org/about/careers/"},
+{n:"Brookfield",s:"consulting",u:"https://www.brookfieldproperties.com/en/careers.html"},
+{n:"Brookings Institution",s:"policy",u:"https://www.brookings.edu/careers/"},
+{n:"Buro Happold",s:"consulting",u:"https://www.burohappold.com/careers/"},
+{n:"Carnegie Endowment",s:"policy",u:"https://carnegieendowment.org/careers"},
+{n:"CBRE",s:"consulting",u:"https://careers.cbre.com"},
+{n:"Chan Zuckerberg Initiative",s:"climate",u:"https://job-boards.greenhouse.io/chanzuckerberginitiative/jobs/7702404"},
+{n:"Cityblock Health",s:"general",u:"#"},
+{n:"Clean Air Task Force",s:"climate",u:"https://www.catf.us/careers/"},
+{n:"Climate Reality Project",s:"climate",u:"https://www.climaterealityproject.org/careers"},
+{n:"Conservation International",s:"climate",u:"https://www.conservation.org/about/careers"},
+{n:"Coord",s:"general",u:"#"},
+{n:"Cushman & Wakefield",s:"consulting",u:"https://www.cushmanwakefield.com/en/careers"},
+{n:"Deloitte",s:"consulting",u:"https://apply.deloitte.com"},
+{n:"Downtown Brooklyn Partnership",s:"urban",u:"https://downtownbrooklyn.com/jobs-rfps/"},
+{n:"Enterprise Community Partners",s:"nonprofit",u:"https://www.enterprisecommunity.org/careers"},
+{n:"Environmental Defense Fund",s:"climate",u:"https://www.edf.org/environmental-careers"},
+{n:"ERA-Co",s:"urban",u:"https://era-co.com/careers/"},
+{n:"EY",s:"consulting",u:"https://www.ey.com/en_us/careers"},
+{n:"Ford Foundation",s:"general",u:"#"},
+{n:"Gates Foundation",s:"nonprofit",u:"https://www.gatesfoundation.org/about/careers"},
+{n:"Gehl",s:"general",u:"#"},
+{n:"Gensler",s:"design",u:"https://www.gensler.com/careers"},
+{n:"GiveDirectly",s:"nonprofit",u:"https://www.givedirectly.org/careers"},
+{n:"Heritage Foundation",s:"policy",u:"https://www.heritage.org/careers"},
+{n:"HKS (Workday)",s:"design",u:"https://hksinc.wd501.myworkdayjobs.com"},
+{n:"HOK",s:"design",u:"https://www.hok.com/careers/"},
+{n:"HR&A Advisors",s:"consulting",u:"https://www.hraadvisors.com/careers/"},
+{n:"Idealist",s:"nonprofit",u:"https://www.idealist.org/en/nonprofit-jobs?q=urban+strategy+OR+placemaking&locationType=REMOTE"},
+{n:"IDEO",s:"design",u:"https://www.ideo.com/careers"},
+{n:"James Corner Field Operations",s:"general",u:"#"},
+{n:"JLL",s:"consulting",u:"https://jobs.jll.com"},
+{n:"JLL (Workday)",s:"consulting",u:"https://jll.wd1.myworkdayjobs.com"},
+{n:"Knight Foundation",s:"general",u:"#"},
+{n:"Lime",s:"general",u:"#"},
+{n:"LISC",s:"nonprofit",u:"https://www.lisc.org/careers/"},
+{n:"Lyft",s:"climate",u:"https://app.careerpuck.com/job-board/lyft/job/8402782002?gh_jid=8402782002"},
+{n:"Manhattan Institute",s:"policy",u:"https://manhattan.institute/careers"},
+{n:"MASS Design Group",s:"general",u:"#"},
+{n:"McKinsey",s:"consulting",u:"https://www.mckinsey.com/careers"},
+{n:"Mellon Foundation",s:"nonprofit",u:"https://www.mellon.org/careers"},
+{n:"MTA",s:"government",u:"https://new.mta.info/careers"},
+{n:"NACTO",s:"policy",u:"https://nacto.org/job-board/"},
+{n:"NBBJ",s:"design",u:"https://www.nbbj.com/careers"},
+{n:"NeighborWorks",s:"nonprofit",u:"https://www.neighborworks.org/"},
+{n:"New America",s:"policy",u:"https://www.newamerica.org/careers/"},
+{n:"NRDC",s:"climate",u:"https://www.nrdc.org/careers"},
+{n:"NYC Government (Mayor\'s Office, DOT, DCP, EDC, Parks, NYCHA, DDC, TLC, DCLA, DOB)",s:"government",u:"https://cityjobs.nyc.gov"},
+{n:"Odyssey",s:"urban",u:"https://www.theodysseyapp.com/careers"},
+{n:"Open Society Foundations",s:"general",u:"#"},
+{n:"Open Space Institute",s:"climate",u:"https://www.openspaceinstitute.org/careers"},
+{n:"OpenGov",s:"general",u:"#"},
+{n:"Passport",s:"general",u:"#"},
+{n:"Perkins&Will",s:"design",u:"https://perkinswill.com/careers/"},
+{n:"Port Authority of NY & NJ",s:"government",u:"https://www.panynj.gov/port-authority/en/careers.html"},
+{n:"Practice for Architecture and Urbanism (PAU)",s:"general",u:"#"},
+{n:"PwC",s:"consulting",u:"https://www.pwc.com/us/en/careers.html"},
+{n:"Regional Plan Association",s:"policy",u:"https://rpa.org/careers"},
+{n:"Related Companies",s:"design",u:"https://rfrk.com/careers/"},
+{n:"Remix",s:"general",u:"#"},
+{n:"Replica",s:"urban",u:"https://replicainc.applytojob.com"},
+{n:"Revel",s:"climate",u:"https://job-boards.greenhouse.io/revel/jobs/5811037004"},
+{n:"RMI",s:"climate",u:"https://rmi.org/careers"},
+{n:"Rockefeller Foundation",s:"general",u:"#"},
+{n:"Sasaki",s:"design",u:"https://www.sasaki.com/careers"},
+{n:"Sidewalk Labs",s:"general",u:"#"},
+{n:"Sierra Club",s:"climate",u:"https://www.sierraclub.org/careers-jobs-employment"},
+{n:"Snohetta",s:"general",u:"#"},
+{n:"Social Science Research Council",s:"policy",u:"https://www.ssrc.org/about/employment/"},
+{n:"SOM",s:"design",u:"https://www.som.com/culture/careers/"},
+{n:"Stantec",s:"consulting",u:"https://www.stantec.com/en/careers"},
+{n:"StreetLight Data",s:"general",u:"#"},
+{n:"Studio Gang",s:"general",u:"#"},
+{n:"Surdna Foundation",s:"general",u:"#"},
+{n:"The Nature Conservancy",s:"climate",u:"https://www.nature.org/en-us/about-us/careers/"},
+{n:"Trust for Public Land",s:"climate",u:"https://www.tpl.org/careers"},
+{n:"Uber",s:"general",u:"#"},
+{n:"Urban Institute",s:"policy",u:"https://www.urban.org/about/careers"},
+{n:"Urban Land Institute",s:"urban",u:"https://urbanland.uli.org/programs/career-center/"},
+{n:"Via",s:"climate",u:"https://job-boards.greenhouse.io/via/jobs/7896438002"},
+{n:"West 8",s:"general",u:"#"},
+{n:"World Wildlife Fund",s:"climate",u:"https://www.worldwildlife.org/about/careers"},
+{n:"WSP",s:"consulting",u:"https://www.wsp.com/en-us/careers"},
+{n:"WXY Architecture",s:"general",u:"#"},
+{n:"Zencity",s:"general",u:"#"}
 ];
-function showTab(i){document.querySelectorAll('.content').forEach(c=>c.classList.remove('active'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.getElementById('tab'+i).classList.add('active');document.querySelectorAll('.tab')[i].classList.add('active')}
+function showTab(i){document.querySelectorAll('.content').forEach(function(c){c.classList.remove('active')});document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active')});document.getElementById('tab'+i).classList.add('active');document.querySelectorAll('.tab')[i].classList.add('active')}
 function getRemovedJobs(){var r=localStorage.getItem('removed_jobs');return r?JSON.parse(r):[]}
-function sortJobs(by){currentSort=by;document.querySelectorAll('.sort-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');renderJobs()}
-function renderJobs(){var removed=getRemovedJobs().map(x=>x.job_id);var sector=document.getElementById('filterSector').value;var salary=parseInt(document.getElementById('filterSalary').value||'0');var liked=document.getElementById('filterLiked').checked;var jobs=JOBS.filter(j=>!removed.includes(j.id));if(sector)jobs=jobs.filter(j=>j.sec===sector);if(salary)jobs=jobs.filter(j=>{var m=j.s.match(/\d+/);return m&&parseInt(m[0])>=salary});if(liked){var ratings=JSON.parse(localStorage.getItem('ratings')||'{}');jobs=jobs.filter(j=>ratings[j.id]==='up')}if(currentSort==='date')jobs.sort((a,b)=>new Date(b.d)-new Date(a.d));else if(currentSort==='salary')jobs.sort((a,b)=>{var ma=a.s.match(/\d+/),mb=b.s.match(/\d+/);return(mb?parseInt(mb[0]):0)-(ma?parseInt(ma[0]):0)});else jobs.sort((a,b)=>b.sc-a.sc);document.getElementById('totalJobs').textContent=jobs.length+' jobs loaded';var html='';jobs.forEach((j,idx)=>{var isNew=new Date()-new Date(j.d)<86400000;var reqsHtml=j.r.map(x=>'✓ '+x).join('<br>');var jobNum=idx+1;var aiCall='showJobAIModal('+j.id+',\"'+j.t.replace(/"/g,'&quot;')+'\",\"'+j.c.replace(/"/g,'&quot;')+'\")';html+='<div class="card"><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="display:inline-block;background:#0066cc;color:#ffffff;width:28px;height:28px;border-radius:50%;text-align:center;line-height:28px;font-weight:700;font-size:12px">'+jobNum+'</span><span style="font-size:11px;text-transform:uppercase;color:#94a3b8;font-weight:600">Job #'+jobNum+'</span></div><div class="job-header"><div><div class="job-title">'+j.t+'</div><div class="job-company">'+j.c+'</div><div class="job-meta"><span class="badge badge-score">'+j.sc+'</span><span class="badge badge-salary">'+j.s+'</span><span class="badge badge-tag">'+j.l+'</span><span class="badge badge-tag">'+j.sec+'</span>'+(isNew?'<span class="badge badge-new">[NEW]</span>':'')+'</div></div><div style="display:flex;gap:6px;margin-top:10px"><span class="thumb" onclick="rateJob('+j.id+',\'up\')" title="Like">👍</span><span class="thumb" onclick="showRemoveModal('+j.id+')" title="Remove">👎</span></div></div></div><div class="job-actions"><a href="'+j.u+'" target="_blank" class="btn btn-sm">View Job →</a><button class="btn btn-sm" onclick="'+aiCall+'" style="background:#667eea">✦ AI Assist</button></div><div class="job-reqs"><strong>Application Requirements:</strong><br>'+reqsHtml+'</div></div>'});document.getElementById('jobsList').innerHTML=html}
-function showJobAIModal(id,title,company){currentJobId=id;document.getElementById('aiTitle').value=title;document.getElementById('aiCompany').value=company;document.getElementById('aiOutput').innerHTML='';showModal('jobAIModal')}
-function genJobBullets(){var title=document.getElementById('aiTitle').value;if(!title){showToast('Job title required');return}var bullets='For this '+title+' role, tailor your resume to highlight:\n• Strategic vision and measurable impact\n• Leadership across teams and disciplines\n• Direct experience in '+title.split(' ').slice(0,2).join(' ')+'\n• Proven track record of [specific achievement]\n\nCustomize these bullets with your actual accomplishments and quantifiable results.';document.getElementById('aiOutput').innerHTML='<div class="gen-output"><strong>Resume Bullet Points:</strong><br>'+bullets.replace(/\n/g,'<br>')+'</div><button class="copy-btn" onclick="copyText(\'aiOutput\')">📋 Copy All</button>'}
-function genJobLetter(){var title=document.getElementById('aiTitle').value;var company=document.getElementById('aiCompany').value;if(!title||!company){showToast('Job title and company required');return}var letter='Dear Hiring Manager,\n\nI am excited to apply for the '+title+' position at '+company+'. With my 7+ years of experience in urban strategy, policy research, and cross-sector collaboration, I bring both strategic vision and operational expertise to complex challenges.\n\nMy background in [your sector] has equipped me to understand the interconnected nature of this work. I am particularly drawn to '+company+'\'s approach to [specific initiative], and I am confident I can contribute meaningfully to your mission.\n\nI would welcome the opportunity to discuss how my experience aligns with your needs.\n\nSincerely,\nAshrita';document.getElementById('aiOutput').innerHTML='<div class="gen-output"><strong>Cover Letter:</strong><br>'+letter.replace(/\n/g,'<br>')+'</div><button class="copy-btn" onclick="copyText(\'aiOutput\')">📋 Copy All</button>'}
+function sortJobs(by){currentSort=by;document.querySelectorAll('.sort-btn').forEach(function(b){b.classList.remove('active')});event.target.classList.add('active');renderJobs()}
+function renderJobs(){var removed=getRemovedJobs().map(function(x){return x.job_id});var sector=document.getElementById('filterSector').value;var salary=parseInt(document.getElementById('filterSalary').value||'0');var source=document.getElementById('filterSource')?document.getElementById('filterSource').value:'';var liked=document.getElementById('filterLiked').checked;var jobs=JOBS.filter(function(j){return !removed.includes(j.id)});if(sector)jobs=jobs.filter(function(j){return j.sec===sector});if(salary)jobs=jobs.filter(function(j){var m=j.s.match(/\d[\d,]*/);return m&&parseInt(m[0].replace(/,/g,''))>=salary});if(liked){var ratings=JSON.parse(localStorage.getItem('ratings')||'{}');jobs=jobs.filter(function(j){return ratings[j.id]==='up'})}if(currentSort==='date')jobs.sort(function(a,b){return new Date(b.d)-new Date(a.d)});else if(currentSort==='salary')jobs.sort(function(a,b){var ma=a.s.match(/\d[\d,]*/),mb=b.s.match(/\d[\d,]*/);return(mb?parseInt(mb[0].replace(/,/g,'')):0)-(ma?parseInt(ma[0].replace(/,/g,'')):0)});else jobs.sort(function(a,b){return b.sc-a.sc});document.getElementById('totalJobs').textContent=jobs.length+' jobs loaded';var html='';jobs.forEach(function(j,idx){var isNew=new Date()-new Date(j.d)<604800000;var reqsHtml=j.r.map(function(x){return '&#10003; '+x}).join('<br>');var jobNum=idx+1;var aiCall='showJobAIModal('+j.id+',"'+j.t.replace(/"/g,'&quot;')+'","'+j.c.replace(/"/g,'&quot;')+'")';html+='<div class="card"><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="display:inline-block;background:#0066cc;color:#ffffff;width:28px;height:28px;border-radius:50%;text-align:center;line-height:28px;font-weight:700;font-size:12px">'+jobNum+'</span><span style="font-size:11px;text-transform:uppercase;color:#94a3b8;font-weight:600">Job #'+jobNum+'</span></div><div class="job-header"><div><div class="job-title">'+j.t+'</div><div class="job-company">'+j.c+'</div><div class="job-meta"><span class="badge badge-score">'+j.sc+'</span><span class="badge badge-salary">'+j.s+'</span><span class="badge badge-tag">'+j.l+'</span><span class="badge badge-tag">'+j.sec+'</span>'+(isNew?'<span class="badge badge-new">[NEW]</span>':'')+'</div></div><div style="display:flex;gap:6px;margin-top:10px"><span class="thumb" onclick="rateJob('+j.id+',\'up\')" title="Like">&#128077;</span><span class="thumb" onclick="showRemoveModal('+j.id+')" title="Remove">&#128078;</span></div></div><div class="job-actions"><a href="'+j.u+'" target="_blank" class="btn btn-sm">View Job &rarr;</a><button class="btn btn-sm" onclick="'+aiCall+'" style="background:#667eea">AI Assist</button></div><div class="job-reqs"><strong>Application Requirements:</strong><br>'+reqsHtml+'</div></div>'});document.getElementById('jobsList').innerHTML=html||'<div class="empty">No jobs match your filters.</div>'}
+function showJobAIModal(id,title,company){document.getElementById('aiTitle').value=title;document.getElementById('aiCompany').value=company;document.getElementById('aiOutput').innerHTML='';showModal('jobAIModal')}
+function genJobBullets(){var title=document.getElementById('aiTitle').value;if(!title){showToast('Job title required');return}var tl=title.toLowerCase();var bullets=[];if(tl.match(/design|architect|placemaking|urban/)){bullets.push('Embedded as Placemaking Strategy Manager in Google\'s corporate placemaking team for 3 years; managed indoor/outdoor retail environments, plazas, and community spaces at 4+ mixed-use assets seeing 10M+ annual foot traffic');bullets.push('Designed and implemented comprehensive multi-year service performance evaluation program for 6 high-traffic public spaces, establishing KPIs, digital dashboards, and bi-annual multi-method research framework');bullets.push('Led team of staff and external vendors; coordinated with operations/strategy stakeholders across property management, retail strategy, and asset management')}if(tl.match(/strategy|operations|management|director|vp|principal/)){bullets.push('Managed 3 simultaneous workplace strategy projects across 6 high-traffic ground floors globally, coordinating design, operations, and retail strategy teams');bullets.push('Delivered strategic campus planning framework informing $50M+ in capital improvements; conducted stakeholder analysis and developed planning scenarios that unlocked $50M in bond funding');bullets.push('Built portfolio-wide headcount forecasting model for space planning that remained in active use 7+ months post-departure, demonstrating sustainable operational value')}if(tl.match(/research|analyst|data|policy/)){bullets.push('Conducted 50+ hours of onsite observation and 35+ stakeholder interviews, focus groups, and surveys; synthesized findings into actionable recommendations for space planning and service design');bullets.push('Designed comprehensive evaluation framework with multi-method research, KPIs, and metrics dashboard; delivered monthly dashboard updates and bi-annual qualitative reports to executive stakeholders');bullets.push('Built portfolio-wide headcount forecasting model integrating quantitative data analysis with qualitative user research to inform strategic planning decisions')}if(tl.match(/sustain|climate|environment|infra/)){bullets.push('Embedded as strategy lead for multi-year engagement managing complex environmental and infrastructure projects; coordinated cross-functional teams across design, operations, and asset management');bullets.push('Designed and launched scalable evaluation frameworks combining onsite observation, stakeholder engagement, and data visualization to measure sustainability outcomes');bullets.push('Delivered strategic planning framework addressing climate-aligned infrastructure improvements; translated research findings into actionable implementation roadmaps')}if(bullets.length<3){bullets.push('Embedded as strategy lead for 3-year engagement managing complex multi-stakeholder projects; coordinated cross-functional teams across design, operations, and asset management');bullets.push('Designed and implemented comprehensive evaluation program establishing KPIs, digital dashboards, and multi-method research framework for 10M+ annual visitor environments');bullets.push('Delivered strategic planning frameworks informing $50M+ in capital improvements; conducted 35+ stakeholder interviews and synthesized findings into actionable recommendations')}var out=bullets.slice(0,5).map(function(b){return'\u2022 '+b}).join('\n\n');document.getElementById('aiOutput').innerHTML='<div class="gen-output"><strong>Resume Bullets for '+title+':</strong><br><br>'+out.replace(/\n/g,'<br>')+'</div><button class="copy-btn" onclick="copyText(\'aiOutput\')">Copy All</button>'}
+function genJobLetter(){var title=document.getElementById('aiTitle').value;var company=document.getElementById('aiCompany').value;if(!title||!company){showToast('Job title and company required');return}var tl=title.toLowerCase();var q1='',q2='',q3='';if(tl.match(/design|architect|placemaking|urban/)){q1='1. Placemaking strategy and operations experience\nI served as Placemaking Strategy Manager embedded in Google\'s corporate placemaking team for three years. My portfolio consisted of indoor/outdoor retail environments, plazas, and indoor community spaces at 4+ mixed-use assets in New York City and nationally, seeing 10M+ annual foot traffic. I designed and implemented a comprehensive multi-year service performance evaluation program, establishing KPIs, digital dashboards, and bi-annual multi-method research framework.';q2='2. Cross-functional stakeholder coordination\nI have extensive experience convening design, operations, asset management, and retail strategy teams. I managed multi-stakeholder design projects across 6 high-traffic ground floors globally, maintaining careful attention to communication between disciplines and delivering monthly dashboard updates to executive stakeholders.';q3='3. Design training and research-informed practice\nTrained as an architect and urban designer (B.Arch + M.Urban Design), I combine hands-on research methodology\u2014including 50+ hours of onsite observation and 35+ stakeholder interviews\u2014with scalable frameworks and tools for evidence-based decision-making.'}else if(tl.match(/strategy|operations|management|director|vp|principal/)){q1='1. Strategic planning and operations leadership\nI bring 7+ years of project management experience across pre-design, design, construction, and operations for complex multi-stakeholder projects. At CBRE, I managed 3 simultaneous workplace strategy projects across 6 high-traffic ground floors globally. I delivered strategic campus planning frameworks informing $50M+ in capital improvements.';q2='2. Cross-functional stakeholder coordination\nI have extensive experience convening design, operations, asset management, and strategy teams. I conducted 35+ stakeholder interviews, focus groups, and surveys, synthesizing findings into actionable recommendations. I built close relationships with operators and maintained careful attention to communication across disciplines.';q3='3. Research-informed implementation\nI am trained in evidence-based methodology, conducting 50+ hours of onsite observation and translating findings into actionable frameworks. I built portfolio-wide forecasting models that remained in active use 7+ months post-departure, demonstrating sustainable value creation.'}else{q1='1. Strategic project management expertise\nI bring 7+ years managing complex, multi-stakeholder projects from pre-design through operations. At CBRE, I embedded as workplace strategist for a 3-year engagement, overseeing $50M+ in capital improvements. I managed 3 simultaneous projects across 6 locations globally.';q2='2. Stakeholder engagement and cross-functional leadership\nI have extensive experience convening teams across design, operations, asset management, and strategy. I conducted 35+ stakeholder interviews and synthesized findings into actionable recommendations. My work consistently bridges the gap between strategic vision and operational execution.';q3='3. Data-informed decision-making\nI designed comprehensive evaluation frameworks with multi-method research, KPIs, and metrics dashboards. I conducted 50+ hours of onsite observation and built forecasting models that remained in active use 7+ months post-departure.'}var letter='I am writing to apply for the '+title+' position at '+company+'.\n\nI bring 7+ years of experience managing complex, multi-stakeholder design and development projects across strategy, design, construction, and operations. I am excited to apply my expertise to '+company+'\'s mission and believe my background maps directly onto this role.\n\nI bring three core qualifications:\n\n'+q1+'\n\n'+q2+'\n\n'+q3+'\n\nThis experience maps directly onto the '+title+' role. I\'m eager to bring my expertise in multi-stakeholder coordination, evidence-based strategy, and operational leadership to '+company+'. I would welcome the opportunity to discuss how my background aligns with your needs.\n\nSincerely,\nAshrita Shetty';document.getElementById('aiOutput').innerHTML='<div class="gen-output"><strong>Cover Letter for '+title+' at '+company+':</strong><br><br>'+letter.replace(/\n/g,'<br>')+'</div><button class="copy-btn" onclick="copyText(\'aiOutput\')">Copy All</button>'}
 function showRemoveModal(id){currentRemoveJobId=id;document.getElementById('removeReason').value='';showModal('removeJobModal')}
-function confirmRemoveJob(){var reason=document.getElementById('removeReason').value;var removed=getRemovedJobs();removed.push({job_id:currentRemoveJobId,reason:reason,timestamp:new Date().toISOString().split('T')[0]});localStorage.setItem('removed_jobs',JSON.stringify(removed));showToast('Job removed. You can manage removed jobs in settings.');closeModal('removeJobModal');renderJobs()}
+function confirmRemoveJob(){var reason=document.getElementById('removeReason').value;var removed=getRemovedJobs();removed.push({job_id:currentRemoveJobId,reason:reason,timestamp:new Date().toISOString().split('T')[0]});localStorage.setItem('removed_jobs',JSON.stringify(removed));showToast('Job removed.');closeModal('removeJobModal');renderJobs()}
 function rateJob(id,type){var ratings=JSON.parse(localStorage.getItem('ratings')||'{}');ratings[id]=type;localStorage.setItem('ratings',JSON.stringify(ratings));renderJobs()}
-function renderOrgs(){var html='';ORGS.forEach(o=>{var matching=JOBS.filter(j=>j.c===o.n);var status=JSON.parse(localStorage.getItem('orgStatus')||'{}')[o.n]||'';var statusClass=status?'status-pill '+status:'status-pill';var rolesHtml=matching.length>0?'<span class="role-link" onclick="showRoles(\''+o.n.replace(/'/g,"\\'")+'\')" title="Click to view roles">'+matching.length+' matching roles</span>':'No matching roles';html+='<tr><td><a href="'+o.u+'" target="_blank">'+o.n+'</a></td><td>'+o.s+'</td><td><span class="'+statusClass+'" onclick="showOrgStatus(\''+o.n.replace(/'/g,"\\'")+'\')" style="cursor:pointer">'+(status||'—')+'</span></td><td>'+rolesHtml+'</td><td style="font-size:12px">'+((JSON.parse(localStorage.getItem('orgStatus')||'{}')[o.n])?new Date().toLocaleDateString():'—')+'</td></tr>'});document.getElementById('orgsList').innerHTML=html}
-function showRoles(org){var roles=JOBS.filter(j=>j.c===org);var html='Matching Roles:\n';roles.forEach(r=>{html+=r.t+' ('+r.c+')\n'});alert(html)}
+function renderOrgs(){var html='';ORGS.forEach(function(o){var matching=JOBS.filter(function(j){return j.c===o.n});var status=JSON.parse(localStorage.getItem('orgStatus')||'{}')[o.n]||'';var statusClass=status?'status-pill '+status:'status-pill';var rolesHtml=matching.length>0?'<span style="color:#0066cc;cursor:pointer" onclick="showRoles(\''+o.n.replace(/'/g,"\\'")+'\')">'+matching.length+' matching</span>':'No matching roles';html+='<tr><td><a href="'+o.u+'" target="_blank">'+o.n+'</a></td><td>'+o.s+'</td><td><span class="'+statusClass+'" onclick="showOrgStatus(\''+o.n.replace(/'/g,"\\'")+'\')>" style="cursor:pointer">'+(status||'&mdash;')+'</span></td><td>'+rolesHtml+'</td><td style="font-size:12px">'+((JSON.parse(localStorage.getItem('orgStatus')||'{}')[o.n])?new Date().toLocaleDateString():'&mdash;')+'</td></tr>'});document.getElementById('orgsList').innerHTML=html}
+function showRoles(org){var roles=JOBS.filter(function(j){return j.c===org});var html='Matching Roles:\n';roles.forEach(function(r){html+=r.t+' ('+r.c+')\n'});alert(html)}
 function showOrgStatus(org){currentOrgName=org;var status=JSON.parse(localStorage.getItem('orgStatus')||'{}')[org]||'';document.getElementById('orgStatusTitle').textContent='Status: '+org;document.getElementById('statusValue').value=status;document.getElementById('statusNotes').value='';showModal('orgStatusModal')}
 function saveStatus(){var status=document.getElementById('statusValue').value;var orgStatus=JSON.parse(localStorage.getItem('orgStatus')||'{}');if(status)orgStatus[currentOrgName]=status;else delete orgStatus[currentOrgName];localStorage.setItem('orgStatus',JSON.stringify(orgStatus));closeModal('orgStatusModal');renderOrgs();showToast('Status updated')}
-function renderApps(){var apps=JSON.parse(localStorage.getItem('applications')||'[]');var html='';if(apps.length===0)html='<div class="empty">No applications tracked yet. Add one using the form above.</div>';else apps.forEach(a=>{html+='<div class="app-card"><div class="app-title">'+a.company+'</div><div class="app-meta">Status: <span class="status-pill '+a.status+'">'+a.status+'</span></div><div class="app-meta">Date: '+a.date+'</div><div class="app-meta">Notes: '+a.notes+'</div></div>'});document.getElementById('appsList').innerHTML=html}
+function renderApps(){var apps=JSON.parse(localStorage.getItem('applications')||'[]');var html='';if(apps.length===0)html='<div class="empty">No applications tracked yet. Add one using the form above.</div>';else apps.forEach(function(a){html+='<div class="app-card"><div class="app-title">'+a.company+'</div><div class="app-meta">Status: <span class="status-pill '+a.status+'">'+a.status+'</span></div><div class="app-meta">Date: '+a.date+'</div><div class="app-meta">Notes: '+a.notes+'</div></div>'});document.getElementById('appsList').innerHTML=html}
 function saveApp(){var apps=JSON.parse(localStorage.getItem('applications')||'[]');apps.push({company:document.getElementById('appCompany').value,status:document.getElementById('appStatus').value,date:document.getElementById('appDate').value,notes:document.getElementById('appNotes').value});localStorage.setItem('applications',JSON.stringify(apps));closeModal('addJobModal');renderApps();showToast('Application saved')}
-function genBullets(){var title=document.getElementById('genTitle').value;var desc=document.getElementById('genDesc').value;if(!title||!desc){showToast('Fill in job title and description');return}var bullets='Your resume should highlight:\n• Strategic impact and measurable outcomes\n• Cross-functional leadership and collaboration\n• Problem-solving aligned with this role\n• Relevant experience in '+title+'\n\nAdapt your existing bullet points to emphasize these elements.';document.getElementById('genOutput').innerHTML='<div class="gen-output">'+bullets.replace(/\n/g,'<br>')+'</div><button class="copy-btn" onclick="copyText(\'genOutput\')">📋 Copy</button>'}
-function genLetter(){var company=document.getElementById('genCompany').value;var title=document.getElementById('genTitle').value;if(!company||!title){showToast('Fill in company and job title');return}var letter='Dear Hiring Manager,\n\nI am writing to express my strong interest in the '+title+' position at '+company+'. With my background in urban strategy, policy research, and cross-sector collaboration, I am confident I can contribute meaningfully to your team.\n\nMy experience has prepared me to understand both the strategic and operational dimensions of this work, and I am excited about the opportunity to apply my skills to [specific impact area].\n\nThank you for considering my application. I look forward to discussing how I can contribute to '+company+'\'s mission.';document.getElementById('genOutput').innerHTML='<div class="gen-output">'+letter.replace(/\n/g,'<br>')+'</div><button class="copy-btn" onclick="copyText(\'genOutput\')">📋 Copy</button>'}
+function genBullets(){var title=document.getElementById('genTitle').value;var desc=document.getElementById('genDesc').value;if(!title||!desc){showToast('Fill in job title and description');return}var bullets='Your resume should highlight:\n- Strategic impact and measurable outcomes\n- Cross-functional leadership and collaboration\n- Problem-solving aligned with this role\n- Relevant experience in '+title+'\n\nAdapt your existing bullet points to emphasize these elements.';document.getElementById('genOutput').innerHTML='<div class="gen-output">'+bullets.replace(/\n/g,'<br>')+'</div><button class="copy-btn" onclick="copyText(\'genOutput\')">Copy</button>'}
+function genLetter(){var company=document.getElementById('genCompany').value;var title=document.getElementById('genTitle').value;if(!company||!title){showToast('Fill in company and job title');return}var letter='Dear Hiring Manager,\n\nI am writing to express my strong interest in the '+title+' position at '+company+'. With my background in urban strategy, policy research, and cross-sector collaboration, I am confident I can contribute meaningfully to your team.\n\nMy experience has prepared me to understand both the strategic and operational dimensions of this work, and I am excited about the opportunity to apply my skills to [specific impact area].\n\nThank you for considering my application. I look forward to discussing how I can contribute to '+company+"\'s mission.";document.getElementById('genOutput').innerHTML='<div class="gen-output">'+letter.replace(/\n/g,'<br>')+'</div><button class="copy-btn" onclick="copyText(\'genOutput\')">Copy</button>'}
 function copyText(id){var text=document.getElementById(id).textContent;navigator.clipboard.writeText(text);showToast('Copied!')}
-function exportCSV(){var orgs=JSON.parse(localStorage.getItem('orgStatus')||'{}');var csv='Organization,Sector,Status,Date\n';ORGS.forEach(o=>{if(orgs[o.n])csv+=o.n+','+o.s+','+orgs[o.n]+','+new Date().toLocaleDateString()+'\n'});var blob=new Blob([csv],{type:'text/csv'});var url=window.URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download='org-tracker-'+new Date().toISOString().split('T')[0]+'.csv';a.click()}
+function exportCSV(){var orgs=JSON.parse(localStorage.getItem('orgStatus')||'{}');var csv='Organization,Sector,Status,Date\n';ORGS.forEach(function(o){if(orgs[o.n])csv+=o.n+','+o.s+','+orgs[o.n]+','+new Date().toLocaleDateString()+'\n'});var blob=new Blob([csv],{type:'text/csv'});var url=window.URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download='org-tracker-'+new Date().toISOString().split('T')[0]+'.csv';a.click()}
 function showModal(id){document.getElementById(id).classList.add('show')}
 function closeModal(id){document.getElementById(id).classList.remove('show')}
-function showToast(msg){var toast=document.createElement('div');toast.className='toast';toast.textContent=msg;document.body.appendChild(toast);setTimeout(()=>toast.remove(),3000)}
-function refreshDashboard(){var btn=document.getElementById('refreshBtn');btn.textContent='⏳ Scraping jobs...';btn.disabled=true;fetch('http://localhost:3000/api/refresh',{method:'POST',headers:{'Content-Type':'application/json'}}).then(r=>r.json()).then(data=>{if(data.status==='success'){localStorage.setItem('lastRefresh',new Date().toISOString().split('T')[0]);document.getElementById('lastRefresh').textContent='Last Refreshed: '+new Date().toLocaleDateString();showToast('✅ Dashboard updated! '+data.data.jobsVerified+' jobs verified. Reload page to see changes.');btn.textContent='🔄 Refresh';btn.disabled=false;setTimeout(()=>location.reload(),2000)}else{showToast('⚠️ Refresh failed: '+data.message);btn.textContent='🔄 Refresh';btn.disabled=false}}).catch(err=>{showToast('⚠️ Server not running. Start with: node server.js');btn.textContent='🔄 Refresh';btn.disabled=false})}
-function init(){document.getElementById('lastRefresh').textContent='Last Refreshed: '+localStorage.getItem('lastRefresh')||'April 7, 2026';renderJobs();renderOrgs();renderApps();document.getElementById('totalOrgs').textContent=ORGS.length+' organizations'}
+function showToast(msg){var toast=document.createElement('div');toast.className='toast';toast.textContent=msg;document.body.appendChild(toast);setTimeout(function(){toast.remove()},3000)}
+function refreshDashboard(){var btn=document.getElementById('refreshBtn');btn.textContent='Scraping...';btn.disabled=true;showToast('Run: node build-dashboard.js to refresh data');setTimeout(function(){btn.textContent='Refresh';btn.disabled=false},3000)}
+function init(){renderJobs();renderOrgs();renderApps();document.getElementById('totalOrgs').textContent=ORGS.length+' organizations'}
 document.addEventListener('DOMContentLoaded',init);
 </script>
 
